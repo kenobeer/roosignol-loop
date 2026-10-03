@@ -110,8 +110,7 @@ noscript{display:block;padding:16px;color:var(--amber)}
 .say{font-size:19px;font-weight:400;min-height:52px;display:flex;align-items:center;margin:8px 0 4px;line-height:1.25}
 .hero{padding:8px 12px 12px;text-align:center}
 .hero svg{width:100%;max-width:265px;height:auto;display:block;margin:0 auto}
-.hero .say{justify-content:center;min-height:26px;font-size:16px;margin:0 0 8px}
-.hero .btn{width:auto;min-width:240px;min-height:50px;padding:0 32px;font-size:17px;margin:0 auto}
+.hero .say{justify-content:center;min-height:26px;font-size:16px;margin:0}
 .lnode{cursor:pointer}
 .lnode circle.dot{fill:var(--red);stroke:#fff;stroke-width:1.5;transition:fill .3s,r .3s}
 .lnode.on circle.dot{fill:var(--amber);r:14}
@@ -234,7 +233,6 @@ nav{margin-bottom:8px}
   <div class="card hero" id="hero">
     <svg id="loopSvg" viewBox="0 0 300 262" role="img" aria-label="The LOOP circle: Rossignol, shops, skiers and returns"></svg>
     <div class="say" id="heroSay" aria-live="polite">Tap a dot.</div>
-    <button class="btn" id="follow">Follow one ski</button>
   </div>
 
   <div id="panels"></div>
@@ -592,9 +590,6 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     g.addEventListener("click", pick);
     g.addEventListener("keydown", function(e){if(e.key === "Enter" || e.key === " "){e.preventDefault(); pick()}});
     groups.push(g);
-  });
-  $("follow").addEventListener("click", function(){
-    showTab("ski");
   });
 })();
 

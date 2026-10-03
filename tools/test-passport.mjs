@@ -6,7 +6,7 @@ if(rm) await p.emulateMediaFeatures([{name:"prefers-reduced-motion",value:"reduc
 const errs=[]; p.on("pageerror",e=>errs.push(e.message)); p.on("console",m=>m.type()==="error"&&errs.push(m.text()));
 await p.goto(url,{waitUntil:"networkidle0"});
 const sl=ms=>new Promise(r=>setTimeout(r,ms));
-await p.evaluate(()=>document.getElementById("follow").click()); await sl(1200);
+await p.evaluate(()=>document.getElementById("t-ski").click()); await sl(1200);
 await p.evaluate(()=>{const y=document.getElementById("panels").getBoundingClientRect().top+scrollY-4; window.scrollTo(0,y)}); await sl(400);
 const fit=()=>p.evaluate(()=>{const g=document.getElementById("g1").getBoundingClientRect(); const nav=document.querySelector("nav").getBoundingClientRect(); const pass=document.getElementById("pass"); const m=pass.getScreenCTM(); const lk=document.getElementById("mathBtn").getBoundingClientRect(); return {vh:innerHeight, navBottom:Math.round(nav.bottom), gTop:Math.round(g.top), gBottom:Math.round(g.bottom), passScale:+m.a.toFixed(3), minMainPx:+(11.8*m.a).toFixed(1), hscroll:document.documentElement.scrollWidth>innerWidth, mathBtnBottom:Math.round(lk.bottom), docScrollable: document.documentElement.scrollHeight>innerHeight}});
 console.log("fit:", JSON.stringify(await fit()));
