@@ -59,6 +59,7 @@ Needs Google Chrome on macOS and `npm install` in `tools`. Each script drives th
 
     node tools/test-passport.mjs <url> <screenshot-dir> [640|844] [rm]   # section 1: fit in the viewport, 6 button presses, 900 and 450 totals, sheet, quiet switch
     node tools/test-shop.mjs <url> [rm]                                   # section 2: default and weather/price/class numbers, layout at 390 x 844, rack tap shows You +EUR 60 and Rossignol EUR 12, run your month
+    node tools/strip-shots.mjs <url> <out-prefix> [width]                 # screenshots of the comparison strip: initial, after winter 3, after winter 5
     node tools/verify.mjs                                                 # QR code decodes to the production URL, private window, offline reload
 
 `<url>` can be the production URL or `file:///.../public/index.html`. Pass `rm` for reduced motion.

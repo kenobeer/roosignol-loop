@@ -180,11 +180,20 @@ details.math .formula{margin:4px 0}
 nav{margin-bottom:8px}
 #g1{display:flex;flex-direction:column;gap:5px;height:calc(100vh - 90px);height:calc(100svh - 90px);min-height:500px}
 @media (max-height:720px){nav{padding-top:6px;padding-bottom:6px}.tab{min-height:44px;font-size:13px;white-space:nowrap}.tab br{display:none}#g1{height:calc(100vh - 78px);height:calc(100svh - 78px);gap:2px}}
-.g1top{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:400;line-height:16px}
+.g1top{flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:15px;color:var(--text);font-weight:400;line-height:20px}
+.wstat{font-size:13px;color:var(--amber);white-space:nowrap}
 .strip{flex:none;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.14);padding:4px 7px;margin-bottom:4px}
 @media (min-height:760px){.strip{padding:12px 12px;margin-bottom:14px}}
-.strip svg{display:block;width:100%;height:clamp(96px,16.5vh,130px);height:clamp(96px,16.5svh,130px)}
+.strip svg{display:block;width:100%;height:clamp(92px,15.5vh,124px);height:clamp(92px,15.5svh,124px)}
 .lbl2{fill:#a9bbdb;font-size:11.5px;font-weight:300}
+.ln{fill:#eef3fc;font-size:13.5px;font-weight:400}
+.nt{fill:#a9bbdb;font-size:11.5px;font-weight:300}
+.idt{fill:#ffb400;font-size:12px;font-weight:400;letter-spacing:.04em}
+.ax{fill:#7f8da8;font-size:12px;font-weight:300;transition:fill .3s}
+.ax.on{fill:#ffb400;font-weight:400}
+.olab{fill:#eef3fc;font-size:12px;font-weight:300}
+.dotv{fill:#071a3e;stroke:#ff4338;stroke-width:1.6;transition:fill .3s}
+.dotv.on{fill:#ff4338}
 .ska{transition:transform .45s cubic-bezier(.2,.8,.3,1),opacity .3s}
 .skin use,.skin{transition:fill .4s}
 .pp{flex:1 1 0;min-height:0;position:relative}
@@ -290,33 +299,35 @@ nav{margin-bottom:8px}
   <!-- 1 FOLLOW ONE SKI -->
   <section id="p-ski" role="tabpanel" aria-labelledby="t-ski">
     <div id="g1">
-      <div class="g1top">Follow one ski</div>
+      <div class="g1top"><span>Same winters. Different ending.</span><span class="wstat" id="wstat">Winter 0 of 5</span></div>
 
       <div class="strip">
-        <svg id="strip" viewBox="0 0 360 128" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Two pairs of skis side by side. The typical rental ski is discarded after 3 winters. The LOOP ski stays in service for 5 winters and then gets a second life.">
-          <g stroke="#3ee0ff" stroke-width="1" fill="none" opacity=".75">
-            <line x1="16" y1="32" x2="226" y2="32"/>
-            <line x1="16" y1="96" x2="226" y2="96"/>
-            <line x1="226" y1="96" x2="300" y2="96" stroke-dasharray="3 4" opacity=".6"/>
-          </g>
-          <g id="dots" fill="#ff4338"></g>
-          <rect x="12" y="27" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/><rect x="12" y="91" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/>
-          <text x="4" y="12" class="lbl2">Typical rental ski: 3 to 5 winters (shown: 3)</text>
-          <text x="4" y="76" class="lbl2">LOOP ski: 5 winters, then a second life</text>
-          <!-- bin -->
-          <g transform="translate(236 22)"><path d="M2 6H24L22 28H4Z" fill="rgba(255,255,255,.05)" stroke="#7f8da8" stroke-width="1.2"/><path d="M0 6H26M9 2H17" stroke="#7f8da8" stroke-width="1.4" stroke-linecap="round"/></g>
-          <!-- blank booklet -->
-          <g id="booklet" transform="translate(298 10)"><rect width="36" height="46" rx="4" fill="#7f8da8" opacity=".5" stroke="#a9bbdb" stroke-width="1"/><path d="M6 12H30M6 18H30M6 24H22" stroke="#a9bbdb" stroke-width=".9" opacity=".7"/></g>
-          <text x="358" y="66" text-anchor="end" class="lbl2">No shared record</text>
-          <g id="discard" visibility="hidden"><g transform="translate(316 34) rotate(-14)"><g id="discardAnim"><g style="--ink:#c8281e"><rect x="-29" y="-14" width="58" height="28" rx="3" class="s" stroke-width="1.8"/><text class="st-t" x="0" y="-1.5" font-size="12" text-anchor="middle" textLength="50" lengthAdjust="spacingAndGlyphs">DISCARDED</text><text class="st-t" x="0" y="10.5" font-size="11" text-anchor="middle" textLength="42" lengthAdjust="spacingAndGlyphs">WINTER 3</text></g><rect x="-30" y="-24" width="60" height="48" fill="transparent"/></g></g></g>
-          <!-- rack -->
-          <g transform="translate(298 84)"><rect width="46" height="30" rx="5" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.2"/><g fill="#ffb400" opacity=".5"><rect x="9" y="4" width="3.5" height="22" rx="1.7"/><rect x="21" y="4" width="3.5" height="22" rx="1.7"/><rect x="33" y="4" width="3.5" height="22" rx="1.7"/></g></g>
-          <text x="358" y="126" text-anchor="end" class="lbl2">Certified second-hand</text>
+        <svg id="strip" viewBox="0 0 360 116" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Same winters, different ending. The typical rental ski ends in the bin after about 3 winters. The LOOP ski stays in service for 5 winters, then gets a second life and is recycled.">
+          <text x="4" y="13" class="ax">Winter</text>
+          <g id="axis"></g>
+          <!-- lane A: typical rental ski -->
+          <text x="4" y="36" class="ln">Typical rental ski</text>
+          <text x="356" y="36" text-anchor="end" class="nt">3 to 5 winters, 3 shown</text>
+          <line x1="16" y1="54" x2="156" y2="54" stroke="#3ee0ff" stroke-width="1" opacity=".75"/>
+          <rect x="12" y="49" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/>
+          <g id="dotsT"></g>
+          <g transform="translate(170 54)"><rect x="-14" y="-14" width="28" height="28" rx="7" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.4"/><path d="M-8 -5H8M-3 -8H3M-6 -5L-5 8H5L6 -5" fill="none" stroke="#a9bbdb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <text class="olab" x="190" y="50">Thrown away</text><text class="olab" x="190" y="64">or burned</text>
+          <!-- lane B: LOOP ski -->
+          <text x="4" y="84" class="ln">LOOP ski</text>
+          <g transform="translate(266 75)"><path d="M1 0H10L14 5L10 10H1Z" fill="#ffb400"/><circle cx="4" cy="5" r="1.5" fill="#071a3e"/></g>
+          <text id="loopId" x="356" y="84" text-anchor="end" class="idt">LOOP-0427</text>
+          <line x1="16" y1="102" x2="238" y2="102" stroke="#3ee0ff" stroke-width="1" opacity=".75"/>
+          <rect x="12" y="97" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/>
+          <g id="dotsL"></g>
+          <g transform="translate(252 102)"><rect x="-14" y="-14" width="28" height="28" rx="7" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.4"/><g id="rackBars" fill="#ffb400" opacity=".45" style="transition:opacity .3s"><rect x="-8" y="-8" width="3.2" height="16" rx="1.6"/><rect x="-1.6" y="-8" width="3.2" height="16" rx="1.6"/><rect x="4.8" y="-8" width="3.2" height="16" rx="1.6"/></g></g>
+          <text class="olab" x="272" y="98">Second life,</text><text class="olab" x="272" y="112">then recycled</text>
           <!-- skis -->
-          <g id="skiT" class="ska"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use id="skiTu" href="#skiS" transform="scale(.5 .6)"/></g></g></g>
-          <g id="skiB" class="ska"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use class="sk" href="#skiS" transform="scale(.5 .6)"/></g>
-            <g id="dmg" opacity="0"><polyline points="-4,-5 -1,-1 -4,2 0,6" fill="none" stroke="#ff4338" stroke-width="1.6"/></g>
-            <g id="patch" opacity="0"><rect x="-6" y="-4" width="12" height="8" rx="2" fill="#0d1424" stroke="#ffb400" stroke-width="1.3"/><path d="M-6 0H6M-2 -4V4M2 -4V4" stroke="#ffb400" stroke-width=".6"/></g>
+          <g id="skiT" class="ska"><g transform="rotate(-30)"><g transform="translate(-16.2 -5.2) scale(.5 .55)"><use id="skiTu" href="#skiS" fill="#ffb400"/><rect x="26" y="1.4" width="12" height="5.2" rx="1.5" fill="#0d1424" opacity=".7"/><rect x="26" y="12.4" width="12" height="5.2" rx="1.5" fill="#0d1424" opacity=".7"/></g></g></g>
+          <g id="skiB" class="ska"><g transform="rotate(-30)"><g transform="translate(-16.2 -5.2) scale(.5 .55)"><use class="sk" href="#skiS"/><rect x="26" y="1.4" width="12" height="5.2" rx="1.5" fill="#0d1424" opacity=".7"/><rect x="26" y="12.4" width="12" height="5.2" rx="1.5" fill="#0d1424" opacity=".7"/></g>
+            <g transform="translate(5 6)"><path d="M0 0V3" stroke="#ffb400" stroke-width="1"/><rect x="-3" y="3" width="6" height="7" rx="1.6" fill="#ffb400"/><circle cx="0" cy="5.2" r="1" fill="#071a3e"/></g>
+            <g id="dmg" opacity="0"><polyline points="-3,-4 -1,-1 -3,1 0,4" fill="none" stroke="#ff4338" stroke-width="1.4"/></g>
+            <g id="patch" opacity="0"><rect x="-4.5" y="-3.5" width="9" height="7" rx="1.6" fill="#0d1424" stroke="#ffb400" stroke-width="1.2"/><path d="M-4.5 0H4.5M-1.5 -3.5V3.5M1.5 -3.5V3.5" stroke="#ffb400" stroke-width=".5"/></g>
           </g></g>
           <path id="spark" d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" fill="#fff" opacity="0"/>
         </svg>
@@ -775,40 +786,48 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
   }
 
   /* strip */
-  var X0 = 16, DX = 40, YT = 32, YB = 96, BIN = [246, 38], RACK = [322, 99];
-  var dots = $("dots");
-  for(var r = 0; r < 2; r++) for(var k = 1; k <= 5; k++) el("circle", {cx:X0 + DX * k, cy:r ? YB : YT, r:5}, dots);
+  var X0 = 16, XF = 56, DX = 40, YT = 54, YB = 102, BIN = [170, 54], RACK = [252, 102];
+  function XW(w){return w <= 0 ? X0 : XF + DX * (w - 1)}
+  var axis = $("axis"), dotsT = $("dotsT"), dotsL = $("dotsL"), nums = [], dT = [], dL = [];
+  for(var k = 1; k <= 5; k++){
+    var nt = el("text", {x:XW(k), y:13, "text-anchor":"middle", class:"ax"}, axis); nt.textContent = k; nums.push(nt);
+    if(k <= 3) dT.push(el("circle", {cx:XW(k), cy:YT, r:7, class:"dotv"}, dotsT));
+    dL.push(el("circle", {cx:XW(k), cy:YB, r:7, class:"dotv"}, dotsL));
+  }
+  $("loopId").textContent = SKI_ID;
   var WEAR = ["#ffb400", "#e0a31c", "#c39a3c", "#a38a52"];
   function place(id, x, y, extra, op){var n = $(id); n.style.transform = "translate(" + x + "px," + y + "px)" + (extra || ""); if(op !== undefined) n.style.opacity = op}
+  function stripDots(w){
+    nums.forEach(function(n, i){n.setAttribute("class", "ax" + (i < w ? " on" : ""))});
+    dT.forEach(function(d, i){d.setAttribute("class", "dotv" + (i < w ? " on" : ""))});
+    dL.forEach(function(d, i){d.setAttribute("class", "dotv" + (i < w ? " on" : ""))});
+  }
+  var INBIN = " rotate(40deg) scale(.5)", INRACK = " rotate(-60deg) scale(.85)";
+  function rackFull(on){$("rackBars").style.opacity = on ? 1 : .45}
   function paintStrip(){
     var w = S.w;
-    // top lane: original ski for winters 1 to 3, then the bin, then a new ski from winter 4
-    if(w < 3){place("skiT", X0 + DX * w, YT, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
-    else {place("skiT", BIN[0], BIN[1], " rotate(40deg) scale(.6)", 0); $("skiTu").setAttribute("fill", WEAR[3])}
-    $("discard").setAttribute("visibility", w >= 3 ? "visible" : "hidden");
-    // LOOP lane
-    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1); else place("skiB", RACK[0], RACK[1], " rotate(-60deg) scale(.85)", 1);
+    stripDots(w);
+    // typical lane ends in the bin after winter 3
+    if(w < 3){place("skiT", XW(w), YT - 3, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
+    else {place("skiT", BIN[0], BIN[1], INBIN, 0); $("skiTu").setAttribute("fill", WEAR[3])}
+    // LOOP lane keeps going and ends in the rack after winter 5
+    if(w < 5) place("skiB", XW(w), YB - 3, "", 1); else place("skiB", RACK[0], RACK[1], INRACK, 0);
+    rackFull(w >= 5);
     $("dmg").style.opacity = 0; $("patch").style.opacity = w >= 3 ? 1 : 0;
-    $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)";
+    $("patch").style.filter = "drop-shadow(0 0 2px #ffb400)";
   }
   function stripStep(w){
-    // both skis advance to dot w
-    if(w <= 3){place("skiT", X0 + DX * w, YT, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
-    if(w === 3){
-      later(function(){place("skiT", BIN[0], BIN[1], " rotate(40deg) scale(.6)", 0)}, 480);
-      later(function(){
-        $("discard").setAttribute("visibility", "visible");
-        anim($("discardAnim"), [{transform:"scale(1.6)", opacity:0}, {transform:"scale(.95)", opacity:1, offset:.7}, {transform:"scale(1)", opacity:1}], {duration:240, easing:"cubic-bezier(.2,.8,.3,1)"});
-      }, 700);
-    }
-    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1);
-    else {place("skiB", X0 + DX * 5, YB, "", 1); later(function(){place("skiB", RACK[0], RACK[1], " rotate(-60deg) scale(.85)", 1)}, 480)}
+    stripDots(w);
+    if(w <= 3){place("skiT", XW(w), YT - 3, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
+    if(w === 3) later(function(){place("skiT", BIN[0], BIN[1], INBIN, 0)}, 480);
+    if(w < 5) place("skiB", XW(w), YB - 3, "", 1);
+    else {place("skiB", XW(5), YB - 3, "", 1); later(function(){place("skiB", RACK[0], RACK[1], INRACK, 0); rackFull(true)}, 480)}
     if(w === 3){
       later(function(){$("dmg").style.opacity = 1}, 460);
-      later(function(){$("patch").style.opacity = 1; $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)"; $("dmg").style.opacity = 0}, 760);
+      later(function(){$("patch").style.opacity = 1; $("patch").style.filter = "drop-shadow(0 0 2px #ffb400)"; $("dmg").style.opacity = 0}, 760);
     }
     if(w >= 1 && w <= 4) later(function(){
-      var sp = $("spark"); sp.setAttribute("transform", "translate(" + (X0 + DX * w + 14) + " " + (YB - 9) + ")");
+      var sp = $("spark"); sp.setAttribute("transform", "translate(" + (XW(w) + 12) + " " + (YB - 12) + ")");
       anim(sp, [{transform:"scale(0)", opacity:0}, {transform:"scale(1.3)", opacity:1, offset:.4}, {transform:"scale(0)", opacity:0}], {duration:600, easing:"ease-out"});
     }, 470);
   }
@@ -833,8 +852,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     2:function(){return days() + " rental days. Summer service by Rossignol: base, edges, bindings, wax."},
     3:function(){return "Structural repair with carbon fibre recovered from old wind turbine blades (our proposal with Vattenfall)."},
     4:function(){return days() + " rental days. Summer service by Rossignol: base, edges, bindings, wax."},
-    5:function(){return "Safety check passed, sold as certified second-hand. Skis that fail the check are never resold, they are recycled via MTB."},
-    d:function(){return "Typical rental ski: replaced after about 3 winters, usually buried or burned."}
+    5:function(){return "Safety check passed, sold as certified second-hand. Skis that fail the check are never resold, they are recycled via MTB."}
   };
   function toggleDetail(k){if(S.lock) return; S.detail = S.detail === k ? null : k; paintCap(); vib()}
   function paintCap(){
@@ -845,10 +863,6 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     else if(S.w === N) c.innerHTML = "<div>Typical rental ski: 3 to 5 winters, then waste.</div><div>LOOP ski: 5 winters in rental, then a second life, then recycling.</div>";
     else c.textContent = "Tap a stamp to see what happened.";
   }
-  $("discard").addEventListener("click", function(){toggleDetail("d")});
-  $("discard").setAttribute("role", "button"); $("discard").setAttribute("tabindex", "0"); $("discard").setAttribute("aria-label", "Discarded stamp, winter 3");
-  $("discard").style.cursor = "pointer";
-  $("discard").addEventListener("keydown", function(e){if(e.key === "Enter" || e.key === " "){e.preventDefault(); toggleDetail("d")}});
 
   /* the one button */
   var LABELS = ["Winter 1", "Winter 2", "Winter 3: repair", "Winter 4", "Winter 5: safety check", "Replay"];
@@ -857,6 +871,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     go.textContent = !S.open ? "Open passport" : LABELS[S.w];
     go.classList.toggle("p1", !S.open);
     go.setAttribute("aria-disabled", S.lock);
+    $("wstat").textContent = "Winter " + S.w + " of " + N;
     $("shopBtn").hidden = S.w < N;
   }
   function lockFor(ms){S.lock = true; paintGo(); later(function(){S.lock = false; paintGo()}, RM ? 0 : ms)}
