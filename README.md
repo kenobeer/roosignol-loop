@@ -20,7 +20,7 @@ Open `public/index.html` and edit the `CONFIG` block at the top of the main `<sc
 | `pairs`, `pairsPerIcon`, `daysPerMonth` | Shop fleet (80 pairs, shown as 20 icons of 4) and normal rental days a month (20) |
 | `classes`, `defaultClass` | Ski classes and their fee per day (Standard 2, Performance 3, Premium 4). Section 2 only |
 | `defaultPrice`, `priceMin`, `priceMax` | The visitor's rental price per pair per day in section 2: start value and slider range (EUR 18, 8 to 40), illustrative |
-| `weather` | Weather steps and their share of normal rental days (10%, 50%, 100%, 130%), an illustration |
+| `weather` | Weather steps with `f`, their share of normal rental days (10%, 50%, 100%, 130%), and `lit`, how many of the 20 rack icons show as rented (2, 7, 16, 20). Both are illustrations |
 
 Passport total: `fee x days x winters` (3 x 60 x 5 = EUR 900 busy, 3 x 30 x 5 = EUR 450 quiet). Each winter drops 6 coins into the jar, so the jar holds 30 coins after 5 winters whatever the mode. Shop (section 2): rental days = `pairs x days x weather factor` (80 x 20 x 100% = 1,600), revenue = rental days x the visitor's price (x 18 = EUR 28,800), Rossignol's fee = rental days x class fee (x 3 = EUR 4,800), the visitor keeps revenue minus fee (EUR 24,000). The price does not change the number of rental days. Both formulas are shown under "Show the math". The passport fee does not follow the ski class chips in section 2. The till jar scales its coin unit so up to 30 coins show the keep and fee amounts in proportion.
 
