@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#071a3e">
-<meta name="description" content="Rossignol LOOP: follow one ski through 5 rental seasons. A student business model proposal.">
+<meta name="description" content="Rossignol LOOP: follow one ski through 5 rental winters. A student business model proposal.">
 <title>Rossignol LOOP</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071a3e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ffb400' stroke-width='3'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23ff3b30'/%3E%3C/svg%3E">
 <style>
@@ -49,7 +49,6 @@ nav{position:sticky;top:0;z-index:5;background:rgba(7,26,62,.94);backdrop-filter
 .seg button.lin[aria-pressed=true]{background:var(--grey);color:#0a1020}
 
 .idrow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.skiid{font-size:28px;font-weight:200;letter-spacing:.08em}
 
 /* timeline */
 .line{position:relative;display:flex;justify-content:space-between;margin:20px 6px 8px}
@@ -57,32 +56,19 @@ nav{position:sticky;top:0;z-index:5;background:rgba(7,26,62,.94);backdrop-filter
 .node{position:relative;width:20px;height:20px;border-radius:50%;background:#26385f;border:2px solid var(--line);padding:0}
 .node.done{background:var(--red);border-color:var(--red)}
 .node.now{background:var(--amber);border-color:#fff;transform:scale(1.35)}
-.lin-mode .node.done{background:var(--grey);border-color:var(--grey)}
-.lin-mode .node.now{background:#c5cfe3}
-.nodes-l{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin:0 -2px 6px;text-align:center}
-.nodes-l span{width:34px;margin:0 -7px}
 
 .ski{height:34px;margin:12px 0 4px}
 .ski svg{width:100%;height:34px;display:block}
 .ski path{fill:var(--amber);transition:fill .4s,opacity .4s}
-.lin-mode .ski path{fill:var(--grey)}
 
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
-.stat .v{font-size:26px;font-weight:300;line-height:1.1}
-.stat .v.amber{color:var(--amber)}
-.stat .l{font-size:13px;color:var(--muted)}
-.lin-mode .stat .v.amber{color:#c5cfe3}
 
 .step h3{margin:0 0 4px;font-size:21px;font-weight:300}
 .step .big{font-size:36px;font-weight:200;color:var(--amber);margin:2px 0 6px;line-height:1.1}
-.lin-mode .step .big{color:#c5cfe3}
 ul.svc{list-style:none;margin:8px 0 0;padding:0}
 ul.svc li{padding:7px 0 7px 26px;position:relative;border-top:1px solid var(--line);font-size:16px}
 ul.svc li:before{content:"";position:absolute;left:4px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--red)}
 ul.svc li.hl{color:var(--amber);font-weight:400}
 ul.svc li.hl:before{background:var(--amber);box-shadow:0 0 0 4px rgba(255,180,0,.25)}
-.two{display:grid;gap:10px}
 .out{border:1px solid var(--line);border-radius:16px;padding:12px}
 .out.good{border-color:var(--amber)}
 .out b{font-weight:400}
@@ -93,23 +79,12 @@ ul.svc li.hl:before{background:var(--amber);box-shadow:0 0 0 4px rgba(255,180,0,
 
 /* calculator */
 label.ctl{display:block;margin:14px 0 0;font-size:16px}
-.ctl .row{display:flex;justify-content:space-between;align-items:baseline}
-.ctl .val{font-size:22px;color:var(--amber);font-weight:400}
 input[type=range]{width:100%;height:44px;margin:4px 0 0;background:transparent;-webkit-appearance:none;appearance:none}
 input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:4px}
 input[type=range]::-moz-range-track{height:4px;background:var(--line);border-radius:4px}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;border-radius:50%;background:var(--amber);border:3px solid #fff;margin-top:-14px}
 input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--amber);border:3px solid #fff}
 .scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
-.bigfee{font-size:46px;font-weight:200;color:var(--amber);line-height:1.05}
-.bars{display:grid;gap:8px;margin-top:10px}
-.bar{display:grid;grid-template-columns:92px 1fr 74px;gap:8px;align-items:center;font-size:13px}
-.bar .t{height:14px;border-radius:7px;background:rgba(255,255,255,.08);overflow:hidden}
-.bar .t i{display:block;height:100%;background:var(--red);border-radius:7px;transition:width .3s}
-.bar.on{color:var(--amber);font-weight:400}
-.bar.on .t i{background:var(--amber)}
-.bar .n{text-align:right}
-.fixed{border-top:1px dashed var(--line);margin-top:12px;padding-top:10px}
 input[type=number]{width:120px;min-height:46px;border-radius:12px;border:1px solid var(--amber);background:rgba(255,255,255,.08);color:var(--text);font:inherit;font-size:20px;padding:0 10px}
 .formula{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;background:rgba(0,0,0,.25);border-radius:12px;padding:10px 12px;margin:6px 0;overflow-wrap:anywhere}
 
@@ -130,6 +105,120 @@ footer{font-size:13px;color:var(--muted);padding-top:6px}
 noscript{display:block;padding:16px;color:var(--amber)}
 @media (min-width:640px){body{font-size:18px}.two{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---- game additions ---- */
+.say{font-size:19px;font-weight:400;min-height:52px;display:flex;align-items:center;margin:8px 0 4px;line-height:1.25}
+.hero{padding:10px 12px 14px;text-align:center}
+.hero svg{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+.hero .say{justify-content:center;min-height:30px;font-size:17px;margin:0 0 8px}
+.lnode{cursor:pointer}
+.lnode circle.dot{fill:var(--red);stroke:#fff;stroke-width:1.5;transition:fill .3s,r .3s}
+.lnode.on circle.dot{fill:var(--amber);r:14}
+.lnode text{fill:var(--text);font-size:12px;font-weight:400;pointer-events:none}
+.flow-a{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:6 9;animation:flowdash 1.2s linear infinite}
+@keyframes flowdash{to{stroke-dashoffset:-30}}
+@keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+.paused *,.paused{animation-play-state:paused!important}
+
+.hud{display:flex;align-items:center;gap:12px;margin:2px 0 8px}
+.jar{width:74px;flex:none}
+.jar svg{width:100%;height:auto;display:block}
+.hud .bn{flex:1;min-width:0}
+.bignum{font-size:46px;font-weight:200;color:var(--amber);line-height:1.05;font-variant-numeric:tabular-nums}
+.hud .cap{font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.stage{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stage svg{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+.sk{fill:var(--amber)}
+.drag{cursor:grab}
+.mini[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+details.math{margin-top:12px;border-top:1px solid var(--line);padding-top:6px}
+details.math summary{min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--amber);font-weight:400;font-size:16px}
+details.math .formula{margin:4px 0}
+.snowline{pointer-events:none}
+.dial{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin:8px 0 4px}
+.dial .st{min-height:78px;padding-top:6px!important;justify-content:flex-start!important;gap:8px!important;background:transparent;border:0;color:var(--muted);font:inherit;font-size:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0}
+.dial .st svg{width:34px;height:34px}
+.dial .st[aria-pressed=true]{color:var(--amber)}
+.dial .dh{position:absolute;top:1px;left:0;width:25%;height:44px;display:flex;justify-content:center;touch-action:none;cursor:grab;z-index:2}
+.dial .dh i{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--amber);background:rgba(255,180,0,.14);display:block;position:relative}
+.dial .dh i:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--amber);animation:pulse 1.6s ease-out infinite}
+.dial.used .dh i:after{display:none}
+.dial.drag-on .dh{transition:none}
+.dial .dh{transition:left .3s cubic-bezier(.2,.8,.3,1)}
+.rack{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}
+.pair{min-height:46px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:0;cursor:pointer;display:grid;place-items:center;transition:background .3s,border-color .3s}
+.pair svg{width:30px;height:34px}
+.pair rect{fill:#5d6f93;transition:fill .3s}
+.pair.lit{background:rgba(255,180,0,.16);border-color:var(--amber)}
+.pair.lit rect{fill:var(--amber)}
+.coinf{position:fixed;pointer-events:none;color:var(--amber);font-weight:400;font-size:17px;z-index:20;width:112px;text-align:center;background:rgba(7,26,62,.92);border:1px solid var(--amber);border-radius:12px;padding:3px 6px;line-height:1.2}
+.coinf small{display:block;font-size:11.5px;color:var(--text);font-weight:300}
+.tok{display:grid;grid-template-columns:1fr;gap:6px;margin:8px 0}
+.tk{min-height:48px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);font:inherit;font-size:16px;font-weight:400;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 14px;cursor:pointer;text-align:left}
+.tk .n{position:relative}
+.tk .why{font-size:12.5px;color:var(--amber);opacity:0;transition:opacity .4s;text-align:right;font-weight:300}
+.tk.x .n{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;color:var(--muted)}
+.tk.x .why{opacity:1}
+.chipsrow.g3{display:grid;grid-template-columns:repeat(3,1fr)}
+.chipsrow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;align-items:center}
+.cls{min-height:52px;padding:4px 6px;line-height:1.2;border-radius:18px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:15px;font-weight:400;cursor:pointer}
+.cls[aria-pressed=true]{background:var(--amber);color:#1a1200;border-color:var(--amber)}
+.step2{display:inline-flex;align-items:center;gap:6px}
+.step2 button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:22px;cursor:pointer}
+.step2 b{font-weight:400;min-width:84px;text-align:center}
+.ringrow{display:flex;align-items:center;gap:12px;margin:8px 0}
+.ringrow svg{width:64px;height:64px;flex:none}
+.fixedl{font-size:15px;color:var(--text);margin:6px 0 0}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .pulse,.flow-a,.hint{animation:none!important}
+}
+@keyframes snowfall{from{transform:translateY(0)}to{transform:translateY(140px)}}
+@keyframes skiRun{0%{transform:translate(0,0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translate(120px,12px);opacity:0}}
+#passport{scroll-margin-top:70px}
+/* ---- section 1: follow one ski ---- */
+nav{margin-bottom:8px}
+#g1{display:flex;flex-direction:column;gap:5px;height:calc(100vh - 90px);height:calc(100svh - 90px);min-height:500px}
+@media (max-height:720px){nav{padding-top:6px;padding-bottom:6px}.tab{min-height:44px;font-size:13px;white-space:nowrap}.tab br{display:none}#g1{height:calc(100vh - 78px);height:calc(100svh - 78px)}}
+.g1top{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:400;line-height:16px}
+.strip{flex:none;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.14);padding:1px 3px}
+.strip svg{display:block;width:100%;height:clamp(92px,15.5vh,124px);height:clamp(92px,15.5svh,124px)}
+.lbl2{fill:#a9bbdb;font-size:11.5px;font-weight:300}
+.ska{transition:transform .45s cubic-bezier(.2,.8,.3,1),opacity .3s}
+.skin use,.skin{transition:fill .4s}
+.pp{flex:1 1 0;min-height:0;position:relative}
+.pp svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.st-t{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed","Helvetica Neue",Arial,sans-serif;font-weight:700;fill:var(--ink)}
+.st-p{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed","Helvetica Neue",Arial,sans-serif}
+.s{fill:none;stroke:var(--ink)}
+.f{fill:var(--ink)}
+.stamp{mix-blend-mode:multiply;cursor:pointer}
+.stamp:focus-visible{outline:none}
+.stamp:focus-visible .hit{stroke:#1e3f7a;stroke-width:2;stroke-dasharray:4 3}
+#cover{transition:transform .4s cubic-bezier(.5,0,.3,1);transform-origin:2px 137px}
+#cover.open{transform:scaleX(0)}
+#cover.gone{visibility:hidden}
+.cap{flex:none;height:32px;font-size:11.5px;line-height:1.3;overflow:hidden}
+.thumb{flex:none;display:flex;gap:10px;align-items:center}
+.nrow{display:flex;align-items:center;gap:10px}
+.nrow .bignum{white-space:nowrap}
+.jar{width:52px;flex:none}
+.jar svg{display:block;width:100%;height:auto}
+.thumb .bn{flex:1;min-width:0}
+.thumb .bignum{font-size:36px;line-height:1.02}
+.jc{font-size:11.5px;color:var(--text);font-weight:400;line-height:1.3}
+.cap2{font-size:11px;color:var(--muted);line-height:1.25}
+#go{flex:none;height:56px;min-height:56px;margin:0}
+#go.p1{animation:goPulse 1.8s ease-out infinite}
+@keyframes goPulse{0%{box-shadow:0 0 0 0 rgba(255,180,0,.55)}100%{box-shadow:0 0 0 16px rgba(255,180,0,0)}}
+.g1bot{flex:none;height:26px;display:flex;justify-content:space-between;position:relative;z-index:2}
+.lnk{height:44px;margin-bottom:-18px;background:none;border:0;color:var(--amber);font:inherit;font-size:15px;font-weight:400;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:6px 6px 0;align-self:flex-start}
+.sheet{position:fixed;inset:0;z-index:40;display:flex;align-items:flex-end}
+.sheet .bd{position:absolute;inset:0;background:rgba(2,8,24,.62)}
+.sheet .pn{position:relative;width:100%;max-width:640px;margin:0 auto;background:#0d2552;border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));max-height:80vh;max-height:80svh;overflow:auto;animation:sheetUp .3s cubic-bezier(.2,.8,.3,1)}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:0}}
+.sheet .seg{margin:12px 0 4px}
+.sheet .seg button{font-size:14px}
 </style>
 </head>
 <body>
@@ -140,82 +229,150 @@ noscript{display:block;padding:16px;color:var(--amber)}
     <p class="muted small" style="margin-top:6px">Rossignol stops selling skis to rental shops and lends them instead. The longer a ski lasts, the more it earns. This is our proposal.</p>
   </header>
 
+  <div class="card hero" id="hero">
+    <svg id="loopSvg" viewBox="0 0 300 262" role="img" aria-label="The LOOP circle: Rossignol, shops, skiers and returns"></svg>
+    <div class="say" id="heroSay" aria-live="polite">Tap a dot.</div>
+    <button class="btn" id="follow">Follow one ski</button>
+  </div>
+
+  <div id="panels"></div>
   <nav aria-label="Sections">
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" id="t-ski" aria-controls="p-ski" aria-selected="true">1. Ski<br>passport</button>
-      <button class="tab" role="tab" id="t-shop" aria-controls="p-shop" aria-selected="false">2. Shop<br>calculator</button>
-      <button class="tab" role="tab" id="t-blade" aria-controls="p-blade" aria-selected="false">3. Turbine<br>blade</button>
+      <button class="tab" role="tab" id="t-ski" aria-controls="p-ski" aria-selected="true">1. Ski<br> passport</button>
+      <button class="tab" role="tab" id="t-shop" aria-controls="p-shop" aria-selected="false">2. The<br> shop</button>
+      <button class="tab" role="tab" id="t-blade" aria-controls="p-blade" aria-selected="false">3. Turbine<br> blade</button>
     </div>
   </nav>
   <noscript>This page needs JavaScript to run the interactive parts.</noscript>
 
-  <!-- 1 PASSPORT -->
+  <!-- 1 FOLLOW ONE SKI -->
   <section id="p-ski" role="tabpanel" aria-labelledby="t-ski">
-    <div class="card" id="passport">
-      <div class="idrow">
-        <div><div class="muted small">Ski passport</div><div class="skiid" id="skiid">LOOP-0427</div></div>
-        <span class="tag">Illustrative example</span>
-      </div>
-      <div class="seg" role="group" aria-label="Business model">
-        <button class="lin" id="m-lin" aria-pressed="false">Linear model</button>
-        <button id="m-loop" aria-pressed="true">LOOP</button>
-      </div>
-      <div class="ski" aria-hidden="true"><svg viewBox="0 0 300 34" preserveAspectRatio="none"><path id="skipath" d="M2 17C2 8 10 6 22 7L270 12C284 13 292 16 298 5C299 14 299 22 298 29C292 18 284 21 270 22L22 27C10 28 2 26 2 17Z"/></svg></div>
-      <div class="line" id="timeline" aria-hidden="true"></div>
-      <div class="nodes-l" id="tlabels" aria-hidden="true"></div>
-    </div>
+    <div id="g1">
+      <div class="g1top">Follow one ski</div>
 
-    <div class="card step" id="step" aria-live="polite"></div>
-    <div class="stats" id="stats"></div>
-    <button class="btn" id="next">Next season</button>
-    <button class="btn ghost" id="restart" hidden>Start again</button>
-    <p class="muted small" id="assume">Assumptions for this example: 60 rental days per season, EUR 3 per pair per rental day, 5 seasons. Real skis will differ.</p>
+      <div class="strip">
+        <svg id="strip" viewBox="0 0 360 114" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Two skis side by side. The typical rental ski is discarded after 3 winters. The LOOP ski stays in service for 5 winters and then gets a second life.">
+          <g stroke="#3ee0ff" stroke-width="1" fill="none" opacity=".75">
+            <line x1="16" y1="34" x2="226" y2="34"/>
+            <line x1="16" y1="88" x2="226" y2="88"/>
+            <line x1="226" y1="88" x2="300" y2="88" stroke-dasharray="3 4" opacity=".6"/>
+          </g>
+          <g id="dots" fill="#ff4338"></g>
+          <rect x="12" y="29" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/><rect x="12" y="83" width="8" height="10" rx="2" fill="none" stroke="#3ee0ff"/>
+          <text x="4" y="12" class="lbl2">Typical rental ski: 3 to 5 winters (shown: 3)</text>
+          <text x="4" y="66" class="lbl2">LOOP ski: 5 winters, then a second life</text>
+          <!-- bin -->
+          <g transform="translate(236 24)"><path d="M2 6H24L22 28H4Z" fill="rgba(255,255,255,.05)" stroke="#7f8da8" stroke-width="1.2"/><path d="M0 6H26M9 2H17" stroke="#7f8da8" stroke-width="1.4" stroke-linecap="round"/></g>
+          <!-- blank booklet -->
+          <g id="booklet" transform="translate(298 10)"><rect width="36" height="46" rx="4" fill="#7f8da8" opacity=".5" stroke="#a9bbdb" stroke-width="1"/><path d="M6 12H30M6 18H30M6 24H22" stroke="#a9bbdb" stroke-width=".9" opacity=".7"/></g>
+          <text x="358" y="68" text-anchor="end" class="lbl2">No shared record</text>
+          <g id="discard" visibility="hidden"><g transform="translate(316 34) rotate(-14)"><g id="discardAnim"><g style="--ink:#c8281e"><rect x="-29" y="-14" width="58" height="28" rx="3" class="s" stroke-width="1.8"/><text class="st-t" x="0" y="-1.5" font-size="12" text-anchor="middle" textLength="50" lengthAdjust="spacingAndGlyphs">DISCARDED</text><text class="st-t" x="0" y="10.5" font-size="11" text-anchor="middle" textLength="42" lengthAdjust="spacingAndGlyphs">WINTER 3</text></g><rect x="-30" y="-24" width="60" height="48" fill="transparent"/></g></g></g>
+          <!-- rack -->
+          <g transform="translate(298 70)"><rect width="46" height="30" rx="5" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.2"/><g fill="#ffb400" opacity=".5"><rect x="9" y="4" width="3.5" height="22" rx="1.7"/><rect x="21" y="4" width="3.5" height="22" rx="1.7"/><rect x="33" y="4" width="3.5" height="22" rx="1.7"/></g></g>
+          <text x="358" y="111" text-anchor="end" class="lbl2">Certified second-hand</text>
+          <!-- skis -->
+          <g id="skiT" class="ska"><g class="skin" transform="translate(-16 -2)"><use id="skiTu" href="#skiS" transform="scale(.52 1.15)"/></g></g>
+          <g id="skiN" class="ska" style="opacity:0"><g class="skin" transform="translate(-16 -2)"><use id="skiNu" href="#skiS" transform="scale(.52 1.15)"/></g><text class="lbl2" x="0" y="-9" text-anchor="middle">bought again</text></g>
+          <g id="skiB" class="ska"><g class="skin" transform="translate(-16 -2)"><use class="sk" href="#skiS" transform="scale(.52 1.15)"/></g>
+            <g id="dmg" opacity="0"><polyline points="-4,-5 -1,-1 -4,2 0,6" fill="none" stroke="#ff4338" stroke-width="1.6"/></g>
+            <g id="patch" opacity="0"><rect x="-6" y="-4" width="12" height="8" rx="2" fill="#0d1424" stroke="#ffb400" stroke-width="1.3"/><path d="M-6 0H6M-2 -4V4M2 -4V4" stroke="#ffb400" stroke-width=".6"/></g>
+          </g>
+          <path id="spark" d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" fill="#fff" opacity="0"/>
+        </svg>
+      </div>
+
+      <div class="pp">
+        <svg id="pass" viewBox="0 0 360 274" preserveAspectRatio="xMidYMid meet" aria-label="Digital ski passport">
+          <defs>
+            <path id="skiS" d="M0 4C0 1.5 2 1 5 1.2L56 2.6C60 2.8 62 3.6 64 0C64.6 2.6 64.6 5.4 64 8C62 4.4 60 5.2 56 5.4L5 6.8C2 7 0 6.5 0 4Z"/>
+            <filter id="worn" x="-6%" y="-6%" width="112%" height="112%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" result="d"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="9" result="n2"/>
+              <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.2 0 0 0 1.95" result="holes"/>
+              <feComposite in="d" in2="holes" operator="in"/>
+            </filter>
+            <mask id="speck" maskUnits="userSpaceOnUse" x="-90" y="-90" width="180" height="180"><rect x="-90" y="-90" width="180" height="180" fill="#fff"/><g id="speckDots" fill="#000"></g></mask>
+            <pattern id="fibre" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0H6" stroke="#8a845a" stroke-width=".35" opacity=".28"/></pattern>
+            <filter id="shadow" x="-5%" y="-5%" width="110%" height="112%"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+          <g id="pageG">
+            <rect x="4" y="7" width="356" height="268" rx="12" fill="#000" opacity=".45" filter="url(#shadow)"/>
+            <rect x="2" y="2" width="356" height="268" rx="12" fill="#f0efe3"/>
+            <rect x="2" y="2" width="356" height="268" rx="12" fill="url(#fibre)"/>
+            <rect x="8" y="8" width="344" height="260" rx="8" fill="none" stroke="#c9c4a6" stroke-width=".8"/>
+            <g transform="translate(12 12)" style="--ink:#1e3f7a"><use href="#skiS" transform="rotate(-18 20 4) scale(.62)" fill="#1e3f7a"/></g>
+            <text x="58" y="21" font-size="12.4" font-weight="700" fill="#1e3f7a" class="st-p" textLength="276" lengthAdjust="spacingAndGlyphs">ROSSIGNOL LOOP, DIGITAL SKI PASSPORT</text>
+            <text id="passId" x="58" y="37" font-size="14" font-weight="700" fill="#c8281e" class="st-p" letter-spacing="1.5">LOOP-0427</text>
+            <path d="M12 44H348" stroke="#c9c4a6" stroke-width=".8"/>
+            <g id="ghosts"></g>
+            <g id="stamps"></g>
+            <text x="180" y="264.5" font-size="12.6" fill="#6a664a" class="st-p" text-anchor="middle" textLength="336" lengthAdjust="spacingAndGlyphs">Every LOOP ski carries a tag. Scan it and this is its history.</text>
+          </g>
+          <g id="cover">
+            <rect x="2" y="2" width="356" height="268" rx="12" fill="#14315f" stroke="#ffb400" stroke-width="1.5"/>
+            <rect x="12" y="12" width="336" height="248" rx="8" fill="none" stroke="#ffb400" stroke-width=".8" opacity=".7"/>
+            <circle cx="180" cy="88" r="46" fill="none" stroke="#ffb400" stroke-width="1.5"/>
+            <circle cx="180" cy="88" r="40" fill="none" stroke="#ffb400" stroke-width=".7" opacity=".6"/>
+            <use href="#skiS" fill="#ffb400" transform="translate(180 88) rotate(-35) scale(.95) translate(-32 -4)"/>
+            <circle cx="180" cy="42" r="5" fill="#ff4338"/>
+            <text x="180" y="172" text-anchor="middle" font-size="26" font-weight="300" fill="#ffb400" class="st-p" textLength="250" lengthAdjust="spacingAndGlyphs" letter-spacing="3">ROSSIGNOL LOOP</text>
+            <text x="180" y="196" text-anchor="middle" font-size="13" font-weight="400" fill="#eef3fc" class="st-p" textLength="190" lengthAdjust="spacingAndGlyphs">DIGITAL SKI PASSPORT</text>
+            <path d="M60 218H300" stroke="#3ee0ff" stroke-width=".8"/>
+            <g fill="#ff4338"><circle cx="60" cy="218" r="3.5"/><circle cx="120" cy="218" r="3.5"/><circle cx="180" cy="218" r="3.5"/><circle cx="240" cy="218" r="3.5"/><circle cx="300" cy="218" r="3.5"/></g>
+            <text id="coverId" x="180" y="244" text-anchor="middle" font-size="15" font-weight="400" fill="#eef3fc" class="st-p" letter-spacing="3">LOOP-0427</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="cap" id="cap" aria-live="polite"></div>
+
+      <div class="thumb">
+        <div class="jar"><svg id="jarSvg" viewBox="0 0 100 120" aria-hidden="true"><path d="M26 12V20C10 30 10 40 10 50V104C10 114 16 118 26 118H74C84 118 90 114 90 104V50C90 40 90 30 74 20V12Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.5)" stroke-width="2"/><rect x="22" y="2" width="56" height="10" rx="4" fill="#26385f" stroke="rgba(255,255,255,.5)"/><g class="coins"></g></svg></div>
+        <div class="bn"><div class="nrow"><div class="bignum" id="jarNum">EUR 0</div><div class="jc">Shop pays EUR 3 per rental day</div></div><div class="cap2">Rossignol's revenue per pair, before production, refurbishment and logistics costs (not modelled).</div></div>
+      </div>
+
+      <button class="btn p1" id="go">Open passport</button>
+      <div class="g1bot"><button class="lnk" id="mathBtn" type="button">Show the math</button><button class="lnk" id="shopBtn" type="button" hidden>Try the shop</button></div>
+    </div>
   </section>
 
-  <!-- 2 CALCULATOR -->
+  <!-- 2 SHOP SCENE -->
   <section id="p-shop" role="tabpanel" aria-labelledby="t-shop" hidden>
-    <div class="card">
-      <h2>What would a shop pay?</h2>
-      <p class="muted small">Move the sliders. The fee follows the winter.</p>
-      <label class="ctl" for="pairs"><div class="row"><span>Pairs of skis</span><span class="val" id="v-pairs"></span></div>
-        <input type="range" id="pairs" min="10" max="300" step="1"></label>
-      <label class="ctl" for="days"><div class="row"><span>Rental days per month, per pair</span><span class="val" id="v-days"></span></div>
-        <input type="range" id="days" min="0" max="30" step="1"></label>
-      <label class="ctl" for="winter"><div class="row"><span>Winter quality</span><span class="val" id="v-winter"></span></div>
-        <input type="range" id="winter" min="0" max="4" step="1"></label>
-      <div class="scale"><span>No snow</span><span>Normal</span><span>Record season</span></div>
-    </div>
-
-    <div class="card">
-      <div class="muted small">Monthly fee to Rossignol</div>
-      <div class="bigfee" id="fee"></div>
-      <div class="muted small" id="feeSub"></div>
-      <div class="bars" id="bars" aria-label="Fee by winter quality"></div>
-      <p class="muted small" style="margin-top:10px">In a bad winter the shop pays less, because Rossignol is paid per rental day. The risk of a bad winter is shared.</p>
-    </div>
-
-    <div class="card">
-      <h2>Versus buying the fleet</h2>
-      <label class="ctl" for="price" style="margin-top:4px"><div class="row"><span>Purchase price per pair, EUR</span><span class="tag red">Assumption, edit me</span></div>
-        <input type="number" id="price" inputmode="numeric" min="0" step="10"></label>
-      <div class="fixed">
-        <div class="muted small">Buying 100% of the fleet</div>
-        <div class="bigfee" style="font-size:34px;color:var(--text)" id="buy"></div>
-        <div class="muted small">Same cost whether it snows or not.</div>
+    <div class="card game">
+      <div class="idrow"><div class="muted small">Rental shop</div><span class="tag red">Illustration</span></div>
+      <div class="say" id="shopSay" aria-live="polite"></div>
+      <div class="hud">
+        <div class="jar"><svg id="jar2" viewBox="0 0 100 130" aria-hidden="true"><path d="M26 14V24C10 34 10 44 10 56V112C10 122 16 126 26 126H74C84 126 90 122 90 112V56C90 44 90 34 74 24V14Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.5)" stroke-width="2"/><rect x="22" y="3" width="56" height="11" rx="4" fill="#26385f" stroke="rgba(255,255,255,.5)"/><g class="coins"></g></svg></div>
+        <div class="bn"><div class="bignum" id="feeNum">EUR 0</div><div class="cap">Monthly fee to Rossignol</div></div>
       </div>
-      <div class="fixed">
-        <div class="muted small">Replacing 1/5 to 1/3 of the fleet each year</div>
-        <div style="font-size:24px" id="replace"></div>
-        <div class="muted small">Rental shops replace 1/5 to 1/3 of their fleet every year.</div>
+      <div class="stage" id="winBox">
+        <svg id="win" viewBox="0 0 360 170" aria-label="Shop window with the slope outside">
+          <defs><clipPath id="winClip"><rect x="28" y="14" width="304" height="136" rx="6"/></clipPath></defs>
+          <rect x="0" y="0" width="360" height="170" fill="rgba(255,255,255,.04)"/>
+          <g clip-path="url(#winClip)">
+            <rect id="sky" x="28" y="14" width="304" height="136" fill="#3a86d0" style="transition:fill .5s"/>
+            <circle id="sun" cx="290" cy="42" r="16" fill="#ffd54a" style="transition:opacity .5s"/>
+            <g id="clouds" fill="#dfe8f7" style="transition:opacity .5s" opacity="0"><ellipse cx="90" cy="40" rx="30" ry="11"/><ellipse cx="112" cy="34" rx="20" ry="10"/><ellipse cx="220" cy="54" rx="34" ry="12"/><ellipse cx="244" cy="46" rx="20" ry="10"/></g>
+            <polygon points="28,98 332,130 332,150 28,150" fill="#eaf2ff"/>
+            <g fill="#12305f"><polygon points="52,100 62,70 72,102"/><polygon points="68,102 76,80 86,104"/><polygon points="300,126 309,98 318,128"/></g>
+            <g id="skiers"></g>
+            <g id="snow" class="snowline" fill="#fff"></g>
+          </g>
+          <rect x="28" y="14" width="304" height="136" rx="6" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+          <path d="M180 14V150" stroke="rgba(255,255,255,.35)"/>
+        </svg>
       </div>
-    </div>
-
-    <div class="card">
-      <h2>How we calculate</h2>
-      <div class="formula" id="f1"></div>
-      <div class="formula" id="f2"></div>
-      <div class="formula" id="f3"></div>
-      <p class="small muted">Fee per pair per rental day: EUR 3 (our model). Winter factors are assumptions, shown above. Shops sign for at least 3 seasons. The default of 80 pairs, 20 days and a normal winter gives EUR 4,800 per month.</p>
+      <div class="dial" id="dial" role="group" aria-label="Weather"></div>
+      <div class="rack" id="rack" role="group" aria-label="Rack of skis, each icon stands for 4 pairs"></div>
+      <button class="btn" id="run">Run the month</button>
+      <div class="tok" id="tok"></div>
+      <div class="chipsrow g3" id="cls" role="group" aria-label="Ski class"></div>
+      <div class="chipsrow"><span class="step2"><button id="pm" aria-label="Lower day price">-</button><b id="pv"></b><button id="pp" aria-label="Raise day price">+</button></span><span class="tag red">Illustrative assumption</span></div>
+      <div class="ringrow"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="7"/><circle id="ring" cx="32" cy="32" r="26" fill="none" stroke="#ffb400" stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4" transform="rotate(-90 32 32)" style="transition:stroke-dashoffset .5s cubic-bezier(.2,.8,.3,1)"/></svg><div><div style="font-size:26px" id="ringTxt"></div><div class="muted small">of the day price goes to Rossignol</div></div></div>
+      <p class="fixedl">Rossignol carries the fleet capital and earns it back through the fee over several winters.</p>
+      <p class="fixedl">Built for small independent shops with mid and premium fleets.</p>
+      <details class="math"><summary>Show the math</summary><div id="mathShopBody"></div></details>
     </div>
   </section>
 
@@ -236,7 +393,7 @@ noscript{display:block;padding:16px;color:var(--amber)}
         <li>Pyrolysis separates the fibres. Carbon fibre survives it.</li>
         <li>The recovered carbon fibre is saturated with new resin.</li>
         <li>It is frozen as prepreg, ready to use.</li>
-        <li>It repairs and reinforces skis, for example in season 3.</li>
+        <li>It repairs and reinforces skis, for example in winter 3.</li>
       </ol>
     </div>
 
@@ -246,155 +403,612 @@ noscript{display:block;padding:16px;color:var(--amber)}
     </div>
   </section>
 
-  <footer>Student project, not an official Rossignol or Vattenfall publication. No agreement with either company is implied. Numbers marked as assumptions are ours.</footer>
+  <footer><b style="font-weight:400;color:var(--text)">Illustrative model. Fee levels would be tested in a pilot.</b><br>Student project, not an official Rossignol or Vattenfall publication. No agreement with either company is implied. Numbers marked as assumptions are ours.</footer>
+</div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="shT">
+  <div class="bd" id="shBd"></div>
+  <div class="pn">
+    <h2 id="shT" style="font-size:22px">The math</h2>
+    <div class="formula" id="shF"></div>
+    <p class="small muted" id="shSo" style="margin:4px 0 10px"></p>
+    <p class="small">Rental skis usually last 3 to 5 winters today (shown at 3). With yearly service and repairs we assume LOOP skis stay in rental for 5 winters, followed by second-hand sale and recycling. Illustrative assumption, to be tested in a pilot.</p>
+    <div class="seg" role="group" aria-label="Shop activity"><button id="busy" aria-pressed="true">Busy shop (60 days)</button><button id="quiet" aria-pressed="false">Quiet shop (30 days)</button></div>
+    <button class="btn ghost" id="shClose" style="margin-top:6px">Close</button>
+  </div>
 </div>
 
 <script>
 /* ===== Edit these numbers to change the site ===== */
 var CONFIG = {
-  feePerDay: 3,          // EUR per pair per rental day
-  daysPerSeason: 60,     // rental days per season (passport example)
-  seasons: 5,            // seasons in the passport
-  carbonSeason: 3,       // season after which the carbon fibre repair happens
-  defaultId: "LOOP-0427",// default ski ID (override with ?id=LOOP-0428)
-  defaultPairs: 80,
-  defaultDays: 20,       // rental days per month per pair
-  defaultPrice: 300,     // EUR per pair, ASSUMPTION
-  // winter factor = share of normal rental days. ASSUMPTIONS, for illustration.
-  winters: [
-    {name: "No snow", f: 0.1},
-    {name: "Poor", f: 0.6},
-    {name: "Normal", f: 1},
-    {name: "Good", f: 1.25},
-    {name: "Record season", f: 1.5}
-  ],
-  defaultWinter: 2
+  feePerDay: 3,           // EUR per pair per rental day (Performance class)
+  busyDays: 60,           // rental days per season, busy shop (passport)
+  quietDays: 30,          // rental days per season, quiet shop (passport)
+  seasons: 5,             // seasons in the passport
+  carbonSeason: 3,        // season in which the carbon fibre repair happens
+  defaultId: "LOOP-0427", // default ski ID (override with ?id=LOOP-0428)
+  pairs: 80,              // shop fleet, shown as 20 icons of 4 pairs
+  pairsPerIcon: 4,
+  daysPerMonth: 20,       // rental days per month at normal weather
+  dayPrice: 17.6,         // EUR day rental price per pair (illustrative assumption)
+  classes: [{name: "Standard", fee: 2}, {name: "Performance", fee: 3}, {name: "Premium", fee: 4}],
+  defaultClass: 1,
+  // share of normal rental days. ILLUSTRATION, not data.
+  weather: [{name: "No snow", f: 0.1}, {name: "Weak", f: 0.5}, {name: "Normal", f: 1}, {name: "Record", f: 1.3}],
+  defaultWeather: 2
 };
 /* ================================================= */
 
-var $ = function(id){return document.getElementById(id)};
+var NS = "http://www.w3.org/2000/svg";
+var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function $(id){return document.getElementById(id)}
 function eur(n){return "EUR " + Math.round(n).toLocaleString("en-US")}
+function vib(){try{navigator.vibrate && navigator.vibrate(10)}catch(e){}}
+function ease(t){return 1 - Math.pow(1 - t, 3)}
+function el(tag, attrs, parent){
+  var e = document.createElementNS(NS, tag);
+  for(var k in attrs) e.setAttribute(k, attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+/* ease-out tween that can be finished instantly, never blocks input */
+function tween(ms, fn, done){
+  if(RM || ms <= 0){fn(1); done && done(); return {finish:function(){}, stop:function(){}};}
+  var st = null, raf = 0, over = false;
+  function f(ts){
+    if(over) return;
+    if(st === null) st = ts;
+    var p = Math.min(1, (ts - st) / ms);
+    fn(ease(p));
+    if(p < 1) raf = requestAnimationFrame(f); else {over = true; done && done();}
+  }
+  raf = requestAnimationFrame(f);
+  return {
+    stop:function(){over = true; cancelAnimationFrame(raf)},
+    finish:function(){if(over) return; over = true; cancelAnimationFrame(raf); fn(1); done && done();}
+  };
+}
+/* pointer drag. touch-action is set only on the draggable element */
+function makeDrag(node, h){
+  node.style.touchAction = "none";
+  var active = false;
+  node.addEventListener("touchmove", function(e){if(active) e.preventDefault()}, {passive:false});
+  node.addEventListener("pointerdown", function(e){
+    if(e.button && e.button !== 0) return;
+    if(h.start && h.start(e) === false) return;
+    active = true;
+    try{node.setPointerCapture(e.pointerId)}catch(x){}
+    var sx = e.clientX, sy = e.clientY, moved = false;
+    function mv(ev){
+      if(!moved && Math.hypot(ev.clientX - sx, ev.clientY - sy) > 6) moved = true;
+      h.move && h.move(ev, moved);
+    }
+    function up(ev){
+      active = false;
+      node.removeEventListener("pointermove", mv);
+      node.removeEventListener("pointerup", up);
+      node.removeEventListener("pointercancel", up);
+      h.end && h.end(ev, moved, ev.type === "pointercancel");
+    }
+    node.addEventListener("pointermove", mv);
+    node.addEventListener("pointerup", up);
+    node.addEventListener("pointercancel", up);
+  });
+}
+function svgPt(svg, ev){
+  var p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+/* coin jar */
+function Jar(svg, max, baseY){
+  var g = svg.querySelector(".coins"), coins = [], sc = 1, by = baseY || 118;
+  function pos(i){return [22 + 14 * (i % 5), by - 9 * Math.floor(i / 5)]}
+  function add(animate){
+    var i = coins.length; if(i >= max) return;
+    var p = pos(i);
+    var o = el("g", {transform: "translate(" + p[0] + "," + p[1] + ")"}, g);
+    var inner = el("g", {}, o);
+    el("ellipse", {rx: 8 * sc, ry: 4.5 * sc, fill: "#ffb400", stroke: "#b27c00"}, inner);
+    el("ellipse", {rx: 4.5 * sc, ry: 2 * sc, fill: "none", stroke: "#b27c00", "stroke-width": .8}, inner);
+    if(animate && !RM){
+      inner.style.transform = "translateY(-100px)"; inner.style.opacity = "0";
+      inner.style.transition = "transform .5s cubic-bezier(.2,.8,.3,1), opacity .2s";
+      requestAnimationFrame(function(){requestAnimationFrame(function(){inner.style.transform = "translateY(0)"; inner.style.opacity = "1"})});
+    }
+    coins.push(o);
+  }
+  function set(n){
+    n = Math.max(0, Math.min(max, Math.round(n)));
+    while(coins.length > n) coins.pop().remove();
+    while(coins.length < n) add(false);
+  }
+  function setScale(v){
+    sc = v;
+    coins.forEach(function(o){var e = o.querySelectorAll("ellipse"); e[0].setAttribute("rx", 8 * sc); e[0].setAttribute("ry", 4.5 * sc); e[1].setAttribute("rx", 4.5 * sc); e[1].setAttribute("ry", 2 * sc)});
+  }
+  return {add: add, set: set, setScale: setScale, count: function(){return coins.length}};
+}
+
+/* pause looping animations that are off screen */
+(function(){
+  if(!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){e.target.classList.toggle("paused", !e.isIntersecting)});
+  });
+  ["hero","g1","winBox"].forEach(function(id){io.observe($(id))});
+})();
 
 /* tabs */
 var tabs = ["ski","shop","blade"];
-function showTab(k){
+function showTab(k, toTop){
   tabs.forEach(function(t){
-    $("p-"+t).hidden = t!==k;
-    $("t-"+t).setAttribute("aria-selected", t===k ? "true":"false");
+    $("p-"+t).hidden = t !== k;
+    $("t-"+t).setAttribute("aria-selected", t === k ? "true" : "false");
   });
-  window.scrollTo(0,0);
+  var pn = $("panels");
+  var y = pn.getBoundingClientRect().top + window.pageYOffset - 4;
+  window.scrollTo({top: toTop === false ? window.pageYOffset : Math.max(0, y), behavior: RM ? "auto" : "smooth"});
 }
-tabs.forEach(function(t){ $("t-"+t).addEventListener("click", function(){showTab(t)}) });
+tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(t)})});
 
-/* ---------- Passport ---------- */
-var idParam = "";
-try { idParam = new URLSearchParams(location.search).get("id") || ""; } catch(e){}
-idParam = idParam.toUpperCase();
-var SKI_ID = /^[A-Z0-9-]{1,16}$/.test(idParam) ? idParam : CONFIG.defaultId;
-$("skiid").textContent = SKI_ID;
-document.title = "Rossignol LOOP " + SKI_ID;
-
-var N = CONFIG.seasons;
-var step = 0, loop = true;       // step 0 = start, 1..N seasons, N+1 = end of life
-var services = ["Inspection","Base repair","Edge sharpening","Binding check","Waxing"];
-
-function renderTimeline(){
-  var h="", l="";
-  for(var i=0;i<=N+1;i++){
-    var cls = i<step ? "done" : (i===step ? "now" : "");
-    h += '<span class="node '+cls+'"></span>';
-    l += '<span>'+(i===0?"Start":i===N+1?"End":"S"+i)+'</span>';
-  }
-  $("timeline").innerHTML = h; $("tlabels").innerHTML = l;
-}
-function tile(v,l,amber){return '<div class="stat"><div class="v'+(amber?' amber':'')+'">'+v+'</div><div class="l">'+l+'</div></div>'}
-function render(){
-  document.body.classList.toggle("lin-mode", !loop);
-  $("m-loop").setAttribute("aria-pressed", loop);
-  $("m-lin").setAttribute("aria-pressed", !loop);
-  renderTimeline();
-  var s = Math.min(step, N);                 // seasons completed
-  var days = s*CONFIG.daysPerSeason;
-  var fee = loop ? days*CONFIG.feePerDay : 0;
-  var carbon = (loop && s>=CONFIG.carbonSeason) ? 1 : 0;  // done in the summer service of that season
-  var svc = loop ? Math.min(s, N-1) : 0;
-  var el = $("step"), h = "";
-
-  if(loop){
-    if(step===0){
-      h = '<h3>Day one</h3><p>This pair is <b>lent</b> to a rental shop. It is not sold. Rossignol still owns it, so Rossignol wants it to last.</p><p class="muted">Tap Next season to follow it.</p>';
-    } else if(step<=N){
-      var summer = step<N ? "Summer service, then back to the shop" : "Final safety check";
-      h = '<h3>Season '+step+' of '+N+'</h3>'
-        + '<div class="big">'+eur(CONFIG.daysPerSeason*CONFIG.feePerDay)+'</div>'
-        + '<p>'+CONFIG.daysPerSeason+' rental days × EUR '+CONFIG.feePerDay+' paid by the shop to Rossignol.</p>'
-        + '<div class="muted small" style="margin-top:10px">'+summer+'</div><ul class="svc">'
-        + (step<N ? services.map(function(x){return '<li>'+x+'</li>'}).join("") : '<li>Full inspection of the ski</li><li>Pass or fail</li>')
-        + (step===CONFIG.carbonSeason ? '<li class="hl">Structural repair with recovered carbon fibre</li>' : '')
-        + '</ul>';
-    } else {
-      h = '<h3>After season '+N+'</h3><p>The safety check decides.</p><div class="two">'
-        + '<div class="out good"><b>Passes</b><br>Sold as <b>certified second-hand</b>. The ski gets another life.</div>'
-        + '<div class="out"><b>Fails</b><br>Recycled via our partner <b>MTB</b>. Nothing is burned.</div></div>'
-        + '<p style="margin-top:12px">Total paid to Rossignol by the shop: <b style="color:var(--amber);font-weight:400">'+eur(N*CONFIG.daysPerSeason*CONFIG.feePerDay)+'</b></p>';
+/* ---------- Hero: the LOOP circle ---------- */
+(function(){
+  var svg = $("loopSvg"), cx = 150, cy = 126, r = 84;
+  var nodes = [
+    {n:"Rossignol", a:-90, say:"Carbon fibre from old blades flows in."},
+    {n:"Shops", a:0, say:"Skis arrive with no upfront cost."},
+    {n:"Skiers", a:90, say:"Skis to rent, winter after winter."},
+    {n:"Return", a:180, say:"Old skis come back for a voucher."}
+  ];
+  function P(a, rr){var t = a * Math.PI / 180; return [cx + (rr || r) * Math.cos(t), cy + (rr || r) * Math.sin(t)]}
+  var defs = el("defs", {}, svg);
+  var mk = el("marker", {id:"ah", viewBox:"0 0 10 10", refX:6, refY:5, markerWidth:6, markerHeight:6, orient:"auto-start-reverse"}, defs);
+  el("path", {d:"M0 0L10 5L0 10Z", fill:"#ffb400"}, mk);
+  el("circle", {cx:cx, cy:cy, r:r + 16, fill:"none", stroke:"#3ee0ff", "stroke-width":.7, opacity:.55}, svg);
+  el("circle", {cx:cx, cy:cy, r:r - 22, fill:"none", stroke:"#3ee0ff", "stroke-width":.5, opacity:.35}, svg);
+  nodes.forEach(function(nd, i){
+    var p = P(nd.a, r + 16), q = P(nd.a, r - 22);
+    el("line", {x1:p[0], y1:p[1], x2:q[0], y2:q[1], stroke:"#3ee0ff", "stroke-width":.5, opacity:.45}, svg);
+    var a1 = nd.a + 24, a2 = nd.a + 90 - 24, s = P(a1), e = P(a2);
+    var arc = el("path", {d:"M"+s[0]+" "+s[1]+"A"+r+" "+r+" 0 0 1 "+e[0]+" "+e[1], class:"flow-a", "marker-end":"url(#ah)"}, svg);
+    arc.setAttribute("fill", "none");
+  });
+  el("text", {x:cx, y:cy + 8, "text-anchor":"middle", fill:"#eef3fc", "font-size":30, "font-weight":200, "letter-spacing":4}, svg).textContent = "LOOP";
+  var groups = [];
+  nodes.forEach(function(nd, i){
+    var p = P(nd.a);
+    var g = el("g", {class:"lnode", tabindex:0, role:"button", "aria-label":nd.n + ": " + nd.say}, svg);
+    el("circle", {cx:p[0], cy:p[1], r:30, fill:"transparent"}, g);
+    el("circle", {cx:p[0], cy:p[1], r:11, class:"dot"}, g);
+    var tx = p[0], ty = p[1], an = "middle";
+    if(nd.a === -90){ty = p[1] - 20} else if(nd.a === 90){ty = p[1] + 28}
+    else if(nd.a === 0){tx = p[0] + 0; ty = p[1] + 28} else {ty = p[1] + 28}
+    el("text", {x:tx, y:ty, "text-anchor":an}, g).textContent = nd.n;
+    function pick(){
+      groups.forEach(function(x){x.classList.remove("on")}); g.classList.add("on");
+      $("heroSay").textContent = nd.say; vib();
     }
-  } else {
-    if(step===0){
-      h = '<h3>Day one</h3><p>The shop <b>buys</b> this pair. Rossignol sells it once and the relationship ends.</p><p class="muted">Tap Next season to follow it.</p>';
-    } else if(step<=N){
-      var note = step<3 ? "Wear builds up. No summer refurbishment programme." :
-                 step<N ? "Replacement window: shops replace skis after 3 to 5 seasons." : "Last season. The shop buys new skis to replace it.";
-      h = '<h3>Season '+step+' of '+N+'</h3>'
-        + '<div class="big">EUR 0</div><p>Paid to Rossignol for this season. The ski was a one-off sale.</p>'
-        + '<p class="muted">'+note+'</p>';
-    } else {
-      h = '<h3>End of the line</h3><p>The ski is <b>thrown away or burned</b>. Its materials are lost, and the shop buys a new pair.</p>'
-        + '<p class="muted">Same ski, same '+(N*CONFIG.daysPerSeason)+' rental days, EUR 0 earned after the sale.</p>';
+    g.addEventListener("click", pick);
+    g.addEventListener("keydown", function(e){if(e.key === "Enter" || e.key === " "){e.preventDefault(); pick()}});
+    groups.push(g);
+  });
+  $("follow").addEventListener("click", function(){
+    showTab("ski");
+  });
+})();
+
+/* ---------- 1. Follow one ski ---------- */
+(function(){
+  var idParam = "";
+  try{idParam = new URLSearchParams(location.search).get("id") || ""}catch(e){}
+  idParam = idParam.toUpperCase();
+  var SKI_ID = /^[A-Z0-9-]{1,16}$/.test(idParam) ? idParam : CONFIG.defaultId;
+  document.title = "Rossignol LOOP " + SKI_ID;
+  $("passId").textContent = SKI_ID; $("coverId").textContent = SKI_ID;
+  $("pass").setAttribute("aria-label", "Digital ski passport " + SKI_ID);
+
+  var N = CONFIG.seasons, FEE = CONFIG.feePerDay, COINS = 6;
+  var jar = Jar($("jarSvg"), N * COINS, 106);
+  var S = {open:false, w:0, quiet:false, lock:false, detail:null};
+  var timers = [];
+  function later(fn, ms){var t = setTimeout(fn, ms); timers.push(t); return t}
+  function clearTimers(){timers.forEach(clearTimeout); timers = []}
+  function days(){return S.quiet ? CONFIG.quietDays : CONFIG.busyDays}
+  function total(){return S.w * days() * FEE}
+  function anim(node, frames, opts){if(RM || !node.animate) return null; return node.animate(frames, opts)}
+
+  /* ink: shared worn filter, or a static speckle mask on weak devices */
+  var lite = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || (navigator.deviceMemory && navigator.deviceMemory <= 3);
+  (function(){
+    var g = $("speckDots"), seed = 7;
+    function rnd(){seed = (seed * 16807) % 2147483647; return seed / 2147483647}
+    for(var i = 0; i < 45; i++) el("circle", {cx:(rnd() * 180 - 90).toFixed(1), cy:(rnd() * 180 - 90).toFixed(1), r:(.5 + rnd() * 1.3).toFixed(2)}, g);
+  })();
+  var inkAttr = lite ? 'mask="url(#speck)"' : 'filter="url(#worn)"';
+
+  /* stamp helpers */
+  function tx(t, x, y, s, len){return '<text class="st-t" x="'+x+'" y="'+y+'" font-size="'+s+'" text-anchor="middle" textLength="'+len+'" lengthAdjust="spacingAndGlyphs">'+t+'</text>'}
+  function arcTx(id, d, t, s, len){return '<path id="'+id+'" d="'+d+'" fill="none"/><text class="st-t" font-size="'+s+'" text-anchor="middle"><textPath href="#'+id+'" startOffset="50%" textLength="'+len+'" lengthAdjust="spacingAndGlyphs">'+t+'</textPath></text>'}
+  function star(x, y, r){
+    var p = []; for(var i = 0; i < 10; i++){var a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * .42 : r; p.push((x + rr * Math.cos(a)).toFixed(1) + "," + (y + rr * Math.sin(a)).toFixed(1))}
+    return '<polygon class="f" points="' + p.join(" ") + '"/>';
+  }
+  var STAMPS = [
+    {cx:58, cy:211, rot:-6, ink:"#1b7f9a", hw:50, hh:36, ghost:'<ellipse rx="47" ry="33"/>',
+     label:function(d){return "Winter 1 stamp: serviced, " + d + " days"},
+     body:function(d){return '<ellipse class="s" rx="47" ry="33" stroke-width="2.6"/><ellipse class="s" rx="42" ry="28" stroke-width=".9"/>'
+       + tx("WINTER 1", 0, -11, 12.4, 46) + tx("SERVICED", 0, 5, 14.4, 66) + '<line class="s" x1="-33" x2="33" y1="9.5" y2="9.5" stroke-width=".8"/>' + tx(d + " DAYS", 0, 22, 12.4, 44)}},
+    {cx:303, cy:82, rot:4, ink:"#c9690a", hw:52, hh:37, ghost:'<rect x="-49" y="-35" width="98" height="70" rx="9"/>',
+     label:function(d){return "Winter 2 stamp: serviced, " + d + " days"},
+     body:function(d){return '<mask id="kn2"><rect x="-44" y="-14" width="88" height="30" fill="#fff"/><text class="st-t" x="0" y="7" font-size="14.8" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs" style="fill:#000">SERVICED</text></mask>'
+       + '<rect class="s" x="-49" y="-35" width="98" height="70" rx="9" stroke-width="2.6"/><rect class="s" x="-43" y="-29" width="86" height="58" rx="5" stroke-width="1.2" stroke-dasharray="3 2.2"/>'
+       + tx("WINTER 2", 0, -15, 12.4, 50) + '<rect class="f" x="-38" y="-10" width="76" height="22" mask="url(#kn2)"/>' + tx(d + " DAYS", 0, 26, 12.4, 46)}},
+    {cx:150, cy:112, rot:-4, ink:"#c8281e", hw:78, hh:68, ghost:'<polygon points="0,-66 74,64 -74,64" stroke-linejoin="round"/>',
+     label:function(d){return "Winter 3 stamp: repaired with recovered carbon fibre"},
+     body:function(d){return '<polygon class="s" points="0,-66 74,64 -74,64" stroke-width="2.8" stroke-linejoin="round"/><polygon class="s" points="0,-54 62,56 -62,56" stroke-width="1" stroke-linejoin="round"/>'
+       + '<g transform="translate(0 -29)"><rect class="s" x="-13" y="-6" width="26" height="12" rx="3" stroke-width="1.6"/><path class="s" d="M-13 -2H13M-13 2H13M-5 -6V6M3 -6V6" stroke-width=".8"/></g>'
+       + tx("WINTER 3", 0, -6, 12.4, 50) + tx("REPAIRED", 0, 17, 16.5, 66) + '<line class="s" x1="-40" x2="40" y1="24" y2="24" stroke-width=".8"/>'
+       + tx("RECOVERED", 0, 38, 12.4, 60) + tx("CARBON FIBRE", 0, 51, 12.4, 74)}},
+    {cx:60, cy:98, rot:7, ink:"#1e3f7a", hw:50, hh:50, ghost:'<circle r="47"/>',
+     label:function(d){return "Winter 4 stamp: serviced, " + d + " days"},
+     body:function(d){return '<circle class="s" r="47" stroke-width="2.6"/><circle class="s" r="42.5" stroke-width=".9"/>'
+       + arcTx("a4t", "M-29 0A29 29 0 0 1 29 0", "WINTER 4", 12.4, 52) + arcTx("a4b", "M-37 0A37 37 0 0 0 37 0", d + " DAYS", 12.4, 46)
+       + '<use href="#skiS" class="f" transform="translate(-14 -22) scale(.44)"/>' + tx("SERVICED", 0, 6, 14.2, 58) + star(-36, 0, 4) + star(36, 0, 4)}},
+    {cx:276, cy:181, rot:-3, ink:"#3c8a2e", hw:72, hh:72, ghost:'<circle r="69"/>',
+     label:function(d){return "Winter 5 stamp: safety check passed, certified second-hand, Rossignol LOOP"},
+     body:function(d){return '<circle class="s" r="69" stroke-width="2.8"/><circle class="s" r="63" stroke-width="1"/>'
+       + arcTx("a5t", "M-47 0A47 47 0 0 1 47 0", "ROSSIGNOL LOOP", 12.6, 104) + arcTx("a5b", "M-56 0A56 56 0 0 0 56 0", "CERTIFIED SECOND-HAND", 12.4, 120)
+       + '<use href="#skiS" class="f" transform="translate(-30 -26) scale(.55)"/><path class="s" d="M11 -26L16 -21L26 -33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
+       + tx("SAFETY CHECK", 0, 3, 13.6, 84) + tx("PASSED", 0, 22, 17.5, 62) + star(-56, 0, 5) + star(56, 0, 5)}}
+  ];
+  var stampG = [], ghostG = [];
+  STAMPS.forEach(function(st, i){
+    var gg = el("g", {transform:"translate(" + st.cx + " " + st.cy + ") rotate(" + st.rot + ")"}, $("ghosts"));
+    var gs = el("g", {fill:"none", stroke:"#b9b49a", "stroke-width":1.4, "stroke-dasharray":"4 3.5"}, gg); gs.innerHTML = st.ghost;
+    el("text", {x:0, y:6, "text-anchor":"middle", "font-size":20, fill:"#b9b49a", class:"st-p"}, gg).textContent = i + 1;
+    var g = el("g", {transform:"translate(" + st.cx + " " + st.cy + ") rotate(" + st.rot + ")", class:"stamp", role:"button", tabindex:0, visibility:"hidden"}, $("stamps"));
+    g.addEventListener("click", function(){toggleDetail(i + 1)});
+    g.addEventListener("keydown", function(e){if(e.key === "Enter" || e.key === " "){e.preventDefault(); toggleDetail(i + 1)}});
+    stampG.push(g); ghostG.push(gg);
+  });
+  function drawStamps(){
+    STAMPS.forEach(function(st, i){
+      var g = stampG[i], d = days();
+      g.setAttribute("aria-label", st.label(d));
+      g.innerHTML = '<g class="anim"><g class="ink" style="--ink:' + st.ink + '" ' + inkAttr + ' opacity=".96">' + st.body(d) + '</g><rect class="hit" x="' + (-st.hw) + '" y="' + (-st.hh) + '" width="' + (st.hw * 2) + '" height="' + (st.hh * 2) + '" fill="transparent"/></g>';
+    });
+  }
+  function paintStamps(){
+    stampG.forEach(function(g, i){
+      var on = i < S.w;
+      g.setAttribute("visibility", on ? "visible" : "hidden");
+      ghostG[i].setAttribute("visibility", on ? "hidden" : "visible");
+    });
+  }
+
+  /* strip */
+  var X0 = 16, DX = 40, YT = 34, YB = 88, BIN = [246, 40], RACK = [322, 86];
+  var dots = $("dots");
+  for(var r = 0; r < 2; r++) for(var k = 1; k <= 5; k++) el("circle", {cx:X0 + DX * k, cy:r ? YB : YT, r:5}, dots);
+  var WEAR = ["#ffb400", "#e0a31c", "#c39a3c", "#a38a52"];
+  function place(id, x, y, extra, op){var n = $(id); n.style.transform = "translate(" + x + "px," + y + "px)" + (extra || ""); if(op !== undefined) n.style.opacity = op}
+  function paintStrip(){
+    var w = S.w;
+    // top lane: original ski for winters 1 to 3, then the bin, then a new ski from winter 4
+    if(w < 3){place("skiT", X0 + DX * w, YT, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
+    else {place("skiT", BIN[0], BIN[1], " rotate(40deg) scale(.6)", 0); $("skiTu").setAttribute("fill", WEAR[3])}
+    if(w >= 4){place("skiN", X0 + DX * w, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[w - 4 + 0 > 0 ? 1 : 0])} else place("skiN", X0 + DX * 4 + 70, YT, "", 0);
+    $("discard").setAttribute("visibility", w >= 3 ? "visible" : "hidden");
+    // LOOP lane
+    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1); else place("skiB", RACK[0], RACK[1], " rotate(-90deg) scale(.85)", 1);
+    $("dmg").style.opacity = 0; $("patch").style.opacity = w >= 3 ? 1 : 0;
+    $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)";
+  }
+  function stripStep(w){
+    // both skis advance to dot w
+    if(w <= 3){place("skiT", X0 + DX * w, YT, "", 1); $("skiTu").setAttribute("fill", WEAR[w])}
+    if(w === 3){
+      later(function(){place("skiT", BIN[0], BIN[1], " rotate(40deg) scale(.6)", 0)}, 480);
+      later(function(){
+        $("discard").setAttribute("visibility", "visible");
+        anim($("discardAnim"), [{transform:"scale(1.6)", opacity:0}, {transform:"scale(.95)", opacity:1, offset:.7}, {transform:"scale(1)", opacity:1}], {duration:240, easing:"cubic-bezier(.2,.8,.3,1)"});
+      }, 700);
+    }
+    if(w === 4){place("skiN", X0 + DX * 4 + 70, YT, "", 0); $("skiN").style.transition = "none"; void $("skiN").getBoundingClientRect(); $("skiN").style.transition = ""; later(function(){place("skiN", X0 + DX * 4, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[0])}, 20)}
+    if(w === 5){place("skiN", X0 + DX * 5, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[1])}
+    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1);
+    else {place("skiB", X0 + DX * 5, YB, "", 1); later(function(){place("skiB", RACK[0], RACK[1], " rotate(-90deg) scale(.85)", 1)}, 480)}
+    if(w === 3){
+      later(function(){$("dmg").style.opacity = 1}, 460);
+      later(function(){$("patch").style.opacity = 1; $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)"; $("dmg").style.opacity = 0}, 760);
+    }
+    if(w >= 1 && w <= 4) later(function(){
+      var sp = $("spark"); sp.setAttribute("transform", "translate(" + (X0 + DX * w + 14) + " " + (YB - 9) + ")");
+      anim(sp, [{transform:"scale(0)", opacity:0}, {transform:"scale(1.3)", opacity:1, offset:.4}, {transform:"scale(0)", opacity:0}], {duration:600, easing:"ease-out"});
+    }, 470);
+  }
+
+  /* number and coins */
+  var numTw = null, shown = 0;
+  function showNum(v){shown = v; $("jarNum").textContent = eur(v)}
+  function countTo(to, ms){
+    if(numTw) numTw.stop();
+    var from = shown;
+    numTw = tween(ms, function(p){showNum(from + (to - from) * p)});
+  }
+  function paintJar(){jar.setScale(S.quiet ? .8 : 1); jar.set(S.w * COINS)}
+  function dropCoins(){
+    var base = (S.w - 1) * COINS;
+    for(var i = 1; i <= COINS; i++){(function(i){later(function(){if(jar.count() < base + i) jar.add(true)}, RM ? 0 : (i - 1) * 70)})(i)}
+  }
+
+  /* caption */
+  var DET = {
+    1:function(){return days() + " rental days. Summer service by Rossignol: base, edges, bindings, wax."},
+    2:function(){return days() + " rental days. Summer service by Rossignol: base, edges, bindings, wax."},
+    3:function(){return "Structural repair with carbon fibre recovered from old wind turbine blades (our proposal with Vattenfall)."},
+    4:function(){return days() + " rental days. Summer service by Rossignol: base, edges, bindings, wax."},
+    5:function(){return "Safety check passed, sold as certified second-hand. Skis that fail the check are never resold, they are recycled via MTB."},
+    d:function(){return "Typical rental ski: replaced after about 3 winters, usually buried or burned."}
+  };
+  function toggleDetail(k){if(S.lock) return; S.detail = S.detail === k ? null : k; paintCap(); vib()}
+  function paintCap(){
+    var c = $("cap");
+    if(S.detail) c.textContent = DET[S.detail]();
+    else if(!S.open) c.textContent = "Two skis start on the same line. Follow them.";
+    else if(S.w === 0) c.textContent = "Press the button to start winter 1.";
+    else if(S.w === N) c.innerHTML = "<div>Typical rental ski: 3 to 5 winters, then waste.</div><div>LOOP ski: 5 winters in rental, then a second life, then recycling.</div>";
+    else c.textContent = "Tap a stamp to see what happened.";
+  }
+  $("discard").addEventListener("click", function(){toggleDetail("d")});
+  $("discard").setAttribute("role", "button"); $("discard").setAttribute("tabindex", "0"); $("discard").setAttribute("aria-label", "Discarded stamp, winter 3");
+  $("discard").style.cursor = "pointer";
+  $("discard").addEventListener("keydown", function(e){if(e.key === "Enter" || e.key === " "){e.preventDefault(); toggleDetail("d")}});
+
+  /* the one button */
+  var LABELS = ["Winter 1", "Winter 2", "Winter 3: repair", "Winter 4", "Winter 5: safety check", "Replay"];
+  function paintGo(){
+    var go = $("go");
+    go.textContent = !S.open ? "Open passport" : LABELS[S.w];
+    go.classList.toggle("p1", !S.open);
+    go.setAttribute("aria-disabled", S.lock);
+    $("shopBtn").hidden = S.w < N;
+  }
+  function lockFor(ms){S.lock = true; paintGo(); later(function(){S.lock = false; paintGo()}, RM ? 0 : ms)}
+  function openCover(){
+    S.open = true; vib();
+    var c = $("cover");
+    if(RM){c.classList.add("open", "gone")} else {c.classList.add("open"); later(function(){c.classList.add("gone")}, 420)}
+    lockFor(430); paintCap();
+  }
+  function step(){
+    S.w++; S.detail = null; vib();
+    var g = stampG[S.w - 1].querySelector(".anim");
+    stampG[S.w - 1].setAttribute("visibility", "visible"); ghostG[S.w - 1].setAttribute("visibility", "hidden");
+    anim(g, [{transform:"scale(1.5)", opacity:0}, {transform:"scale(.94)", opacity:1, offset:.72}, {transform:"scale(1)", opacity:1}], {duration:320, easing:"cubic-bezier(.2,.8,.3,1)"});
+    anim($("pageG"), [{transform:"translateY(0)"}, {transform:"translateY(2px)", offset:.4}, {transform:"translateY(0)"}], {duration:240, easing:"ease-out"});
+    stripStep(S.w);
+    dropCoins(); countTo(total(), 500);
+    paintCap(); lockFor(S.w === 3 || S.w === 5 ? 880 : 700);
+    later(refreshSheet, 0);
+  }
+  function replay(){
+    clearTimers(); if(numTw) numTw.stop();
+    S.w = 0; S.detail = null; S.lock = false;
+    jar.set(0); showNum(0); paintStamps(); paintStrip(); paintCap(); paintGo(); refreshSheet();
+  }
+  $("go").addEventListener("click", function(){
+    if(S.lock) return;
+    if(!S.open) openCover();
+    else if(S.w >= N) replay();
+    else step();
+  });
+  $("shopBtn").addEventListener("click", function(){showTab("shop")});
+
+  /* bottom sheet */
+  var sheet = $("sheet"), lastFocus = null;
+  function refreshSheet(){
+    var d = days(), full = N * d * FEE;
+    $("shF").textContent = "Fee: EUR " + FEE + " x " + d + " rental days x " + N + " winters = " + eur(full);
+    $("shSo").textContent = "Performance class fee, illustrative. So far: " + S.w + (S.w === 1 ? " winter" : " winters") + ", " + eur(total()) + ".";
+    $("busy").setAttribute("aria-pressed", !S.quiet); $("quiet").setAttribute("aria-pressed", S.quiet);
+  }
+  function openSheet(){lastFocus = document.activeElement; refreshSheet(); sheet.hidden = false; $("shClose").focus()}
+  function closeSheet(){sheet.hidden = true; if(lastFocus && lastFocus.focus) lastFocus.focus()}
+  $("mathBtn").addEventListener("click", openSheet);
+  $("shClose").addEventListener("click", closeSheet);
+  $("shBd").addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function(e){if(e.key === "Escape" && !sheet.hidden) closeSheet()});
+  function setQuiet(q){
+    S.quiet = q; drawStamps(); paintStamps();
+    if(numTw) numTw.stop(); showNum(total()); paintJar(); paintCap(); refreshSheet();
+  }
+  $("busy").addEventListener("click", function(){setQuiet(false)});
+  $("quiet").addEventListener("click", function(){setQuiet(true)});
+
+  drawStamps(); paintStamps(); paintStrip(); paintJar(); showNum(0); paintCap(); paintGo(); refreshSheet();
+  window.__skiState = S;
+})();
+
+/* ---------- 2. Shop scene ---------- */
+(function(){
+  var W = CONFIG.weather, ICONS = CONFIG.pairs / CONFIG.pairsPerIcon;
+  var sh = {w:CONFIG.defaultWeather, cls:CONFIG.defaultClass, price:CONFIG.dayPrice, lit:[], running:null, shown:0, crossed:{}};
+  var jar = Jar($("jar2"), 30), MAXFEE = CONFIG.pairs * CONFIG.daysPerMonth * 1.3 * 4;
+  function classFee(){return CONFIG.classes[sh.cls].fee}
+  function fee(){return CONFIG.pairs * CONFIG.daysPerMonth * W[sh.w].f * classFee()}
+  function pct(f){return Math.round(f * 100) + "%"}
+  var SAY = ["No snow: the shop pays almost nothing.", "Weak winter: the shop pays less.", "Normal winter: steady income for both.", "Record season: both earn more."];
+  var SNOW = [0, 14, 32, 60], SKIERS = [0, 2, 5, 9];
+  var SKY = ["#3a86d0", "#52688f", "#2b3b63", "#1d2a4d"];
+
+  /* weather dial */
+  var dial = $("dial"), steps = [], handle;
+  var icons = [
+    '<svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="6" fill="#ffd54a"/><g stroke="#ffd54a" stroke-width="2" stroke-linecap="round"><path d="M17 3V7M17 27V31M3 17H7M27 17H31M7 7L10 10M24 24L27 27M27 7L24 10M10 24L7 27"/></g></svg>',
+    '<svg viewBox="0 0 34 34"><path d="M9 24A6 6 0 0 1 10 12A8 8 0 0 1 25 14A5 5 0 0 1 25 24Z" fill="#dfe8f7"/></svg>',
+    '<svg viewBox="0 0 34 34"><g stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M17 4V30M6 10.5L28 23.5M28 10.5L6 23.5"/></g></svg>',
+    '<svg viewBox="0 0 34 34"><g stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M11 3V17M5 6.5L17 13.5M17 6.5L5 13.5M23 17V31M17 20.5L29 27.5M29 20.5L17 27.5"/></g></svg>'
+  ];
+  W.forEach(function(w, i){
+    var b = document.createElement("button"); b.className = "st"; b.type = "button";
+    b.innerHTML = icons[i] + "<span>" + w.name + "</span>"; b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function(){useDial(); setWeather(i)});
+    dial.appendChild(b); steps.push(b);
+  });
+  handle = document.createElement("div"); handle.className = "dh"; handle.innerHTML = '<i></i>'; handle.setAttribute("aria-hidden", "true");
+  dial.appendChild(handle);
+  function useDial(){dial.classList.add("used")}
+  function placeHandle(i){handle.style.left = (i * 25) + "%"}
+  makeDrag(handle, {
+    start:function(){dial.classList.add("drag-on"); useDial()},
+    move:function(ev){
+      var r = dial.getBoundingClientRect(), x = ev.clientX - r.left;
+      var f = Math.max(0, Math.min(W.length - 1, (x / r.width) * W.length - .5));
+      handle.style.left = (f * 25) + "%";
+      var i = Math.round(f); if(i !== sh.w) setWeather(i);
+    },
+    end:function(){dial.classList.remove("drag-on"); placeHandle(sh.w)}
+  });
+
+  /* rack */
+  var rack = $("rack"), pairs = [];
+  for(var i = 0; i < ICONS; i++){
+    var b = document.createElement("button"); b.type = "button"; b.className = "pair"; b.setAttribute("aria-label", "Rent out " + CONFIG.pairsPerIcon + " pairs"); b.setAttribute("aria-pressed", "false");
+    b.innerHTML = '<svg viewBox="0 0 30 34"><rect x="7" y="2" width="5" height="30" rx="2.5"/><rect x="18" y="2" width="5" height="30" rx="2.5"/></svg>';
+    (function(i, b){b.addEventListener("click", function(ev){
+      if(sh.running) return finishRun();
+      sh.lit[i] = !sh.lit[i]; paintRack();
+      coinFloat(b); vib();
+      if(sh.lit[i]) jar.add(true);
+    })})(i, b);
+    rack.appendChild(b); pairs.push(b);
+  }
+  function paintRack(){pairs.forEach(function(b, i){b.classList.toggle("lit", !!sh.lit[i]); b.setAttribute("aria-pressed", !!sh.lit[i])})}
+  function weatherLit(){
+    var n = Math.min(ICONS, Math.round(ICONS * W[sh.w].f));
+    // spread the lit skis evenly
+    var out = []; for(var i = 0; i < ICONS; i++) out[i] = false;
+    for(var k = 0; k < n; k++) out[Math.floor(k * ICONS / n)] = true;
+    return out;
+  }
+  function coinFloat(btn){
+    var r = btn.getBoundingClientRect(), d = document.createElement("div");
+    d.className = "coinf"; d.innerHTML = "+EUR " + (classFee() * CONFIG.pairsPerIcon) + '<small>' + CONFIG.pairsPerIcon + " pairs x EUR " + classFee() + "</small>";
+    d.style.left = Math.max(4, Math.min(window.innerWidth - 120, r.left + r.width / 2 - 56)) + "px"; d.style.top = (r.top - 30) + "px";
+    document.body.appendChild(d);
+    if(!RM && d.animate){var a = d.animate([{transform:"translateY(0)", opacity:1}, {transform:"translateY(-30px)", opacity:0}], {duration:900, easing:"ease-out"}); a.onfinish = function(){d.remove()}}
+    else setTimeout(function(){d.remove()}, 1300);
+  }
+
+  /* window: snow, skiers, sky */
+  var snow = $("snow"), skiers = $("skiers");
+  function buildSnow(n){
+    snow.innerHTML = "";
+    for(var i = 0; i < Math.min(60, n); i++){
+      var c = el("circle", {cx: 30 + Math.random() * 300, cy: 14, r: 1.2 + Math.random() * 1.6}, snow);
+      var dur = 2.2 + Math.random() * 3, delay = -Math.random() * dur;
+      if(RM) c.setAttribute("cy", 20 + Math.random() * 120);
+      else {c.style.animation = "snowfall " + dur + "s linear " + delay + "s infinite"}
     }
   }
-  el.innerHTML = h;
-  $("stats").innerHTML =
-      tile(days,"Rental days")
-    + tile(eur(fee), loop ? "Fee to Rossignol" : "Rental fee to Rossignol", true)
-    + tile(loop ? svc : 0, "Summer services")
-    + tile(loop ? carbon : 0, "Carbon repairs")
-  ;
-  $("skipath").style.opacity = (!loop && step>N) ? .2 : 1;
-  $("next").textContent = step===0 ? "Start: season 1" : step<N ? "Next season" : step===N ? "See what happens next" : "";
-  $("next").hidden = step>N;
-  $("restart").hidden = step<=N;
-}
-$("next").addEventListener("click", function(){ if(step<=N){step++; render()} });
-$("restart").addEventListener("click", function(){ step=0; render(); window.scrollTo(0,0) });
-$("m-loop").addEventListener("click", function(){ loop=true; render() });
-$("m-lin").addEventListener("click", function(){ loop=false; render() });
-render();
+  function buildSkiers(n){
+    skiers.innerHTML = "";
+    for(var i = 0; i < n; i++){
+      var g = el("g", {}, skiers);
+      var x0 = 40 + (i * 61) % 240;
+      var y0 = 98 + (x0 - 28) * 32 / 304 - 12;
+      var f = el("g", {transform:"translate(" + x0 + " " + y0 + ")"}, g);
+      var m = el("g", {}, f);
+      el("circle", {cx:0, cy:-9, r:3, fill:"#ff4338"}, m);
+      el("path", {d:"M0 -6V3M-5 5L5 3M0 -3L-4 1", stroke:"#12305f", "stroke-width":2, "stroke-linecap":"round", fill:"none"}, m);
+      if(!RM){m.style.animation = "skiRun " + (4 + (i % 3)) + "s linear " + (-i * 1.3) + "s infinite"; }
+    }
+  }
+  function paintWindow(){
+    $("sky").setAttribute("fill", SKY[sh.w]);
+    $("sun").style.opacity = sh.w === 0 ? 1 : 0;
+    $("clouds").style.opacity = sh.w === 0 ? 0 : (sh.w === 1 ? .6 : 1);
+    buildSnow(SNOW[sh.w]); buildSkiers(SKIERS[sh.w]);
+  }
 
-/* ---------- Calculator ---------- */
-var W = CONFIG.winters;
-var elP=$("pairs"), elD=$("days"), elW=$("winter"), elPrice=$("price");
-elP.value=CONFIG.defaultPairs; elD.value=CONFIG.defaultDays; elW.max=W.length-1; elW.value=CONFIG.defaultWinter; elPrice.value=CONFIG.defaultPrice;
-function calc(){
-  var p=+elP.value, d=+elD.value, wi=+elW.value, w=W[wi], price=Math.max(0,+elPrice.value||0);
-  var f=CONFIG.feePerDay;
-  var fee=p*d*f*w.f;
-  $("v-pairs").textContent=p; $("v-days").textContent=d; $("v-winter").textContent=w.name;
-  $("fee").textContent=eur(fee);
-  $("feeSub").textContent = p+" pairs × "+d+" days × EUR "+f+(w.f!==1 ? " × "+w.f+" ("+w.name.toLowerCase()+")" : " (normal winter)");
-  var max = p*d*f*Math.max.apply(null,W.map(function(x){return x.f}))||1;
-  $("bars").innerHTML = W.map(function(x,i){
-    var v=p*d*f*x.f;
-    return '<div class="bar'+(i===wi?' on':'')+'"><span>'+x.name+'</span><span class="t"><i style="width:'+Math.max(2,v/max*100)+'%"></i></span><span class="n">'+eur(v)+'</span></div>';
-  }).join("");
-  var buy=p*price;
-  $("buy").textContent=eur(buy);
-  $("replace").textContent=eur(buy/5)+" to "+eur(buy/3)+" a year";
-  $("f1").textContent="Winter factor ("+w.name+") = "+w.f+"  [assumption]";
-  $("f2").textContent="Monthly fee = pairs × days × EUR "+f+" × winter factor";
-  $("f3").textContent="            = "+p+" × "+d+" × "+f+" × "+w.f+" = "+eur(fee);
-}
-[elP,elD,elW,elPrice].forEach(function(e){e.addEventListener("input",calc)});
-calc();
+  /* number and jar */
+  var numTw = null;
+  function showNum(v){sh.shown = v; $("feeNum").textContent = eur(v)}
+  function jarTarget(){return Math.round(fee() / MAXFEE * 30)}
+  function setWeather(i){
+    if(sh.running) finishRun();
+    sh.w = i; sh.lit = weatherLit(); paintRack(); paintWindow();
+    steps.forEach(function(b, k){b.setAttribute("aria-pressed", k === i)});
+    placeHandle(i); jar.set(jarTarget()); refresh(); vib();
+  }
+  function refresh(animate){
+    $("shopSay").textContent = SAY[sh.w];
+    var from = sh.shown, to = fee();
+    if(numTw) numTw.stop();
+    numTw = tween(animate === false ? 0 : 450, function(p){showNum(from + (to - from) * p)});
+    var share = classFee() / sh.price;
+    $("ringTxt").textContent = Math.round(share * 100) + "%";
+    $("ring").setAttribute("stroke-dashoffset", 163.4 * (1 - Math.min(1, share)));
+    $("pv").textContent = "EUR " + sh.price.toFixed(2);
+    CONFIG.classes.forEach(function(c, k){clsB[k].setAttribute("aria-pressed", k === sh.cls)});
+    $("mathShopBody").innerHTML =
+      '<div class="formula">pairs × days × weather factor × fee</div>' +
+      '<div class="formula">' + CONFIG.pairs + ' × ' + CONFIG.daysPerMonth + ' × ' + pct(W[sh.w].f) + ' × EUR ' + classFee() + ' = ' + eur(fee()) + '</div>' +
+      '<p class="small muted">Weather factors are an illustration: ' + W.map(function(w){return pct(w.f)}).join(", ") + ' of ' + CONFIG.daysPerMonth + ' rental days a month. Each rack icon stands for ' + CONFIG.pairsPerIcon + ' pairs. Day price share: EUR ' + classFee() + ' / EUR ' + sh.price.toFixed(2) + ' = ' + Math.round(classFee() / sh.price * 100) + '%.</p>';
+  }
+
+  /* run the month */
+  var DAYMS = [230, 170, 120, 85];
+  function finishRun(){if(sh.running) sh.running.finish()}
+  $("run").addEventListener("click", function(){
+    if(sh.running) return finishRun();
+    var total = fee(), target = jarTarget(), D = CONFIG.daysPerMonth;
+    if(numTw) numTw.stop();
+    jar.set(0); showNum(0); $("run").textContent = "Skip";
+    var day = 0, timer, over = false;
+    function paintDay(){
+      showNum(total * day / D);
+      var need = Math.round(target * day / D); while(jar.count() < need) jar.add(true);
+      var lit = weatherLit(); sh.lit = lit.map(function(v, i){return v && ((i + day) % 3 !== 0 || sh.w === 3 || sh.w === 2)}); paintRack();
+    }
+    function end(){
+      if(over) return; over = true; clearTimeout(timer); sh.running = null;
+      day = D; showNum(total); jar.set(target); sh.lit = weatherLit(); paintRack();
+      $("run").textContent = "Run the month"; vib();
+    }
+    sh.running = {finish: end};
+    if(RM){end(); return}
+    (function tick(){
+      if(over) return;
+      day++; paintDay();
+      if(day >= D) end(); else timer = setTimeout(tick, DAYMS[sh.w]);
+    })();
+  });
+
+  /* tokens */
+  var tok = $("tok");
+  ["Fleet purchase", "Servicing", "Disposal"].forEach(function(n){
+    var b = document.createElement("button"); b.type = "button"; b.className = "tk"; b.setAttribute("aria-pressed", "false");
+    b.innerHTML = '<span class="n">' + n + '</span><span class="why">Rossignol\'s job, not the shop\'s.</span>';
+    b.addEventListener("click", function(){var x = b.classList.toggle("x"); b.setAttribute("aria-pressed", x); vib()});
+    tok.appendChild(b);
+  });
+
+  /* class and day price chips */
+  var clsB = [];
+  CONFIG.classes.forEach(function(c, k){
+    var b = document.createElement("button"); b.type = "button"; b.className = "cls"; b.innerHTML = c.name + "<br>EUR " + c.fee; b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function(){if(sh.running) finishRun(); sh.cls = k; jar.set(jarTarget()); refresh(); vib()});
+    $("cls").appendChild(b); clsB.push(b);
+  });
+  $("pm").addEventListener("click", function(){sh.price = Math.max(5, +(sh.price - 1).toFixed(2)); refresh(false)});
+  $("pp").addEventListener("click", function(){sh.price = Math.min(40, +(sh.price + 1).toFixed(2)); refresh(false)});
+
+  sh.lit = weatherLit(); paintRack(); paintWindow();
+  steps.forEach(function(b, k){b.setAttribute("aria-pressed", k === sh.w)});
+  placeHandle(sh.w); jar.set(jarTarget()); refresh(false);
+  window.__shop = sh;
+})();
 
 /* ---------- Blade ---------- */
 var PARTS = {

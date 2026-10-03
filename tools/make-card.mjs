@@ -39,7 +39,7 @@ h1{margin:2mm 0 0;font-size:24pt;font-weight:200}h1 b{color:#ffb400;font-weight:
   <div class="brand">Student business model</div>
   <h1>Rossignol <b>LOOP</b></h1>
   <div class="qr">${svg.replace(/<\?xml[^>]*>/, "")}</div>
-  <div class="line">Scan: follow one ski through 5 seasons</div>
+  <div class="line">Scan: follow one ski through 5 winters</div>
   <div class="id"><small>Ski ID</small>${id}</div>
 </div>
 </body></html>`;
