@@ -406,9 +406,9 @@ nav{margin-bottom:8px}
         </div>
       </div>
       <input type="range" id="pRange" aria-label="Your rental price per pair per day">
+      <p class="pcap" id="pCap">Your price, your customers. Rossignol's fee per rental day depends on your fleet class.</p>
       <div class="clsrow"><span class="lbl3">Your fleet class</span></div>
       <div class="chipsrow g3" id="cls" role="group" aria-label="Your fleet class"></div>
-      <p class="pcap" id="pCap"></p>
 
       <div class="split" id="split">
         <div class="sb"><i id="sbAmber"></i></div>
@@ -1099,7 +1099,6 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     $("pVal").setAttribute("aria-live", "polite");
     $("pMinus").setAttribute("aria-disabled", p <= CONFIG.priceMin); $("pPlus").setAttribute("aria-disabled", p >= CONFIG.priceMax);
     range.setAttribute("aria-valuetext", "EUR " + p);
-    $("pCap").textContent = "Your price, your customers. Rossignol's fee stays EUR " + fee + " per rental day.";
     var share = fee / p;
     $("sbAmber").style.width = (share * 100) + "%";
     $("slA").textContent = "Rossignol EUR " + fee + " (" + pct(share) + ")";
