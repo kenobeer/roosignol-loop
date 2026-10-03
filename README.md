@@ -5,7 +5,7 @@ Static site (plain HTML, CSS and JS, no dependencies, no backend, no external re
 What is on the page: a hero with the animated LOOP circle, then three tabs.
 
 1. Follow one ski: one button, one big number, one digital ski passport. Each press is one winter, and a stamp lands on the passport.
-2. The shop: a rental shop scene with a weather dial, a rack of skis and the monthly fee.
+2. You run the shop: the visitor sets their own rental price on a chalkboard sign, then sees what they keep per month and what Rossignol's fee is, while a weather dial, a rack of skis and a coin till react.
 3. Turbine blade: what happens to each part of a wind turbine blade.
 
 ## Change the numbers
@@ -19,10 +19,10 @@ Open `public/index.html` and edit the `CONFIG` block at the top of the main `<sc
 | `defaultId` | Default ski ID (LOOP-0427) |
 | `pairs`, `pairsPerIcon`, `daysPerMonth` | Shop fleet (80 pairs, shown as 20 icons of 4) and normal rental days a month (20) |
 | `classes`, `defaultClass` | Ski classes and their fee per day (Standard 2, Performance 3, Premium 4). Section 2 only |
-| `dayPrice` | Day rental price per pair, an illustrative assumption (17.60). Section 2 only |
+| `defaultPrice`, `priceMin`, `priceMax` | The visitor's rental price per pair per day in section 2: start value and slider range (EUR 18, 8 to 40), illustrative |
 | `weather` | Weather steps and their share of normal rental days (10%, 50%, 100%, 130%), an illustration |
 
-Passport total: `fee x days x winters` (3 x 60 x 5 = EUR 900 busy, 3 x 30 x 5 = EUR 450 quiet). Each winter drops 6 coins into the jar, so the jar holds 30 coins after 5 winters whatever the mode. Shop: `pairs x days x weather factor x fee` (80 x 20 x 100% x 3 = EUR 4,800). Both formulas are shown under "Show the math". The passport fee does not follow the ski class chips in section 2.
+Passport total: `fee x days x winters` (3 x 60 x 5 = EUR 900 busy, 3 x 30 x 5 = EUR 450 quiet). Each winter drops 6 coins into the jar, so the jar holds 30 coins after 5 winters whatever the mode. Shop (section 2): rental days = `pairs x days x weather factor` (80 x 20 x 100% = 1,600), revenue = rental days x the visitor's price (x 18 = EUR 28,800), Rossignol's fee = rental days x class fee (x 3 = EUR 4,800), the visitor keeps revenue minus fee (EUR 24,000). The price does not change the number of rental days. Both formulas are shown under "Show the math". The passport fee does not follow the ski class chips in section 2. The till jar scales its coin unit so up to 30 coins show the keep and fee amounts in proportion.
 
 Copy that quotes numbers (for example "3 to 5 winters", "EUR 3 per rental day") is plain text in the HTML, so search for it if you change the defaults.
 
@@ -58,7 +58,7 @@ Stamps use one shared SVG filter for worn ink. On devices that report 4 or fewer
 Needs Google Chrome on macOS and `npm install` in `tools`. Each script drives the page in headless Chrome at phone size and prints what it finds.
 
     node tools/test-passport.mjs <url> <screenshot-dir> [640|844] [rm]   # section 1: fit in the viewport, 6 button presses, 900 and 450 totals, sheet, quiet switch
-    node tools/test-shop.mjs <url> [rm]                                   # section 2: EUR 4,800 default, rack tap shows +EUR 12
+    node tools/test-shop.mjs <url> [rm]                                   # section 2: default and weather/price/class numbers, layout at 390 x 844, rack tap shows You +EUR 60 and Rossignol EUR 12, run your month
     node tools/verify.mjs                                                 # QR code decodes to the production URL, private window, offline reload
 
 `<url>` can be the production URL or `file:///.../public/index.html`. Pass `rm` for reduced motion.

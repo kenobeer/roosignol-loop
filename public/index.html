@@ -220,6 +220,46 @@ nav{margin-bottom:8px}
 @keyframes sheetUp{from{transform:translateY(40px);opacity:0}}
 .sheet .seg{margin:12px 0 4px}
 .sheet .seg button{font-size:14px}
+/* ---- section 2: you run the shop ---- */
+.frame{font-size:16px;font-weight:400;margin:6px 0 8px;line-height:1.3}
+.sign{position:relative;transform-origin:50% 0;margin:0 auto;max-width:300px}
+.strings{display:block;width:100%;height:20px}
+.board{position:relative;background:#17312c;border:5px solid #8a6a3b;border-radius:12px;padding:8px 10px 10px;text-align:center;color:#f1f0e6;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.board .bl{font-size:12.5px;color:#d7d5c3;font-weight:300;line-height:1.2}
+.prow{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:2px}
+.prow button{width:48px;height:48px;border-radius:50%;border:1.5px solid #f1f0e6;background:transparent;color:#f1f0e6;font:inherit;font-size:28px;line-height:1;cursor:pointer;padding:0}
+.prow button[aria-disabled=true]{opacity:.35}
+.pv{font-size:44px;font-weight:300;min-width:130px;line-height:1.1;font-variant-numeric:tabular-nums}
+.setp{position:absolute;left:50%;top:-14px;transform:translateX(-50%);background:var(--amber);color:#1a1200;font-size:12px;font-weight:400;border-radius:99px;padding:2px 10px;white-space:nowrap;z-index:2}
+.setp.gone{display:none}
+.board.pulse1{animation:signPulse .7s ease-out .5s 1}
+@keyframes signPulse{50%{transform:scale(1.05)}}
+#pRange{margin:6px 0 0;display:block;width:100%}
+.pcap{font-size:12.5px;color:var(--muted);margin:0 0 8px;line-height:1.3}
+.split{margin:4px 0 10px}
+.split .sb{height:24px;border-radius:12px;background:#e4ecfb;position:relative;overflow:hidden}
+.split .sb i{position:absolute;left:0;top:0;bottom:0;width:17%;background:var(--amber);transition:width .4s cubic-bezier(.2,.8,.3,1)}
+.split .sl{display:flex;justify-content:space-between;gap:8px;font-size:13px;margin-top:4px}
+.split .a{color:var(--amber);font-weight:400}
+.split .k{color:#e4ecfb;font-weight:400}
+.dhint{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.sbar{position:sticky;bottom:0;z-index:6;margin:10px -6px 0;padding:8px 6px calc(8px + env(safe-area-inset-bottom));background:rgba(9,27,64,.96);border-top:1px solid var(--line);border-radius:16px 16px 0 0;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.tnum{display:flex;gap:8px;align-items:center}
+.tnum svg{width:120px;height:auto;flex:none;display:block}
+.nb{flex:1;min-width:0}
+.kl{font-size:13px;color:var(--text);font-weight:400;line-height:1.1}
+.nb .bignum{font-size:35px;line-height:1.05;white-space:nowrap}
+.kc{font-size:11px;color:var(--muted);line-height:1.25}
+.feerow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.feeline{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--amber);font-weight:400}
+.coinI{width:15px;height:15px;border-radius:50%;background:var(--amber);border:2px solid #b27c00;box-sizing:border-box;display:inline-block;flex:none}
+.feerow .lnk{margin:-14px 0 -14px;height:44px;padding:0 4px;font-size:14px;position:relative;z-index:2;align-self:center}
+.runline{font-size:12.5px;min-height:18px;color:var(--text);line-height:1.4}
+.sbar .btn{margin:2px 0 0}
+.lbl3{font-size:13px;color:var(--muted);margin:10px 0 0}
+.coinf{width:150px!important;padding:4px 8px!important}
+.coinf .y{color:#fff;font-weight:400;font-size:16px}
+.coinf .r{color:var(--amber);font-weight:400;font-size:13px}
 </style>
 </head>
 <body>
@@ -338,16 +378,29 @@ nav{margin-bottom:8px}
     </div>
   </section>
 
-  <!-- 2 SHOP SCENE -->
+  <!-- 2 YOU RUN THE SHOP -->
   <section id="p-shop" role="tabpanel" aria-labelledby="t-shop" hidden>
-    <div class="card game">
+    <div class="card game" id="shopCard">
       <div class="idrow"><div class="muted small">Rental shop</div><span class="tag red">Illustration</span></div>
-      <div class="say" id="shopSay" aria-live="polite"></div>
-      <div class="hud">
-        <div class="jar"><svg id="jar2" viewBox="0 0 100 130" aria-hidden="true"><path d="M26 14V24C10 34 10 44 10 56V112C10 122 16 126 26 126H74C84 126 90 122 90 112V56C90 44 90 34 74 24V14Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.5)" stroke-width="2"/><rect x="22" y="3" width="56" height="11" rx="4" fill="#26385f" stroke="rgba(255,255,255,.5)"/><g class="coins"></g></svg></div>
-        <div class="bn"><div class="bignum" id="feeNum">EUR 0</div><div class="cap">Monthly fee to Rossignol</div></div>
+      <p class="frame">You run a small rental shop with 80 LOOP skis. You did not buy a single pair.</p>
+
+      <div class="sign" id="sign">
+        <svg class="strings" viewBox="0 0 240 20" aria-hidden="true"><path d="M120 1L58 20M120 1L182 20" stroke="#cfc9a8" stroke-width="1.4" fill="none"/><circle cx="120" cy="2" r="3.5" fill="#cfc9a8"/></svg>
+        <div class="board" id="board">
+          <span class="setp" id="setp">Set your price</span>
+          <div class="bl">Your rental price per pair per day</div>
+          <div class="prow"><button id="pMinus" type="button" aria-label="Lower your price">-</button><div class="pv" id="pVal">EUR 18</div><button id="pPlus" type="button" aria-label="Raise your price">+</button></div>
+        </div>
       </div>
-      <div class="stage" id="winBox">
+      <input type="range" id="pRange" aria-label="Your rental price per pair per day">
+      <p class="pcap" id="pCap"></p>
+
+      <div class="split" id="split">
+        <div class="sb"><i id="sbAmber"></i></div>
+        <div class="sl"><span class="a" id="slA"></span><span class="k" id="slK"></span></div>
+      </div>
+
+<div class="stage" id="winBox">
         <svg id="win" viewBox="0 0 360 170" aria-label="Shop window with the slope outside">
           <defs><clipPath id="winClip"><rect x="28" y="14" width="304" height="136" rx="6"/></clipPath></defs>
           <rect x="0" y="0" width="360" height="170" fill="rgba(255,255,255,.04)"/>
@@ -364,16 +417,37 @@ nav{margin-bottom:8px}
           <path d="M180 14V150" stroke="rgba(255,255,255,.35)"/>
         </svg>
       </div>
+      
+      <div class="dhint">Drag the weather</div>
       <div class="dial" id="dial" role="group" aria-label="Weather"></div>
       <div class="rack" id="rack" role="group" aria-label="Rack of skis, each icon stands for 4 pairs"></div>
-      <button class="btn" id="run">Run the month</button>
+
+      <div class="sbar" id="sbar">
+        <div class="tnum">
+          <svg id="till" viewBox="0 0 200 146" aria-hidden="true">
+            <g id="tillJar"><path d="M26 14V22C10 32 10 42 10 52V106C10 116 16 120 26 120H74C84 120 90 116 90 106V52C90 42 90 32 74 22V14Z" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.5)" stroke-width="2"/><rect x="22" y="4" width="56" height="10" rx="4" fill="#26385f" stroke="rgba(255,255,255,.5)"/><g class="coins" id="coinsL"></g></g>
+            <g transform="translate(116 36) scale(.72)"><path d="M26 14V22C10 32 10 42 10 52V106C10 116 16 120 26 120H74C84 120 90 116 90 106V52C90 42 90 32 74 22V14Z" fill="rgba(255,180,0,.1)" stroke="#ffb400" stroke-width="2.5"/><rect x="22" y="4" width="56" height="10" rx="4" fill="#26385f" stroke="#ffb400"/><g class="coins" id="coinsA"></g></g>
+            <g id="fly"></g>
+            <text x="50" y="143" text-anchor="middle" fill="#a9bbdb" font-size="19">Your till</text>
+            <text x="152" y="143" text-anchor="middle" fill="#ffb400" font-size="19" font-weight="400">Rossignol</text>
+          </svg>
+          <div class="nb">
+            <div class="kl">You keep</div>
+            <div class="bignum" id="keepNum">EUR 0</div>
+            <div class="kc">per month, before your own costs (staff, rent, boots)</div>
+          </div>
+        </div>
+        <div class="feerow"><div class="feeline"><i class="coinI"></i><span id="feeLine">Rossignol's fee: EUR 0</span></div><button class="lnk" id="mathBtn2" type="button">Show the math</button></div>
+        <div class="runline" id="runLine" aria-live="polite"></div>
+        <button class="btn" id="run">Run your month</button>
+      </div>
+
       <div class="tok" id="tok"></div>
-      <div class="chipsrow g3" id="cls" role="group" aria-label="Ski class"></div>
-      <div class="chipsrow"><span class="step2"><button id="pm" aria-label="Lower day price">-</button><b id="pv"></b><button id="pp" aria-label="Raise day price">+</button></span><span class="tag red">Illustrative assumption</span></div>
-      <div class="ringrow"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="7"/><circle id="ring" cx="32" cy="32" r="26" fill="none" stroke="#ffb400" stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4" transform="rotate(-90 32 32)" style="transition:stroke-dashoffset .5s cubic-bezier(.2,.8,.3,1)"/></svg><div><div style="font-size:26px" id="ringTxt"></div><div class="muted small">of the day price goes to Rossignol</div></div></div>
+      <div class="lbl3">Your fleet class</div>
+      <div class="chipsrow g3" id="cls" role="group" aria-label="Your fleet class"></div>
+      <div class="chipsrow"><span class="tag red">Illustrative assumption</span></div>
       <p class="fixedl">Rossignol carries the fleet capital and earns it back through the fee over several winters.</p>
       <p class="fixedl">Built for small independent shops with mid and premium fleets.</p>
-      <details class="math"><summary>Show the math</summary><div id="mathShopBody"></div></details>
     </div>
   </section>
 
@@ -417,6 +491,19 @@ nav{margin-bottom:8px}
     <button class="btn ghost" id="shClose" style="margin-top:6px">Close</button>
   </div>
 </div>
+<div class="sheet" id="sheet2" hidden role="dialog" aria-modal="true" aria-labelledby="sh2T">
+  <div class="bd" id="sh2Bd"></div>
+  <div class="pn">
+    <h2 id="sh2T" style="font-size:22px">The math</h2>
+    <div class="formula">Rental days = 80 pairs x 20 days x weather factor</div>
+    <div class="formula">Revenue = rental days x your price</div>
+    <div class="formula">Rossignol's fee = rental days x class fee</div>
+    <div class="formula">You keep = revenue minus fee</div>
+    <p class="small" id="sh2Now" style="margin:8px 0 6px"></p>
+    <p class="small muted">Your price does not change the number of rental days in this illustration. Illustrative assumptions, to be tested in a pilot.</p>
+    <button class="btn ghost" id="sh2Close" style="margin-top:6px">Close</button>
+  </div>
+</div>
 
 <script>
 /* ===== Edit these numbers to change the site ===== */
@@ -430,7 +517,9 @@ var CONFIG = {
   pairs: 80,              // shop fleet, shown as 20 icons of 4 pairs
   pairsPerIcon: 4,
   daysPerMonth: 20,       // rental days per month at normal weather
-  dayPrice: 17.6,         // EUR day rental price per pair (illustrative assumption)
+  defaultPrice: 18,       // EUR your rental price per pair per day (section 2, illustrative assumption)
+  priceMin: 8,
+  priceMax: 40,
   classes: [{name: "Standard", fee: 2}, {name: "Performance", fee: 3}, {name: "Premium", fee: 4}],
   defaultClass: 1,
   // share of normal rental days. ILLUSTRATION, not data.
@@ -500,16 +589,17 @@ function svgPt(svg, ev){
   return p.matrixTransform(svg.getScreenCTM().inverse());
 }
 /* coin jar */
-function Jar(svg, max, baseY){
-  var g = svg.querySelector(".coins"), coins = [], sc = 1, by = baseY || 118;
+function Jar(svg, max, baseY, style){
+  var g = svg.classList && svg.classList.contains("coins") ? svg : svg.querySelector(".coins"), coins = [], sc = 1, by = baseY || 118;
+  style = style || {fill: "#ffb400", stroke: "#b27c00"};
   function pos(i){return [22 + 14 * (i % 5), by - 9 * Math.floor(i / 5)]}
   function add(animate){
     var i = coins.length; if(i >= max) return;
     var p = pos(i);
     var o = el("g", {transform: "translate(" + p[0] + "," + p[1] + ")"}, g);
     var inner = el("g", {}, o);
-    el("ellipse", {rx: 8 * sc, ry: 4.5 * sc, fill: "#ffb400", stroke: "#b27c00"}, inner);
-    el("ellipse", {rx: 4.5 * sc, ry: 2 * sc, fill: "none", stroke: "#b27c00", "stroke-width": .8}, inner);
+    el("ellipse", {rx: 8 * sc, ry: 4.5 * sc, fill: style.fill, stroke: style.stroke}, inner);
+    el("ellipse", {rx: 4.5 * sc, ry: 2 * sc, fill: "none", stroke: style.stroke, "stroke-width": .8}, inner);
     if(animate && !RM){
       inner.style.transform = "translateY(-100px)"; inner.style.opacity = "0";
       inner.style.transition = "transform .5s cubic-bezier(.2,.8,.3,1), opacity .2s";
@@ -824,17 +914,40 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
   window.__skiState = S;
 })();
 
-/* ---------- 2. Shop scene ---------- */
+/* ---------- 2. You run the shop ---------- */
 (function(){
   var W = CONFIG.weather, ICONS = CONFIG.pairs / CONFIG.pairsPerIcon;
-  var sh = {w:CONFIG.defaultWeather, cls:CONFIG.defaultClass, price:CONFIG.dayPrice, lit:[], running:null, shown:0, crossed:{}};
-  var jar = Jar($("jar2"), 30), MAXFEE = CONFIG.pairs * CONFIG.daysPerMonth * 1.3 * 4;
+  var sh = {w:CONFIG.defaultWeather, cls:CONFIG.defaultClass, price:CONFIG.defaultPrice, lit:[], running:null, shown:0, feeShown:0, ran:false};
+  var tillL = Jar($("coinsL"), 30, 106, {fill:"#f4f2e4", stroke:"#b8b39a"});
+  var tillA = Jar($("coinsA"), 30, 106, {fill:"#ffb400", stroke:"#b27c00"});
   function classFee(){return CONFIG.classes[sh.cls].fee}
-  function fee(){return CONFIG.pairs * CONFIG.daysPerMonth * W[sh.w].f * classFee()}
+  function rdays(){return CONFIG.pairs * CONFIG.daysPerMonth * W[sh.w].f}
+  function revenue(){return rdays() * sh.price}
+  function feeTot(){return rdays() * classFee()}
+  function keep(){return revenue() - feeTot()}
   function pct(f){return Math.round(f * 100) + "%"}
-  var SAY = ["No snow: the shop pays almost nothing.", "Weak winter: the shop pays less.", "Normal winter: steady income for both.", "Record season: both earn more."];
   var SNOW = [0, 14, 32, 60], SKIERS = [0, 2, 5, 9];
   var SKY = ["#3a86d0", "#52688f", "#2b3b63", "#1d2a4d"];
+
+  /* price sign */
+  var range = $("pRange"), sign = $("sign");
+  range.min = CONFIG.priceMin; range.max = CONFIG.priceMax; range.step = 1; range.value = sh.price;
+  $("board").classList.toggle("pulse1", !RM);
+  function swing(){
+    if(RM || !sign.animate) return;
+    sign.animate([{transform:"rotate(0)"}, {transform:"rotate(-2.6deg)"}, {transform:"rotate(2deg)"}, {transform:"rotate(-1deg)"}, {transform:"rotate(0)"}], {duration:620, easing:"ease-out"});
+  }
+  function setPrice(p, fromUser){
+    p = Math.max(CONFIG.priceMin, Math.min(CONFIG.priceMax, Math.round(p)));
+    if(p === sh.price) return;
+    if(sh.running) finishRun();
+    sh.price = p; range.value = p;
+    if(fromUser){$("setp").classList.add("gone"); $("board").classList.remove("pulse1")}
+    swing(); refresh(); vib();
+  }
+  $("pMinus").addEventListener("click", function(){setPrice(sh.price - 1, true)});
+  $("pPlus").addEventListener("click", function(){setPrice(sh.price + 1, true)});
+  range.addEventListener("input", function(){setPrice(+range.value, true)});
 
   /* weather dial */
   var dial = $("dial"), steps = [], handle;
@@ -865,35 +978,64 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     end:function(){dial.classList.remove("drag-on"); placeHandle(sh.w)}
   });
 
-  /* rack */
+  /* rack: tap rents 4 pairs for a day, feedback only */
   var rack = $("rack"), pairs = [];
   for(var i = 0; i < ICONS; i++){
-    var b = document.createElement("button"); b.type = "button"; b.className = "pair"; b.setAttribute("aria-label", "Rent out " + CONFIG.pairsPerIcon + " pairs"); b.setAttribute("aria-pressed", "false");
+    var b = document.createElement("button"); b.type = "button"; b.className = "pair"; b.setAttribute("aria-label", "Rent out " + CONFIG.pairsPerIcon + " pairs for a day"); b.setAttribute("aria-pressed", "false");
     b.innerHTML = '<svg viewBox="0 0 30 34"><rect x="7" y="2" width="5" height="30" rx="2.5"/><rect x="18" y="2" width="5" height="30" rx="2.5"/></svg>';
-    (function(i, b){b.addEventListener("click", function(ev){
+    (function(i, b){b.addEventListener("click", function(){
       if(sh.running) return finishRun();
       sh.lit[i] = !sh.lit[i]; paintRack();
-      coinFloat(b); vib();
-      if(sh.lit[i]) jar.add(true);
+      rentFeedback(b); vib();
     })})(i, b);
     rack.appendChild(b); pairs.push(b);
   }
   function paintRack(){pairs.forEach(function(b, i){b.classList.toggle("lit", !!sh.lit[i]); b.setAttribute("aria-pressed", !!sh.lit[i])})}
   function weatherLit(){
-    var n = Math.min(ICONS, Math.round(ICONS * W[sh.w].f));
-    // spread the lit skis evenly
-    var out = []; for(var i = 0; i < ICONS; i++) out[i] = false;
+    var n = Math.min(ICONS, Math.round(ICONS * W[sh.w].f)), out = [];
+    for(var i = 0; i < ICONS; i++) out[i] = false;
     for(var k = 0; k < n; k++) out[Math.floor(k * ICONS / n)] = true;
     return out;
   }
-  function coinFloat(btn){
+  function rentFeedback(btn){
+    var n = CONFIG.pairsPerIcon, f = classFee();
     var r = btn.getBoundingClientRect(), d = document.createElement("div");
-    d.className = "coinf"; d.innerHTML = "+EUR " + (classFee() * CONFIG.pairsPerIcon) + '<small>' + CONFIG.pairsPerIcon + " pairs x EUR " + classFee() + "</small>";
-    d.style.left = Math.max(4, Math.min(window.innerWidth - 120, r.left + r.width / 2 - 56)) + "px"; d.style.top = (r.top - 30) + "px";
+    d.className = "coinf";
+    d.innerHTML = '<div class="y">You +EUR ' + (n * (sh.price - f)) + '</div><div class="r">Rossignol EUR ' + (n * f) + '</div>';
+    d.style.left = Math.max(4, Math.min(window.innerWidth - 158, r.left + r.width / 2 - 75)) + "px"; d.style.top = (r.top - 52) + "px";
     document.body.appendChild(d);
-    if(!RM && d.animate){var a = d.animate([{transform:"translateY(0)", opacity:1}, {transform:"translateY(-30px)", opacity:0}], {duration:900, easing:"ease-out"}); a.onfinish = function(){d.remove()}}
-    else setTimeout(function(){d.remove()}, 1300);
+    if(!RM && d.animate){var a = d.animate([{transform:"translateY(0)", opacity:1}, {transform:"translateY(-26px)", opacity:0}], {duration:1000, easing:"ease-out"}); a.onfinish = function(){d.remove()}}
+    else setTimeout(function(){d.remove()}, 1400);
+    flyCoins(5);
   }
+
+  /* till: light coins stay, amber coins slide to the Rossignol jar. Transient, never changes the numbers */
+  var fly = $("fly"), animCoins = 0;
+  function coinEl(fill, stroke, parent){
+    var g = el("g", {}, parent);
+    el("ellipse", {rx:8, ry:4.5, fill:fill, stroke:stroke}, g);
+    el("ellipse", {rx:4.5, ry:2, fill:"none", stroke:stroke, "stroke-width":.8}, g);
+    return g;
+  }
+  function flyCoins(n){
+    if(RM) return;
+    var share = classFee() / sh.price, amber = Math.max(1, Math.round(n * share));
+    for(var k = 0; k < n; k++){(function(k){
+      if(animCoins >= 40) return;
+      animCoins++;
+      var isA = k < amber;
+      var c = coinEl(isA ? "#ffb400" : "#f4f2e4", isA ? "#b27c00" : "#b8b39a", fly);
+      var x0 = 36 + (k % 3) * 14, y0 = -4;
+      var frames = isA
+        ? [{transform:"translate(" + x0 + "px," + y0 + "px)", opacity:0}, {transform:"translate(" + x0 + "px,40px)", opacity:1, offset:.3}, {transform:"translate(150px,46px)", opacity:1, offset:.75}, {transform:"translate(152px,100px)", opacity:0}]
+        : [{transform:"translate(" + x0 + "px," + y0 + "px)", opacity:0}, {transform:"translate(" + x0 + "px,70px)", opacity:1, offset:.6}, {transform:"translate(" + x0 + "px,98px)", opacity:0}];
+      var a = c.animate(frames, {duration:isA ? 900 : 650, delay:k * 70, easing:"ease-in", fill:"both"});
+      a.onfinish = function(){c.remove(); animCoins = Math.max(0, animCoins - 1)};
+    })(k)}
+  }
+  function unit(){return Math.max(300, Math.ceil(keep() / 30 / 100) * 100)}
+  function pileTargets(){var u = unit(); return [Math.min(30, Math.round(keep() / u)), Math.min(30, Math.round(feeTot() / u))]}
+  function paintPile(){var t = pileTargets(); tillL.set(t[0]); tillA.set(t[1])}
 
   /* window: snow, skiers, sky */
   var snow = $("snow"), skiers = $("skiers");
@@ -916,7 +1058,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
       var m = el("g", {}, f);
       el("circle", {cx:0, cy:-9, r:3, fill:"#ff4338"}, m);
       el("path", {d:"M0 -6V3M-5 5L5 3M0 -3L-4 1", stroke:"#12305f", "stroke-width":2, "stroke-linecap":"round", fill:"none"}, m);
-      if(!RM){m.style.animation = "skiRun " + (4 + (i % 3)) + "s linear " + (-i * 1.3) + "s infinite"; }
+      if(!RM){m.style.animation = "skiRun " + (4 + (i % 3)) + "s linear " + (-i * 1.3) + "s infinite"}
     }
   }
   function paintWindow(){
@@ -926,82 +1068,111 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     buildSnow(SNOW[sh.w]); buildSkiers(SKIERS[sh.w]);
   }
 
-  /* number and jar */
+  /* numbers */
   var numTw = null;
-  function showNum(v){sh.shown = v; $("feeNum").textContent = eur(v)}
-  function jarTarget(){return Math.round(fee() / MAXFEE * 30)}
+  function showNums(k, f){sh.shown = k; sh.feeShown = f; $("keepNum").textContent = eur(k); $("feeLine").textContent = "Rossignol's fee: " + eur(f)}
   function setWeather(i){
     if(sh.running) finishRun();
     sh.w = i; sh.lit = weatherLit(); paintRack(); paintWindow();
     steps.forEach(function(b, k){b.setAttribute("aria-pressed", k === i)});
-    placeHandle(i); jar.set(jarTarget()); refresh(); vib();
+    placeHandle(i); refresh(); vib();
   }
   function refresh(animate){
-    $("shopSay").textContent = SAY[sh.w];
-    var from = sh.shown, to = fee();
+    var fee = classFee(), p = sh.price;
+    $("pVal").textContent = "EUR " + p;
+    $("pVal").setAttribute("aria-live", "polite");
+    $("pMinus").setAttribute("aria-disabled", p <= CONFIG.priceMin); $("pPlus").setAttribute("aria-disabled", p >= CONFIG.priceMax);
+    range.setAttribute("aria-valuetext", "EUR " + p);
+    $("pCap").textContent = "Your price, your customers. Rossignol's fee stays EUR " + fee + " per rental day.";
+    var share = fee / p;
+    $("sbAmber").style.width = (share * 100) + "%";
+    $("slA").textContent = "Rossignol EUR " + fee + " (" + pct(share) + ")";
+    $("slK").textContent = "You keep EUR " + (p - fee);
+    var fk = sh.shown, ff = sh.feeShown, tk = keep(), tf = feeTot();
     if(numTw) numTw.stop();
-    numTw = tween(animate === false ? 0 : 450, function(p){showNum(from + (to - from) * p)});
-    var share = classFee() / sh.price;
-    $("ringTxt").textContent = Math.round(share * 100) + "%";
-    $("ring").setAttribute("stroke-dashoffset", 163.4 * (1 - Math.min(1, share)));
-    $("pv").textContent = "EUR " + sh.price.toFixed(2);
+    numTw = tween(animate === false ? 0 : 450, function(q){showNums(fk + (tk - fk) * q, ff + (tf - ff) * q)});
+    if(!sh.running) paintPile();
+    $("runLine").textContent = "";
     CONFIG.classes.forEach(function(c, k){clsB[k].setAttribute("aria-pressed", k === sh.cls)});
-    $("mathShopBody").innerHTML =
-      '<div class="formula">pairs × days × weather factor × fee</div>' +
-      '<div class="formula">' + CONFIG.pairs + ' × ' + CONFIG.daysPerMonth + ' × ' + pct(W[sh.w].f) + ' × EUR ' + classFee() + ' = ' + eur(fee()) + '</div>' +
-      '<p class="small muted">Weather factors are an illustration: ' + W.map(function(w){return pct(w.f)}).join(", ") + ' of ' + CONFIG.daysPerMonth + ' rental days a month. Each rack icon stands for ' + CONFIG.pairsPerIcon + ' pairs. Day price share: EUR ' + classFee() + ' / EUR ' + sh.price.toFixed(2) + ' = ' + Math.round(classFee() / sh.price * 100) + '%.</p>';
+    refreshSheet();
   }
 
-  /* run the month */
+  /* run your month */
   var DAYMS = [230, 170, 120, 85];
   function finishRun(){if(sh.running) sh.running.finish()}
   $("run").addEventListener("click", function(){
     if(sh.running) return finishRun();
-    var total = fee(), target = jarTarget(), D = CONFIG.daysPerMonth;
+    var D = CONFIG.daysPerMonth, tk = keep(), tf = feeTot(), tg = pileTargets(), animLeft = 40;
     if(numTw) numTw.stop();
-    jar.set(0); showNum(0); $("run").textContent = "Skip";
+    tillL.set(0); tillA.set(0); showNums(0, 0); $("runLine").textContent = ""; $("run").textContent = "Skip";
     var day = 0, timer, over = false;
+    var queuedA = 0;
+    function addLight(){
+      if(animLeft > 0 && !RM){animLeft--; tillL.add(true)} else tillL.add(false);
+    }
+    function addAmber(){
+      if(animLeft > 0 && !RM){
+        animLeft--; queuedA++;
+        var c = coinEl("#ffb400", "#b27c00", fly);
+        var a = c.animate([{transform:"translate(50px,-4px)", opacity:0}, {transform:"translate(50px,50px)", opacity:1, offset:.35}, {transform:"translate(152px,56px)", opacity:1, offset:.8}, {transform:"translate(152px,90px)", opacity:1}], {duration:600, easing:"ease-in", fill:"both"});
+        a.onfinish = function(){c.remove(); queuedA--; if(!over) tillA.add(false)};
+      } else tillA.add(false);
+    }
     function paintDay(){
-      showNum(total * day / D);
-      var need = Math.round(target * day / D); while(jar.count() < need) jar.add(true);
-      var lit = weatherLit(); sh.lit = lit.map(function(v, i){return v && ((i + day) % 3 !== 0 || sh.w === 3 || sh.w === 2)}); paintRack();
+      showNums(tk * day / D, tf * day / D);
+      var nl = Math.round(tg[0] * day / D), na = Math.round(tg[1] * day / D);
+      while(tillL.count() < nl) addLight();
+      var need = na - tillA.count() - queuedA; while(need-- > 0) addAmber();
+      var lit = weatherLit(); sh.lit = lit.map(function(v, i){return v && ((i + day) % 3 !== 0 || sh.w >= 2)}); paintRack();
     }
     function end(){
       if(over) return; over = true; clearTimeout(timer); sh.running = null;
-      day = D; showNum(total); jar.set(target); sh.lit = weatherLit(); paintRack();
-      $("run").textContent = "Run the month"; vib();
+      fly.innerHTML = ""; showNums(tk, tf); paintPile(); sh.lit = weatherLit(); paintRack();
+      $("run").textContent = "Run your month"; sh.ran = true;
+      $("runLine").textContent = "You keep " + eur(tk) + " and pay Rossignol " + eur(tf) + ".";
+      vib();
     }
     sh.running = {finish: end};
     if(RM){end(); return}
     (function tick(){
       if(over) return;
       day++; paintDay();
-      if(day >= D) end(); else timer = setTimeout(tick, DAYMS[sh.w]);
+      if(day >= D) {timer = setTimeout(end, 700)} else timer = setTimeout(tick, DAYMS[sh.w]);
     })();
   });
 
   /* tokens */
   var tok = $("tok");
-  ["Fleet purchase", "Servicing", "Disposal"].forEach(function(n){
+  ["You did not buy the fleet", "You do not service it over the summer", "You do not dispose of it"].forEach(function(n){
     var b = document.createElement("button"); b.type = "button"; b.className = "tk"; b.setAttribute("aria-pressed", "false");
-    b.innerHTML = '<span class="n">' + n + '</span><span class="why">Rossignol\'s job, not the shop\'s.</span>';
+    b.innerHTML = '<span class="n">' + n + '</span><span class="why">Rossignol\'s job, not yours.</span>';
     b.addEventListener("click", function(){var x = b.classList.toggle("x"); b.setAttribute("aria-pressed", x); vib()});
     tok.appendChild(b);
   });
 
-  /* class and day price chips */
+  /* ski class chips */
   var clsB = [];
   CONFIG.classes.forEach(function(c, k){
     var b = document.createElement("button"); b.type = "button"; b.className = "cls"; b.innerHTML = c.name + "<br>EUR " + c.fee; b.setAttribute("aria-pressed", "false");
-    b.addEventListener("click", function(){if(sh.running) finishRun(); sh.cls = k; jar.set(jarTarget()); refresh(); vib()});
+    b.addEventListener("click", function(){if(sh.running) finishRun(); sh.cls = k; refresh(); vib()});
     $("cls").appendChild(b); clsB.push(b);
   });
-  $("pm").addEventListener("click", function(){sh.price = Math.max(5, +(sh.price - 1).toFixed(2)); refresh(false)});
-  $("pp").addEventListener("click", function(){sh.price = Math.min(40, +(sh.price + 1).toFixed(2)); refresh(false)});
+
+  /* math sheet */
+  var sheet2 = $("sheet2"), last2 = null;
+  function refreshSheet(){
+    $("sh2Now").textContent = "Now: " + Math.round(rdays()).toLocaleString("en-US") + " rental days. Revenue " + eur(revenue()) + ". Rossignol's fee " + eur(feeTot()) + ". You keep " + eur(keep()) + ".";
+  }
+  function open2(){last2 = document.activeElement; refreshSheet(); sheet2.hidden = false; $("sh2Close").focus()}
+  function close2(){sheet2.hidden = true; if(last2 && last2.focus) last2.focus()}
+  $("mathBtn2").addEventListener("click", open2);
+  $("sh2Close").addEventListener("click", close2);
+  $("sh2Bd").addEventListener("click", close2);
+  document.addEventListener("keydown", function(e){if(e.key === "Escape" && !sheet2.hidden) close2()});
 
   sh.lit = weatherLit(); paintRack(); paintWindow();
   steps.forEach(function(b, k){b.setAttribute("aria-pressed", k === sh.w)});
-  placeHandle(sh.w); jar.set(jarTarget()); refresh(false);
+  placeHandle(sh.w); refresh(false);
   window.__shop = sh;
 })();
 
