@@ -272,12 +272,12 @@ nav{margin-bottom:8px}
           <g transform="translate(298 78)"><rect width="46" height="30" rx="5" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.2"/><g fill="#ffb400" opacity=".5"><rect x="9" y="4" width="3.5" height="22" rx="1.7"/><rect x="21" y="4" width="3.5" height="22" rx="1.7"/><rect x="33" y="4" width="3.5" height="22" rx="1.7"/></g></g>
           <text x="358" y="118" text-anchor="end" class="lbl2">Certified second-hand</text>
           <!-- skis -->
-          <g id="skiT" class="ska"><g class="skin" transform="translate(-16 -5.7)"><use id="skiTu" href="#skiS" transform="scale(.5 .6)"/></g></g>
-          <g id="skiN" class="ska" style="opacity:0"><g class="skin" transform="translate(-16 -5.7)"><use id="skiNu" href="#skiS" transform="scale(.5 .6)"/></g><text class="lbl2" x="0" y="-11" text-anchor="middle">bought again</text></g>
-          <g id="skiB" class="ska"><g class="skin" transform="translate(-16 -5.7)"><use class="sk" href="#skiS" transform="scale(.5 .6)"/></g>
+          <g id="skiT" class="ska"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use id="skiTu" href="#skiS" transform="scale(.5 .6)"/></g></g></g>
+          <g id="skiN" class="ska" style="opacity:0"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use id="skiNu" href="#skiS" transform="scale(.5 .6)"/></g></g><text class="lbl2" x="14" y="20" text-anchor="end">bought again</text></g>
+          <g id="skiB" class="ska"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use class="sk" href="#skiS" transform="scale(.5 .6)"/></g>
             <g id="dmg" opacity="0"><polyline points="-4,-5 -1,-1 -4,2 0,6" fill="none" stroke="#ff4338" stroke-width="1.6"/></g>
             <g id="patch" opacity="0"><rect x="-6" y="-4" width="12" height="8" rx="2" fill="#0d1424" stroke="#ffb400" stroke-width="1.3"/><path d="M-6 0H6M-2 -4V4M2 -4V4" stroke="#ffb400" stroke-width=".6"/></g>
-          </g>
+          </g></g>
           <path id="spark" d="M0 -7L2 -2L7 0L2 2L0 7L-2 2L-7 0L-2 -2Z" fill="#fff" opacity="0"/>
         </svg>
       </div>
@@ -700,7 +700,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     if(w >= 4){place("skiN", X0 + DX * w, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[w - 4 + 0 > 0 ? 1 : 0])} else place("skiN", X0 + DX * 4 + 70, YT, "", 0);
     $("discard").setAttribute("visibility", w >= 3 ? "visible" : "hidden");
     // LOOP lane
-    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1); else place("skiB", RACK[0], RACK[1], " rotate(-90deg) scale(.85)", 1);
+    if(w < 5) place("skiB", X0 + DX * w, YB, "", 1); else place("skiB", RACK[0], RACK[1], " rotate(-60deg) scale(.85)", 1);
     $("dmg").style.opacity = 0; $("patch").style.opacity = w >= 3 ? 1 : 0;
     $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)";
   }
@@ -717,7 +717,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     if(w === 4){place("skiN", X0 + DX * 4 + 70, YT, "", 0); $("skiN").style.transition = "none"; void $("skiN").getBoundingClientRect(); $("skiN").style.transition = ""; later(function(){place("skiN", X0 + DX * 4, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[0])}, 20)}
     if(w === 5){place("skiN", X0 + DX * 5, YT, "", 1); $("skiNu").setAttribute("fill", WEAR[1])}
     if(w < 5) place("skiB", X0 + DX * w, YB, "", 1);
-    else {place("skiB", X0 + DX * 5, YB, "", 1); later(function(){place("skiB", RACK[0], RACK[1], " rotate(-90deg) scale(.85)", 1)}, 480)}
+    else {place("skiB", X0 + DX * 5, YB, "", 1); later(function(){place("skiB", RACK[0], RACK[1], " rotate(-60deg) scale(.85)", 1)}, 480)}
     if(w === 3){
       later(function(){$("dmg").style.opacity = 1}, 460);
       later(function(){$("patch").style.opacity = 1; $("patch").style.filter = "drop-shadow(0 0 3px #ffb400)"; $("dmg").style.opacity = 0}, 760);
