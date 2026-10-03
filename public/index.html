@@ -256,7 +256,9 @@ nav{margin-bottom:8px}
 .feerow .lnk{margin:-14px 0 -14px;height:44px;padding:0 4px;font-size:14px;position:relative;z-index:2;align-self:center}
 .runline{font-size:12.5px;min-height:18px;color:var(--text);line-height:1.4}
 .sbar .btn{margin:2px 0 0}
-.lbl3{font-size:13px;color:var(--muted);margin:10px 0 0}
+.lbl3{font-size:13px;color:var(--muted)}
+.clsrow{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0 0}
+#shopCard .chipsrow.g3{margin:6px 0 8px}
 .coinf{width:150px!important;padding:4px 8px!important}
 .coinf .y{color:#fff;font-weight:400;font-size:16px}
 .coinf .r{color:var(--amber);font-weight:400;font-size:13px}
@@ -393,6 +395,8 @@ nav{margin-bottom:8px}
         </div>
       </div>
       <input type="range" id="pRange" aria-label="Your rental price per pair per day">
+      <div class="clsrow"><span class="lbl3">Your fleet class</span><span class="tag red">Illustrative assumption</span></div>
+      <div class="chipsrow g3" id="cls" role="group" aria-label="Your fleet class"></div>
       <p class="pcap" id="pCap"></p>
 
       <div class="split" id="split">
@@ -443,9 +447,6 @@ nav{margin-bottom:8px}
       </div>
 
       <div class="tok" id="tok"></div>
-      <div class="lbl3">Your fleet class</div>
-      <div class="chipsrow g3" id="cls" role="group" aria-label="Your fleet class"></div>
-      <div class="chipsrow"><span class="tag red">Illustrative assumption</span></div>
       <p class="fixedl">Rossignol carries the fleet capital and earns it back through the fee over several winters.</p>
       <p class="fixedl">Built for small independent shops with mid and premium fleets.</p>
     </div>
