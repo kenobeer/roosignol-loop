@@ -524,7 +524,7 @@ var CONFIG = {
   classes: [{name: "Standard", fee: 2}, {name: "Performance", fee: 3}, {name: "Premium", fee: 4}],
   defaultClass: 1,
   // share of normal rental days. ILLUSTRATION, not data.
-  weather: [{name: "No snow", f: 0.1}, {name: "Weak", f: 0.5}, {name: "Normal", f: 1}, {name: "Record", f: 1.3}],
+  weather: [{name: "No snow", f: 0.1, lit: 2}, {name: "Weak", f: 0.5, lit: 7}, {name: "Normal", f: 1, lit: 16}, {name: "Record", f: 1.3, lit: 20}],  // lit = rack icons shown as rented (of 20)
   defaultWeather: 2
 };
 /* ================================================= */
@@ -993,7 +993,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
   }
   function paintRack(){pairs.forEach(function(b, i){b.classList.toggle("lit", !!sh.lit[i]); b.setAttribute("aria-pressed", !!sh.lit[i])})}
   function weatherLit(){
-    var n = Math.min(ICONS, Math.round(ICONS * W[sh.w].f)), out = [];
+    var n = Math.min(ICONS, W[sh.w].lit), out = [];
     for(var i = 0; i < ICONS; i++) out[i] = false;
     for(var k = 0; k < n; k++) out[Math.floor(k * ICONS / n)] = true;
     return out;
@@ -1124,7 +1124,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
       var nl = Math.round(tg[0] * day / D), na = Math.round(tg[1] * day / D);
       while(tillL.count() < nl) addLight();
       var need = na - tillA.count() - queuedA; while(need-- > 0) addAmber();
-      var lit = weatherLit(); sh.lit = lit.map(function(v, i){return v && ((i + day) % 3 !== 0 || sh.w >= 2)}); paintRack();
+      var lit = weatherLit(); sh.lit = lit.map(function(v, i){return v && ((i + day) % 3 !== 0 || sh.w === 3)}); paintRack();
     }
     function end(){
       if(over) return; over = true; clearTimeout(timer); sh.running = null;
