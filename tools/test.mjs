@@ -1,0 +1,24 @@
+import puppeteer from "puppeteer-core";
+const url = process.argv[2] || "https://roosignol-loop.vercel.app/";
+const out = process.argv[3] || "/private/tmp/claude-501/-Users-yona-dev-roosignol/76daa292-3076-421b-b986-4ed34dc372af/scratchpad";
+const b = await puppeteer.launch({executablePath:"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless:"new"});
+const p = await b.newPage();
+await p.setViewport({width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true});
+const errs=[]; p.on("pageerror",e=>errs.push(e.message)); p.on("console",m=>m.type()==="error"&&errs.push(m.text()));
+await p.goto(url+"?id=LOOP-0431",{waitUntil:"networkidle0"});
+const t=s=>p.$eval(s,e=>e.innerText.replace(/\n+/g," | "));
+console.log("id", await t("#skiid"));
+await p.screenshot({path:out+"/s0.png"});
+for(let i=0;i<6;i++){ await p.tap("#next"); }
+console.log("after 5 stats:", await t("#stats"));
+console.log("step:", (await t("#step")).slice(0,160));
+await p.screenshot({path:out+"/s1.png",fullPage:true});
+await p.tap("#m-lin"); console.log("linear:", await t("#stats"), (await t("#step")).slice(0,120));
+await p.screenshot({path:out+"/s2.png",fullPage:true});
+await p.tap("#t-shop"); console.log("fee default:", await t("#fee"), "|", await t("#feeSub"), "|", await t("#buy"), "|", await t("#replace"));
+await p.screenshot({path:out+"/s3.png",fullPage:true});
+await p.tap("#t-blade"); await p.tap('.chip[data-p="glass"]'); console.log("fate:", await t("#fate"));
+await p.screenshot({path:out+"/s4.png",fullPage:true});
+console.log("hscroll:", await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
+console.log("errors:", errs);
+await b.close();

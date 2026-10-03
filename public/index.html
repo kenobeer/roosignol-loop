@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071a3e">
+<meta name="description" content="Rossignol LOOP: follow one ski through 5 rental seasons. A student business model proposal.">
+<title>Rossignol LOOP</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071a3e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ffb400' stroke-width='3'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23ff3b30'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#071a3e; --bg2:#0b2a5c; --card:rgba(255,255,255,.07); --line:rgba(255,255,255,.16);
+  --text:#eef3fc; --muted:#a9bbdb; --amber:#ffb400; --red:#ff4338; --grey:#7f8da8;
+  --r:20px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; color:var(--text);
+  font-family:"Helvetica Neue",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-weight:300;
+  background:linear-gradient(180deg,var(--bg2) 0,var(--bg) 380px) var(--bg) no-repeat;
+  line-height:1.45; font-size:17px;
+  padding:0 0 env(safe-area-inset-bottom);
+}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 40px}
+header{padding:20px 0 10px}
+.brand{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:400}
+h1{margin:4px 0 0;font-size:30px;font-weight:200;letter-spacing:.01em}
+h1 b{font-weight:400;color:var(--amber)}
+h2{margin:0 0 6px;font-size:24px;font-weight:300}
+p{margin:0 0 10px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(7,26,62,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 0;margin:0 -16px 14px;padding-left:16px;padding-right:16px;border-bottom:1px solid var(--line)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tab{min-height:52px;border-radius:16px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:15px;font-weight:400;padding:6px 4px;cursor:pointer;line-height:1.2}
+.tab[aria-selected=true]{background:var(--amber);color:#1a1200;border-color:var(--amber)}
+.tab:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+[hidden]{display:none!important}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--amber);color:var(--amber);border-radius:99px;padding:3px 10px;font-weight:400}
+.tag.red{border-color:var(--red);color:#ff9a93}
+
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:99px;padding:4px;gap:4px;margin:12px 0}
+.seg button{min-height:48px;border-radius:99px;border:0;background:transparent;color:var(--text);font:inherit;font-weight:400;font-size:16px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--amber);color:#1a1200}
+.seg button.lin[aria-pressed=true]{background:var(--grey);color:#0a1020}
+
+.idrow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.skiid{font-size:28px;font-weight:200;letter-spacing:.08em}
+
+/* timeline */
+.line{position:relative;display:flex;justify-content:space-between;margin:20px 6px 8px}
+.line:before{content:"";position:absolute;left:8px;right:8px;top:9px;height:1px;background:var(--line)}
+.node{position:relative;width:20px;height:20px;border-radius:50%;background:#26385f;border:2px solid var(--line);padding:0}
+.node.done{background:var(--red);border-color:var(--red)}
+.node.now{background:var(--amber);border-color:#fff;transform:scale(1.35)}
+.lin-mode .node.done{background:var(--grey);border-color:var(--grey)}
+.lin-mode .node.now{background:#c5cfe3}
+.nodes-l{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin:0 -2px 6px;text-align:center}
+.nodes-l span{width:34px;margin:0 -7px}
+
+.ski{height:34px;margin:12px 0 4px}
+.ski svg{width:100%;height:34px;display:block}
+.ski path{fill:var(--amber);transition:fill .4s,opacity .4s}
+.lin-mode .ski path{fill:var(--grey)}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+.stat .v{font-size:26px;font-weight:300;line-height:1.1}
+.stat .v.amber{color:var(--amber)}
+.stat .l{font-size:13px;color:var(--muted)}
+.lin-mode .stat .v.amber{color:#c5cfe3}
+
+.step h3{margin:0 0 4px;font-size:21px;font-weight:300}
+.step .big{font-size:36px;font-weight:200;color:var(--amber);margin:2px 0 6px;line-height:1.1}
+.lin-mode .step .big{color:#c5cfe3}
+ul.svc{list-style:none;margin:8px 0 0;padding:0}
+ul.svc li{padding:7px 0 7px 26px;position:relative;border-top:1px solid var(--line);font-size:16px}
+ul.svc li:before{content:"";position:absolute;left:4px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--red)}
+ul.svc li.hl{color:var(--amber);font-weight:400}
+ul.svc li.hl:before{background:var(--amber);box-shadow:0 0 0 4px rgba(255,180,0,.25)}
+.two{display:grid;gap:10px}
+.out{border:1px solid var(--line);border-radius:16px;padding:12px}
+.out.good{border-color:var(--amber)}
+.out b{font-weight:400}
+
+.btn{display:block;width:100%;min-height:58px;border-radius:99px;border:0;background:var(--amber);color:#1a1200;font:inherit;font-size:19px;font-weight:400;cursor:pointer;margin:6px 0}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);min-height:48px;font-size:15px}
+.lin-mode .btn:not(.ghost){background:#c5cfe3}
+
+/* calculator */
+label.ctl{display:block;margin:14px 0 0;font-size:16px}
+.ctl .row{display:flex;justify-content:space-between;align-items:baseline}
+.ctl .val{font-size:22px;color:var(--amber);font-weight:400}
+input[type=range]{width:100%;height:44px;margin:4px 0 0;background:transparent;-webkit-appearance:none;appearance:none}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:4px}
+input[type=range]::-moz-range-track{height:4px;background:var(--line);border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;border-radius:50%;background:var(--amber);border:3px solid #fff;margin-top:-14px}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--amber);border:3px solid #fff}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.bigfee{font-size:46px;font-weight:200;color:var(--amber);line-height:1.05}
+.bars{display:grid;gap:8px;margin-top:10px}
+.bar{display:grid;grid-template-columns:92px 1fr 74px;gap:8px;align-items:center;font-size:13px}
+.bar .t{height:14px;border-radius:7px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--red);border-radius:7px;transition:width .3s}
+.bar.on{color:var(--amber);font-weight:400}
+.bar.on .t i{background:var(--amber)}
+.bar .n{text-align:right}
+.fixed{border-top:1px dashed var(--line);margin-top:12px;padding-top:10px}
+input[type=number]{width:120px;min-height:46px;border-radius:12px;border:1px solid var(--amber);background:rgba(255,255,255,.08);color:var(--text);font:inherit;font-size:20px;padding:0 10px}
+.formula{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;background:rgba(0,0,0,.25);border-radius:12px;padding:10px 12px;margin:6px 0;overflow-wrap:anywhere}
+
+/* blade */
+.bladeart svg{width:100%;height:auto;display:block}
+.part{cursor:pointer}
+.part:focus-visible{outline:none}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.chip{min-height:52px;border-radius:16px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:16px;font-weight:400;cursor:pointer;display:flex;gap:8px;align-items:center;justify-content:center}
+.chip i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.chip[aria-pressed=true]{border-color:var(--amber);background:rgba(255,180,0,.14)}
+.flow{display:grid;gap:6px;margin:8px 0 0;padding:0;list-style:none;counter-reset:s}
+.flow li{counter-increment:s;position:relative;padding:8px 10px 8px 42px;border:1px solid var(--line);border-radius:14px;font-size:15px}
+.flow li:before{content:counter(s);position:absolute;left:10px;top:7px;width:22px;height:22px;border-radius:50%;background:var(--red);font-size:13px;display:grid;place-items:center;font-weight:400}
+.note{border-left:3px solid var(--amber);padding:4px 0 4px 12px;margin:0}
+
+footer{font-size:13px;color:var(--muted);padding-top:6px}
+noscript{display:block;padding:16px;color:var(--amber)}
+@media (min-width:640px){body{font-size:18px}.two{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Student business model</div>
+    <h1>Rossignol <b>LOOP</b></h1>
+    <p class="muted small" style="margin-top:6px">Rossignol stops selling skis to rental shops and lends them instead. The longer a ski lasts, the more it earns. This is our proposal.</p>
+  </header>
+
+  <nav aria-label="Sections">
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="t-ski" aria-controls="p-ski" aria-selected="true">1. Ski<br>passport</button>
+      <button class="tab" role="tab" id="t-shop" aria-controls="p-shop" aria-selected="false">2. Shop<br>calculator</button>
+      <button class="tab" role="tab" id="t-blade" aria-controls="p-blade" aria-selected="false">3. Turbine<br>blade</button>
+    </div>
+  </nav>
+  <noscript>This page needs JavaScript to run the interactive parts.</noscript>
+
+  <!-- 1 PASSPORT -->
+  <section id="p-ski" role="tabpanel" aria-labelledby="t-ski">
+    <div class="card" id="passport">
+      <div class="idrow">
+        <div><div class="muted small">Ski passport</div><div class="skiid" id="skiid">LOOP-0427</div></div>
+        <span class="tag">Illustrative example</span>
+      </div>
+      <div class="seg" role="group" aria-label="Business model">
+        <button class="lin" id="m-lin" aria-pressed="false">Linear model</button>
+        <button id="m-loop" aria-pressed="true">LOOP</button>
+      </div>
+      <div class="ski" aria-hidden="true"><svg viewBox="0 0 300 34" preserveAspectRatio="none"><path id="skipath" d="M2 17C2 8 10 6 22 7L270 12C284 13 292 16 298 5C299 14 299 22 298 29C292 18 284 21 270 22L22 27C10 28 2 26 2 17Z"/></svg></div>
+      <div class="line" id="timeline" aria-hidden="true"></div>
+      <div class="nodes-l" id="tlabels" aria-hidden="true"></div>
+    </div>
+
+    <div class="card step" id="step" aria-live="polite"></div>
+    <div class="stats" id="stats"></div>
+    <button class="btn" id="next">Next season</button>
+    <button class="btn ghost" id="restart" hidden>Start again</button>
+    <p class="muted small" id="assume">Assumptions for this example: 60 rental days per season, EUR 3 per pair per rental day, 5 seasons. Real skis will differ.</p>
+  </section>
+
+  <!-- 2 CALCULATOR -->
+  <section id="p-shop" role="tabpanel" aria-labelledby="t-shop" hidden>
+    <div class="card">
+      <h2>What would a shop pay?</h2>
+      <p class="muted small">Move the sliders. The fee follows the winter.</p>
+      <label class="ctl" for="pairs"><div class="row"><span>Pairs of skis</span><span class="val" id="v-pairs"></span></div>
+        <input type="range" id="pairs" min="10" max="300" step="1"></label>
+      <label class="ctl" for="days"><div class="row"><span>Rental days per month, per pair</span><span class="val" id="v-days"></span></div>
+        <input type="range" id="days" min="0" max="30" step="1"></label>
+      <label class="ctl" for="winter"><div class="row"><span>Winter quality</span><span class="val" id="v-winter"></span></div>
+        <input type="range" id="winter" min="0" max="4" step="1"></label>
+      <div class="scale"><span>No snow</span><span>Normal</span><span>Record season</span></div>
+    </div>
+
+    <div class="card">
+      <div class="muted small">Monthly fee to Rossignol</div>
+      <div class="bigfee" id="fee"></div>
+      <div class="muted small" id="feeSub"></div>
+      <div class="bars" id="bars" aria-label="Fee by winter quality"></div>
+      <p class="muted small" style="margin-top:10px">In a bad winter the shop pays less, because Rossignol is paid per rental day. The risk of a bad winter is shared.</p>
+    </div>
+
+    <div class="card">
+      <h2>Versus buying the fleet</h2>
+      <label class="ctl" for="price" style="margin-top:4px"><div class="row"><span>Purchase price per pair, EUR</span><span class="tag red">Assumption, edit me</span></div>
+        <input type="number" id="price" inputmode="numeric" min="0" step="10"></label>
+      <div class="fixed">
+        <div class="muted small">Buying 100% of the fleet</div>
+        <div class="bigfee" style="font-size:34px;color:var(--text)" id="buy"></div>
+        <div class="muted small">Same cost whether it snows or not.</div>
+      </div>
+      <div class="fixed">
+        <div class="muted small">Replacing 1/5 to 1/3 of the fleet each year</div>
+        <div style="font-size:24px" id="replace"></div>
+        <div class="muted small">Rental shops replace 1/5 to 1/3 of their fleet every year.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How we calculate</h2>
+      <div class="formula" id="f1"></div>
+      <div class="formula" id="f2"></div>
+      <div class="formula" id="f3"></div>
+      <p class="small muted">Fee per pair per rental day: EUR 3 (our model). Winter factors are assumptions, shown above. Shops sign for at least 3 seasons. The default of 80 pairs, 20 days and a normal winter gives EUR 4,800 per month.</p>
+    </div>
+  </section>
+
+  <!-- 3 BLADE -->
+  <section id="p-blade" role="tabpanel" aria-labelledby="t-blade" hidden>
+    <div class="card">
+      <h2>A turbine blade, cut open</h2>
+      <p class="muted small">Tap a part to see what happens to it.</p>
+      <div class="bladeart" id="bladeart"></div>
+      <div class="chips" id="chips" role="group" aria-label="Blade parts"></div>
+      <div class="out good" id="fate" aria-live="polite"></div>
+    </div>
+
+    <div class="card">
+      <h2>How carbon fibre gets into a ski</h2>
+      <ol class="flow">
+        <li>An old blade comes out of service. This is our proposal with Vattenfall.</li>
+        <li>Pyrolysis separates the fibres. Carbon fibre survives it.</li>
+        <li>The recovered carbon fibre is saturated with new resin.</li>
+        <li>It is frozen as prepreg, ready to use.</li>
+        <li>It repairs and reinforces skis, for example in season 3.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <p class="note"><b style="font-weight:400">An honest note.</b> Only a small fraction of a blade is usable carbon fibre, so this complements Vattenfall's other circular solutions and does not replace them. Pyrolysis is energy intensive and a last resort. That is why LOOP first keeps existing skis in use, and only uses recovered fibre where it clearly extends a ski's life.</p>
+      <p class="small muted" style="margin:10px 0 0">Source: our interview with Endre Hals, EVI ski factory, Norway.</p>
+    </div>
+  </section>
+
+  <footer>Student project, not an official Rossignol or Vattenfall publication. No agreement with either company is implied. Numbers marked as assumptions are ours.</footer>
+</div>
+
+<script>
+/* ===== Edit these numbers to change the site ===== */
+var CONFIG = {
+  feePerDay: 3,          // EUR per pair per rental day
+  daysPerSeason: 60,     // rental days per season (passport example)
+  seasons: 5,            // seasons in the passport
+  carbonSeason: 3,       // season after which the carbon fibre repair happens
+  defaultId: "LOOP-0427",// default ski ID (override with ?id=LOOP-0428)
+  defaultPairs: 80,
+  defaultDays: 20,       // rental days per month per pair
+  defaultPrice: 300,     // EUR per pair, ASSUMPTION
+  // winter factor = share of normal rental days. ASSUMPTIONS, for illustration.
+  winters: [
+    {name: "No snow", f: 0.1},
+    {name: "Poor", f: 0.6},
+    {name: "Normal", f: 1},
+    {name: "Good", f: 1.25},
+    {name: "Record season", f: 1.5}
+  ],
+  defaultWinter: 2
+};
+/* ================================================= */
+
+var $ = function(id){return document.getElementById(id)};
+function eur(n){return "EUR " + Math.round(n).toLocaleString("en-US")}
+
+/* tabs */
+var tabs = ["ski","shop","blade"];
+function showTab(k){
+  tabs.forEach(function(t){
+    $("p-"+t).hidden = t!==k;
+    $("t-"+t).setAttribute("aria-selected", t===k ? "true":"false");
+  });
+  window.scrollTo(0,0);
+}
+tabs.forEach(function(t){ $("t-"+t).addEventListener("click", function(){showTab(t)}) });
+
+/* ---------- Passport ---------- */
+var idParam = "";
+try { idParam = new URLSearchParams(location.search).get("id") || ""; } catch(e){}
+idParam = idParam.toUpperCase();
+var SKI_ID = /^[A-Z0-9-]{1,16}$/.test(idParam) ? idParam : CONFIG.defaultId;
+$("skiid").textContent = SKI_ID;
+document.title = "Rossignol LOOP " + SKI_ID;
+
+var N = CONFIG.seasons;
+var step = 0, loop = true;       // step 0 = start, 1..N seasons, N+1 = end of life
+var services = ["Inspection","Base repair","Edge sharpening","Binding check","Waxing"];
+
+function renderTimeline(){
+  var h="", l="";
+  for(var i=0;i<=N+1;i++){
+    var cls = i<step ? "done" : (i===step ? "now" : "");
+    h += '<span class="node '+cls+'"></span>';
+    l += '<span>'+(i===0?"Start":i===N+1?"End":"S"+i)+'</span>';
+  }
+  $("timeline").innerHTML = h; $("tlabels").innerHTML = l;
+}
+function tile(v,l,amber){return '<div class="stat"><div class="v'+(amber?' amber':'')+'">'+v+'</div><div class="l">'+l+'</div></div>'}
+function render(){
+  document.body.classList.toggle("lin-mode", !loop);
+  $("m-loop").setAttribute("aria-pressed", loop);
+  $("m-lin").setAttribute("aria-pressed", !loop);
+  renderTimeline();
+  var s = Math.min(step, N);                 // seasons completed
+  var days = s*CONFIG.daysPerSeason;
+  var fee = loop ? days*CONFIG.feePerDay : 0;
+  var carbon = (loop && s>=CONFIG.carbonSeason) ? 1 : 0;  // done in the summer service of that season
+  var svc = loop ? Math.min(s, N-1) : 0;
+  var el = $("step"), h = "";
+
+  if(loop){
+    if(step===0){
+      h = '<h3>Day one</h3><p>This pair is <b>lent</b> to a rental shop. It is not sold. Rossignol still owns it, so Rossignol wants it to last.</p><p class="muted">Tap Next season to follow it.</p>';
+    } else if(step<=N){
+      var summer = step<N ? "Summer service, then back to the shop" : "Final safety check";
+      h = '<h3>Season '+step+' of '+N+'</h3>'
+        + '<div class="big">'+eur(CONFIG.daysPerSeason*CONFIG.feePerDay)+'</div>'
+        + '<p>'+CONFIG.daysPerSeason+' rental days × EUR '+CONFIG.feePerDay+' paid by the shop to Rossignol.</p>'
+        + '<div class="muted small" style="margin-top:10px">'+summer+'</div><ul class="svc">'
+        + (step<N ? services.map(function(x){return '<li>'+x+'</li>'}).join("") : '<li>Full inspection of the ski</li><li>Pass or fail</li>')
+        + (step===CONFIG.carbonSeason ? '<li class="hl">Structural repair with recovered carbon fibre</li>' : '')
+        + '</ul>';
+    } else {
+      h = '<h3>After season '+N+'</h3><p>The safety check decides.</p><div class="two">'
+        + '<div class="out good"><b>Passes</b><br>Sold as <b>certified second-hand</b>. The ski gets another life.</div>'
+        + '<div class="out"><b>Fails</b><br>Recycled via our partner <b>MTB</b>. Nothing is burned.</div></div>'
+        + '<p style="margin-top:12px">Total paid to Rossignol by the shop: <b style="color:var(--amber);font-weight:400">'+eur(N*CONFIG.daysPerSeason*CONFIG.feePerDay)+'</b></p>';
+    }
+  } else {
+    if(step===0){
+      h = '<h3>Day one</h3><p>The shop <b>buys</b> this pair. Rossignol sells it once and the relationship ends.</p><p class="muted">Tap Next season to follow it.</p>';
+    } else if(step<=N){
+      var note = step<3 ? "Wear builds up. No summer refurbishment programme." :
+                 step<N ? "Replacement window: shops replace skis after 3 to 5 seasons." : "Last season. The shop buys new skis to replace it.";
+      h = '<h3>Season '+step+' of '+N+'</h3>'
+        + '<div class="big">EUR 0</div><p>Paid to Rossignol for this season. The ski was a one-off sale.</p>'
+        + '<p class="muted">'+note+'</p>';
+    } else {
+      h = '<h3>End of the line</h3><p>The ski is <b>thrown away or burned</b>. Its materials are lost, and the shop buys a new pair.</p>'
+        + '<p class="muted">Same ski, same '+(N*CONFIG.daysPerSeason)+' rental days, EUR 0 earned after the sale.</p>';
+    }
+  }
+  el.innerHTML = h;
+  $("stats").innerHTML =
+      tile(days,"Rental days")
+    + tile(eur(fee), loop ? "Fee to Rossignol" : "Rental fee to Rossignol", true)
+    + tile(loop ? svc : 0, "Summer services")
+    + tile(loop ? carbon : 0, "Carbon repairs")
+  ;
+  $("skipath").style.opacity = (!loop && step>N) ? .2 : 1;
+  $("next").textContent = step===0 ? "Start: season 1" : step<N ? "Next season" : step===N ? "See what happens next" : "";
+  $("next").hidden = step>N;
+  $("restart").hidden = step<=N;
+}
+$("next").addEventListener("click", function(){ if(step<=N){step++; render()} });
+$("restart").addEventListener("click", function(){ step=0; render(); window.scrollTo(0,0) });
+$("m-loop").addEventListener("click", function(){ loop=true; render() });
+$("m-lin").addEventListener("click", function(){ loop=false; render() });
+render();
+
+/* ---------- Calculator ---------- */
+var W = CONFIG.winters;
+var elP=$("pairs"), elD=$("days"), elW=$("winter"), elPrice=$("price");
+elP.value=CONFIG.defaultPairs; elD.value=CONFIG.defaultDays; elW.max=W.length-1; elW.value=CONFIG.defaultWinter; elPrice.value=CONFIG.defaultPrice;
+function calc(){
+  var p=+elP.value, d=+elD.value, wi=+elW.value, w=W[wi], price=Math.max(0,+elPrice.value||0);
+  var f=CONFIG.feePerDay;
+  var fee=p*d*f*w.f;
+  $("v-pairs").textContent=p; $("v-days").textContent=d; $("v-winter").textContent=w.name;
+  $("fee").textContent=eur(fee);
+  $("feeSub").textContent = p+" pairs × "+d+" days × EUR "+f+(w.f!==1 ? " × "+w.f+" ("+w.name.toLowerCase()+")" : " (normal winter)");
+  var max = p*d*f*Math.max.apply(null,W.map(function(x){return x.f}))||1;
+  $("bars").innerHTML = W.map(function(x,i){
+    var v=p*d*f*x.f;
+    return '<div class="bar'+(i===wi?' on':'')+'"><span>'+x.name+'</span><span class="t"><i style="width:'+Math.max(2,v/max*100)+'%"></i></span><span class="n">'+eur(v)+'</span></div>';
+  }).join("");
+  var buy=p*price;
+  $("buy").textContent=eur(buy);
+  $("replace").textContent=eur(buy/5)+" to "+eur(buy/3)+" a year";
+  $("f1").textContent="Winter factor ("+w.name+") = "+w.f+"  [assumption]";
+  $("f2").textContent="Monthly fee = pairs × days × EUR "+f+" × winter factor";
+  $("f3").textContent="            = "+p+" × "+d+" × "+f+" × "+w.f+" = "+eur(fee);
+}
+[elP,elD,elW,elPrice].forEach(function(e){e.addEventListener("input",calc)});
+calc();
+
+/* ---------- Blade ---------- */
+var PARTS = {
+  carbon:{name:"Carbon fibre",color:"#ff4338",fate:"Survives pyrolysis. It is recovered, saturated with new resin and frozen as prepreg. Then it repairs and reinforces skis. Only a small fraction of a blade is usable carbon fibre."},
+  glass:{name:"Glass fibre",color:"#8fd3ff",fate:"Comes out brittle and degraded. It is not usable for skis. It needs other circular solutions."},
+  resin:{name:"Resin",color:"#ffb400",fate:"Binds the fibres together. Pyrolysis breaks it down, which frees the fibres. Recovered carbon fibre gets new resin before use."},
+  core:{name:"Core material",color:"#d9c9a3",fate:"Fills the inside of the blade. It is not used in our skis. This is where Vattenfall's other circular solutions matter."}
+};
+var order=["carbon","glass","resin","core"];
+$("bladeart").innerHTML =
+'<svg viewBox="0 0 320 250" role="img" aria-label="Wind turbine blade and its cross section">'
++'<defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#ffb400"/></pattern></defs>'
++'<path d="M8 40 L236 28 C 290 26 312 32 312 38 C 312 44 290 50 236 50 L8 56 Z" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.4)"/>'
++'<line x1="120" y1="12" x2="120" y2="72" stroke="#ff4338" stroke-dasharray="4 3"/>'
++'<text x="126" y="14" fill="#a9bbdb" font-size="11">cut here</text>'
++'<path d="M120 76 L60 118 M120 76 L300 118" stroke="rgba(255,255,255,.25)"/>'
++'<g transform="translate(0,10)">'
++ '<path class="part" data-p="glass" d="M30 170 C 80 100, 200 105, 300 165 C 200 215, 80 230, 30 170 Z" fill="#0b2a5c" stroke="#8fd3ff" stroke-width="12" stroke-linejoin="round"/>'
++ '<path class="part" data-p="core" d="M40 170 C 85 112, 200 116, 288 165 C 200 205, 85 218, 40 170 Z" fill="#d9c9a3" opacity=".55"/>'
++ '<path class="part" data-p="resin" d="M40 170 C 85 112, 200 116, 288 165 C 200 205, 85 218, 40 170 Z" fill="url(#dots)"/>'
++ '<path class="part" data-p="carbon" d="M95 134 C 140 120, 195 124, 235 142 L 235 152 C 195 136, 140 132, 95 146 Z" fill="#ff4338" stroke="#fff" stroke-width="1.5"/>'
++ '<path class="part" data-p="carbon" d="M95 196 C 140 206, 195 200, 235 184 L 235 174 C 195 188, 140 192, 95 184 Z" fill="#ff4338" stroke="#fff" stroke-width="1.5"/>'
++'</g></svg>';
+function showPart(k){
+  var p=PARTS[k];
+  $("fate").innerHTML='<b style="font-weight:400;color:var(--amber)">'+p.name+'</b><p style="margin:6px 0 0">'+p.fate+'</p>';
+  Array.prototype.forEach.call($("chips").children,function(c){c.setAttribute("aria-pressed", c.dataset.p===k)});
+}
+$("chips").innerHTML = order.map(function(k){return '<button class="chip" data-p="'+k+'" aria-pressed="false"><i style="background:'+PARTS[k].color+'"></i>'+PARTS[k].name+'</button>'}).join("");
+$("chips").addEventListener("click",function(e){var b=e.target.closest("button");if(b)showPart(b.dataset.p)});
+Array.prototype.forEach.call(document.querySelectorAll(".part"),function(n){
+  n.setAttribute("tabindex","0"); n.setAttribute("role","button"); n.setAttribute("aria-label",PARTS[n.dataset.p].name);
+  n.addEventListener("click",function(){showPart(n.dataset.p)});
+  n.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();showPart(n.dataset.p)}});
+});
+showPart("carbon");
+
+/* offline support: cache the page after first load */
+if("serviceWorker" in navigator && location.protocol==="https:"){
+  window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});
+}
+</script>
+</body>
+</html>
