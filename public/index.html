@@ -632,11 +632,11 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     return '<polygon class="f" points="' + p.join(" ") + '"/>';
   }
   var STAMPS = [
-    {cx:58, cy:222, rot:-6, ink:"#1b7f9a", hw:50, hh:36, ghost:'<ellipse rx="47" ry="33"/>',
+    {cx:58, cy:219, rot:-6, ink:"#1b7f9a", hw:50, hh:36, ghost:'<ellipse rx="47" ry="33"/>',
      label:function(d){return "Winter 1 stamp: serviced, " + d + " days"},
      body:function(d){return '<ellipse class="s" rx="47" ry="33" stroke-width="2.6"/><ellipse class="s" rx="42" ry="28" stroke-width=".9"/>'
        + tx("WINTER 1", 0, -11, 12.4, 46) + tx("SERVICED", 0, 5, 14.4, 66) + '<line class="s" x1="-33" x2="33" y1="9.5" y2="9.5" stroke-width=".8"/>' + tx(d + " DAYS", 0, 22, 12.4, 44)}},
-    {cx:303, cy:92, rot:4, ink:"#c9690a", hw:52, hh:37, ghost:'<rect x="-49" y="-35" width="98" height="70" rx="9"/>',
+    {cx:303, cy:89, rot:4, ink:"#c9690a", hw:52, hh:37, ghost:'<rect x="-49" y="-35" width="98" height="70" rx="9"/>',
      label:function(d){return "Winter 2 stamp: serviced, " + d + " days"},
      body:function(d){return '<mask id="kn2"><rect x="-44" y="-14" width="88" height="30" fill="#fff"/><text class="st-t" x="0" y="7" font-size="14.8" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs" style="fill:#000">SERVICED</text></mask>'
        + '<rect class="s" x="-49" y="-35" width="98" height="70" rx="9" stroke-width="2.6"/><rect class="s" x="-43" y="-29" width="86" height="58" rx="5" stroke-width="1.2" stroke-dasharray="3 2.2"/>'
@@ -652,7 +652,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
      body:function(d){return '<circle class="s" r="47" stroke-width="2.6"/><circle class="s" r="42.5" stroke-width=".9"/>'
        + arcTx("a4t", "M-29 0A29 29 0 0 1 29 0", "WINTER 4", 12.4, 52) + arcTx("a4b", "M-37 0A37 37 0 0 0 37 0", d + " DAYS", 12.4, 46)
        + '<use href="#skiS" class="f" transform="translate(-14 -22) scale(.44)"/>' + tx("SERVICED", 0, 6, 14.2, 58) + star(-36, 0, 4) + star(36, 0, 4)}},
-    {cx:276, cy:192, rot:-3, ink:"#3c8a2e", hw:72, hh:72, ghost:'<circle r="69"/>',
+    {cx:278, cy:187, rot:-3, ink:"#3c8a2e", hw:72, hh:72, ghost:'<circle r="69"/>',
      label:function(d){return "Winter 5 stamp: safety check passed, certified second-hand, Rossignol LOOP"},
      body:function(d){return '<circle class="s" r="69" stroke-width="2.8"/><circle class="s" r="63" stroke-width="1"/>'
        + arcTx("a5t", "M-47 0A47 47 0 0 1 47 0", "ROSSIGNOL LOOP", 12.6, 104) + arcTx("a5b", "M-56 0A56 56 0 0 0 56 0", "CERTIFIED SECOND-HAND", 12.4, 120)
