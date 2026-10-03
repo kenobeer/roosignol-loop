@@ -101,7 +101,7 @@ input[type=number]{width:120px;min-height:46px;border-radius:12px;border:1px sol
 .flow li:before{content:counter(s);position:absolute;left:10px;top:7px;width:22px;height:22px;border-radius:50%;background:var(--red);font-size:13px;display:grid;place-items:center;font-weight:400}
 .note{border-left:3px solid var(--amber);padding:4px 0 4px 12px;margin:0}
 
-footer{font-size:13px;color:var(--muted);padding-top:6px}
+footer{font-size:13px;color:var(--muted);padding-top:6px;margin-top:26px}
 noscript{display:block;padding:16px;color:var(--amber)}
 @media (min-width:640px){body{font-size:18px}.two{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -196,10 +196,10 @@ nav{margin-bottom:8px}
 .stamp{mix-blend-mode:multiply;cursor:pointer}
 .stamp:focus-visible{outline:none}
 .stamp:focus-visible .hit{stroke:#1e3f7a;stroke-width:2;stroke-dasharray:4 3}
-#cover{transition:transform .4s cubic-bezier(.5,0,.3,1);transform-origin:2px 137px}
+#cover{transition:transform .4s cubic-bezier(.5,0,.3,1);transform-origin:2px 143px}
 #cover.open{transform:scaleX(0)}
 #cover.gone{visibility:hidden}
-.cap{flex:none;height:32px;font-size:11.5px;line-height:1.3;overflow:hidden}
+.cap{flex:none;height:38px;padding-top:6px;box-sizing:border-box;font-size:11.5px;line-height:1.3;overflow:hidden}
 .thumb{flex:none;display:flex;gap:10px;align-items:center}
 .nrow{display:flex;align-items:center;gap:10px}
 .nrow .bignum{white-space:nowrap}
@@ -251,7 +251,7 @@ nav{margin-bottom:8px}
       <div class="g1top">Follow one ski</div>
 
       <div class="strip">
-        <svg id="strip" viewBox="0 0 360 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Two pairs of skis side by side. The typical rental ski is discarded after 3 winters. The LOOP ski stays in service for 5 winters and then gets a second life.">
+        <svg id="strip" viewBox="0 0 360 128" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Two pairs of skis side by side. The typical rental ski is discarded after 3 winters. The LOOP ski stays in service for 5 winters and then gets a second life.">
           <g stroke="#3ee0ff" stroke-width="1" fill="none" opacity=".75">
             <line x1="16" y1="32" x2="226" y2="32"/>
             <line x1="16" y1="96" x2="226" y2="96"/>
@@ -265,11 +265,11 @@ nav{margin-bottom:8px}
           <g transform="translate(236 22)"><path d="M2 6H24L22 28H4Z" fill="rgba(255,255,255,.05)" stroke="#7f8da8" stroke-width="1.2"/><path d="M0 6H26M9 2H17" stroke="#7f8da8" stroke-width="1.4" stroke-linecap="round"/></g>
           <!-- blank booklet -->
           <g id="booklet" transform="translate(298 10)"><rect width="36" height="46" rx="4" fill="#7f8da8" opacity=".5" stroke="#a9bbdb" stroke-width="1"/><path d="M6 12H30M6 18H30M6 24H22" stroke="#a9bbdb" stroke-width=".9" opacity=".7"/></g>
-          <text x="358" y="68" text-anchor="end" class="lbl2">No shared record</text>
+          <text x="358" y="66" text-anchor="end" class="lbl2">No shared record</text>
           <g id="discard" visibility="hidden"><g transform="translate(316 34) rotate(-14)"><g id="discardAnim"><g style="--ink:#c8281e"><rect x="-29" y="-14" width="58" height="28" rx="3" class="s" stroke-width="1.8"/><text class="st-t" x="0" y="-1.5" font-size="12" text-anchor="middle" textLength="50" lengthAdjust="spacingAndGlyphs">DISCARDED</text><text class="st-t" x="0" y="10.5" font-size="11" text-anchor="middle" textLength="42" lengthAdjust="spacingAndGlyphs">WINTER 3</text></g><rect x="-30" y="-24" width="60" height="48" fill="transparent"/></g></g></g>
           <!-- rack -->
-          <g transform="translate(298 78)"><rect width="46" height="30" rx="5" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.2"/><g fill="#ffb400" opacity=".5"><rect x="9" y="4" width="3.5" height="22" rx="1.7"/><rect x="21" y="4" width="3.5" height="22" rx="1.7"/><rect x="33" y="4" width="3.5" height="22" rx="1.7"/></g></g>
-          <text x="358" y="118" text-anchor="end" class="lbl2">Certified second-hand</text>
+          <g transform="translate(298 84)"><rect width="46" height="30" rx="5" fill="rgba(255,255,255,.05)" stroke="#a9bbdb" stroke-width="1.2"/><g fill="#ffb400" opacity=".5"><rect x="9" y="4" width="3.5" height="22" rx="1.7"/><rect x="21" y="4" width="3.5" height="22" rx="1.7"/><rect x="33" y="4" width="3.5" height="22" rx="1.7"/></g></g>
+          <text x="358" y="126" text-anchor="end" class="lbl2">Certified second-hand</text>
           <!-- skis -->
           <g id="skiT" class="ska"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use id="skiTu" href="#skiS" transform="scale(.5 .6)"/></g></g></g>
           <g id="skiN" class="ska" style="opacity:0"><g transform="rotate(-30)"><g class="skin" transform="translate(-16 -5.7)"><use id="skiNu" href="#skiS" transform="scale(.5 .6)"/></g></g><text class="lbl2" x="14" y="20" text-anchor="end">bought again</text></g>
@@ -282,7 +282,7 @@ nav{margin-bottom:8px}
       </div>
 
       <div class="pp">
-        <svg id="pass" viewBox="0 0 360 274" preserveAspectRatio="xMidYMid meet" aria-label="Digital ski passport">
+        <svg id="pass" viewBox="0 0 360 290" preserveAspectRatio="xMidYMid meet" aria-label="Digital ski passport">
           <defs>
             <g id="skiS"><path d="M4 .4C20 1.5 44 1.5 59 .4C63 .8 65 2.6 65 4C65 5.4 63 7.2 59 7.6C44 6.5 20 6.5 4 7.6C1.5 7.2 0 5.6 0 4C0 2.4 1.5 .8 4 .4Z"/><path transform="translate(0 11)" d="M4 .4C20 1.5 44 1.5 59 .4C63 .8 65 2.6 65 4C65 5.4 63 7.2 59 7.6C44 6.5 20 6.5 4 7.6C1.5 7.2 0 5.6 0 4C0 2.4 1.5 .8 4 .4Z"/></g>
             <filter id="worn" x="-6%" y="-6%" width="112%" height="112%">
@@ -297,21 +297,22 @@ nav{margin-bottom:8px}
             <filter id="shadow" x="-5%" y="-5%" width="110%" height="112%"><feGaussianBlur stdDeviation="3"/></filter>
           </defs>
           <g id="pageG">
-            <rect x="4" y="7" width="356" height="268" rx="12" fill="#000" opacity=".45" filter="url(#shadow)"/>
-            <rect x="2" y="2" width="356" height="268" rx="12" fill="#f0efe3"/>
-            <rect x="2" y="2" width="356" height="268" rx="12" fill="url(#fibre)"/>
-            <rect x="8" y="8" width="344" height="260" rx="8" fill="none" stroke="#c9c4a6" stroke-width=".8"/>
-            <g transform="translate(12 12)" style="--ink:#1e3f7a"><use href="#skiS" transform="rotate(-18 20 6) scale(.62)" fill="#1e3f7a"/></g>
-            <text x="58" y="21" font-size="12.4" font-weight="700" fill="#1e3f7a" class="st-p" textLength="276" lengthAdjust="spacingAndGlyphs">ROSSIGNOL LOOP, DIGITAL SKI PASSPORT</text>
-            <text id="passId" x="58" y="37" font-size="14" font-weight="700" fill="#c8281e" class="st-p" letter-spacing="1.5">LOOP-0427</text>
-            <path d="M12 44H348" stroke="#c9c4a6" stroke-width=".8"/>
+            <rect x="4" y="7" width="356" height="282" rx="12" fill="#000" opacity=".45" filter="url(#shadow)"/>
+            <rect x="2" y="2" width="356" height="282" rx="12" fill="#f0efe3"/>
+            <rect x="2" y="2" width="356" height="282" rx="12" fill="url(#fibre)"/>
+            <rect x="8" y="8" width="344" height="270" rx="8" fill="none" stroke="#c9c4a6" stroke-width=".8"/>
+            <g transform="translate(14 19)" style="--ink:#1e3f7a"><use href="#skiS" transform="rotate(-18 20 6) scale(.62)" fill="#1e3f7a"/></g>
+            <text x="60" y="28" font-size="12.4" font-weight="700" fill="#1e3f7a" class="st-p" textLength="276" lengthAdjust="spacingAndGlyphs">ROSSIGNOL LOOP, DIGITAL SKI PASSPORT</text>
+            <text id="passId" x="60" y="45" font-size="14" font-weight="700" fill="#c8281e" class="st-p" letter-spacing="1.5">LOOP-0427</text>
+            <path d="M14 54H346" stroke="#c9c4a6" stroke-width=".8"/>
             <g id="ghosts"></g>
             <g id="stamps"></g>
-            <text x="180" y="264.5" font-size="12.6" fill="#6a664a" class="st-p" text-anchor="middle" textLength="336" lengthAdjust="spacingAndGlyphs">Every LOOP ski carries a tag. Scan it and this is its history.</text>
+            <text x="180" y="270" font-size="12.6" fill="#6a664a" class="st-p" text-anchor="middle" textLength="336" lengthAdjust="spacingAndGlyphs">Every LOOP ski carries a tag. Scan it and this is its history.</text>
           </g>
           <g id="cover">
-            <rect x="2" y="2" width="356" height="268" rx="12" fill="#14315f" stroke="#ffb400" stroke-width="1.5"/>
-            <rect x="12" y="12" width="336" height="248" rx="8" fill="none" stroke="#ffb400" stroke-width=".8" opacity=".7"/>
+            <rect x="2" y="2" width="356" height="282" rx="12" fill="#14315f" stroke="#ffb400" stroke-width="1.5"/>
+            <rect x="12" y="12" width="336" height="262" rx="8" fill="none" stroke="#ffb400" stroke-width=".8" opacity=".7"/>
+            <g transform="translate(0 10)">
             <circle cx="180" cy="88" r="46" fill="none" stroke="#ffb400" stroke-width="1.5"/>
             <circle cx="180" cy="88" r="40" fill="none" stroke="#ffb400" stroke-width=".7" opacity=".6"/>
             <use href="#skiS" fill="#ffb400" transform="translate(180 88) rotate(-35) scale(.95) translate(-32 -9.5)"/>
@@ -321,6 +322,7 @@ nav{margin-bottom:8px}
             <path d="M60 218H300" stroke="#3ee0ff" stroke-width=".8"/>
             <g fill="#ff4338"><circle cx="60" cy="218" r="3.5"/><circle cx="120" cy="218" r="3.5"/><circle cx="180" cy="218" r="3.5"/><circle cx="240" cy="218" r="3.5"/><circle cx="300" cy="218" r="3.5"/></g>
             <text id="coverId" x="180" y="244" text-anchor="middle" font-size="15" font-weight="400" fill="#eef3fc" class="st-p" letter-spacing="3">LOOP-0427</text>
+            </g>
           </g>
         </svg>
       </div>
@@ -630,27 +632,27 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
     return '<polygon class="f" points="' + p.join(" ") + '"/>';
   }
   var STAMPS = [
-    {cx:58, cy:211, rot:-6, ink:"#1b7f9a", hw:50, hh:36, ghost:'<ellipse rx="47" ry="33"/>',
+    {cx:58, cy:222, rot:-6, ink:"#1b7f9a", hw:50, hh:36, ghost:'<ellipse rx="47" ry="33"/>',
      label:function(d){return "Winter 1 stamp: serviced, " + d + " days"},
      body:function(d){return '<ellipse class="s" rx="47" ry="33" stroke-width="2.6"/><ellipse class="s" rx="42" ry="28" stroke-width=".9"/>'
        + tx("WINTER 1", 0, -11, 12.4, 46) + tx("SERVICED", 0, 5, 14.4, 66) + '<line class="s" x1="-33" x2="33" y1="9.5" y2="9.5" stroke-width=".8"/>' + tx(d + " DAYS", 0, 22, 12.4, 44)}},
-    {cx:303, cy:82, rot:4, ink:"#c9690a", hw:52, hh:37, ghost:'<rect x="-49" y="-35" width="98" height="70" rx="9"/>',
+    {cx:303, cy:92, rot:4, ink:"#c9690a", hw:52, hh:37, ghost:'<rect x="-49" y="-35" width="98" height="70" rx="9"/>',
      label:function(d){return "Winter 2 stamp: serviced, " + d + " days"},
      body:function(d){return '<mask id="kn2"><rect x="-44" y="-14" width="88" height="30" fill="#fff"/><text class="st-t" x="0" y="7" font-size="14.8" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs" style="fill:#000">SERVICED</text></mask>'
        + '<rect class="s" x="-49" y="-35" width="98" height="70" rx="9" stroke-width="2.6"/><rect class="s" x="-43" y="-29" width="86" height="58" rx="5" stroke-width="1.2" stroke-dasharray="3 2.2"/>'
        + tx("WINTER 2", 0, -15, 12.4, 50) + '<rect class="f" x="-38" y="-10" width="76" height="22" mask="url(#kn2)"/>' + tx(d + " DAYS", 0, 26, 12.4, 46)}},
-    {cx:150, cy:112, rot:-4, ink:"#c8281e", hw:78, hh:68, ghost:'<polygon points="0,-66 74,64 -74,64" stroke-linejoin="round"/>',
+    {cx:150, cy:123, rot:-4, ink:"#c8281e", hw:78, hh:68, ghost:'<polygon points="0,-66 74,64 -74,64" stroke-linejoin="round"/>',
      label:function(d){return "Winter 3 stamp: repaired with recovered carbon fibre"},
      body:function(d){return '<polygon class="s" points="0,-66 74,64 -74,64" stroke-width="2.8" stroke-linejoin="round"/><polygon class="s" points="0,-54 62,56 -62,56" stroke-width="1" stroke-linejoin="round"/>'
        + '<g transform="translate(0 -29)"><rect class="s" x="-13" y="-6" width="26" height="12" rx="3" stroke-width="1.6"/><path class="s" d="M-13 -2H13M-13 2H13M-5 -6V6M3 -6V6" stroke-width=".8"/></g>'
        + tx("WINTER 3", 0, -6, 12.4, 50) + tx("REPAIRED", 0, 17, 16.5, 66) + '<line class="s" x1="-40" x2="40" y1="24" y2="24" stroke-width=".8"/>'
        + tx("RECOVERED", 0, 38, 12.4, 60) + tx("CARBON FIBRE", 0, 51, 12.4, 74)}},
-    {cx:60, cy:98, rot:7, ink:"#1e3f7a", hw:50, hh:50, ghost:'<circle r="47"/>',
+    {cx:60, cy:110, rot:7, ink:"#1e3f7a", hw:50, hh:50, ghost:'<circle r="47"/>',
      label:function(d){return "Winter 4 stamp: serviced, " + d + " days"},
      body:function(d){return '<circle class="s" r="47" stroke-width="2.6"/><circle class="s" r="42.5" stroke-width=".9"/>'
        + arcTx("a4t", "M-29 0A29 29 0 0 1 29 0", "WINTER 4", 12.4, 52) + arcTx("a4b", "M-37 0A37 37 0 0 0 37 0", d + " DAYS", 12.4, 46)
        + '<use href="#skiS" class="f" transform="translate(-14 -22) scale(.44)"/>' + tx("SERVICED", 0, 6, 14.2, 58) + star(-36, 0, 4) + star(36, 0, 4)}},
-    {cx:276, cy:181, rot:-3, ink:"#3c8a2e", hw:72, hh:72, ghost:'<circle r="69"/>',
+    {cx:276, cy:192, rot:-3, ink:"#3c8a2e", hw:72, hh:72, ghost:'<circle r="69"/>',
      label:function(d){return "Winter 5 stamp: safety check passed, certified second-hand, Rossignol LOOP"},
      body:function(d){return '<circle class="s" r="69" stroke-width="2.8"/><circle class="s" r="63" stroke-width="1"/>'
        + arcTx("a5t", "M-47 0A47 47 0 0 1 47 0", "ROSSIGNOL LOOP", 12.6, 104) + arcTx("a5b", "M-56 0A56 56 0 0 0 56 0", "CERTIFIED SECOND-HAND", 12.4, 120)
@@ -683,7 +685,7 @@ tabs.forEach(function(t){$("t-"+t).addEventListener("click", function(){showTab(
   }
 
   /* strip */
-  var X0 = 16, DX = 40, YT = 32, YB = 96, BIN = [246, 38], RACK = [322, 93];
+  var X0 = 16, DX = 40, YT = 32, YB = 96, BIN = [246, 38], RACK = [322, 99];
   var dots = $("dots");
   for(var r = 0; r < 2; r++) for(var k = 1; k <= 5; k++) el("circle", {cx:X0 + DX * k, cy:r ? YB : YT, r:5}, dots);
   var WEAR = ["#ffb400", "#e0a31c", "#c39a3c", "#a38a52"];
