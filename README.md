@@ -2,6 +2,8 @@
 
 Static site (plain HTML, CSS and JS, no dependencies, no backend, no external requests). Production: https://roosignol-loop.vercel.app/
 
+Full handover (what every part says and does, the numbers and who they came from, code map, decisions, open points): `docs/HANDOVER.md`.
+
 What is on the page: a hero with the animated LOOP circle, then three tabs.
 
 1. Follow one ski: one button, one big number, one digital ski passport. Each press is one winter, and a stamp lands on the passport.
