@@ -4,6 +4,9 @@ Written at the end of the build session (2026-10-05). Everything needed to pick 
 
 ## 1. Status and links
 
+> **Taken offline on 2026-10-13.** The course is finished, so the Vercel project was paused (`vercel project pause`, not deleted). The URL below now returns a 503. To bring it back: Vercel dashboard, project `roosignol-loop`, Settings, Unpause (or `vercel project unpause roosignol-loop`). The repo stays on GitHub as a reference.
+
+
 | Item | Value |
 | --- | --- |
 | Production URL | https://roosignol-loop.vercel.app/ |
