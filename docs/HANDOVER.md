@@ -9,7 +9,7 @@ Written at the end of the build session (2026-10-05). Everything needed to pick 
 | Production URL | https://roosignol-loop.vercel.app/ |
 | Hosting | Vercel, project `roosignol-loop` (id `prj_dbUFipvYbhZcz7uevFY4niLLfcHT`), team id `team_GWqR3MWEv6Tdanin0yAVrTyH` (account shown as `ggkeno`) |
 | Access | Public, no login, no deployment protection on the production alias (checked with a plain request and a fresh private browser context) |
-| Repo | `/Users/yona/dev/roosignol`, branch `master`, all work committed. **There is no git remote**, so the code only exists on this machine until you push it somewhere |
+| Repo | `/Users/yona/dev/roosignol`, branch `master`, all work committed and pushed to https://github.com/kenobeer/roosignol-loop (public, remote `origin`). The GitHub repo is not connected to Vercel: pushing does not deploy, production is deployed from the machine with `vercel deploy --prod --yes` |
 | Last verified | Production page was byte-identical to the committed `public/index.html` after every deploy; the last check was after the hub circle change (commit `5579874`) |
 | Stack | One static HTML file (inline CSS and JS), one service worker. No libraries, no build step, no backend, no analytics, no external requests at runtime |
 | Size | `public/index.html` about 81 KB (about 22 KB gzipped) |
@@ -188,7 +188,7 @@ Last results against production: passport reaches EUR 900 (busy) and EUR 450 (qu
 - At 360 px wide the small strip note is about 9.6 px.
 - The strip has no explicit label for what the dots are beyond the "Winter" scale; the lane lengths do the explaining.
 - The passport page and cover are drawn for 5 winters only.
-- No git remote: push the repo somewhere if you want a backup.
+- The GitHub repo is public and not linked to Vercel, so a push does not update the live site. This file contains the Vercel project and team ids (identifiers, not credentials); remove them if you prefer.
 - The URL is a `.vercel.app` address tied to the current Vercel account. A custom domain would mean regenerating the QR code and reprinting cards.
 - The service worker only runs over HTTPS and caches after the first visit; there is no offline page for a first visit without network.
 
